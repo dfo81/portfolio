@@ -1,0 +1,15 @@
+@font-face {
+    font-family: roboto;
+    src: url(./Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url(./Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
