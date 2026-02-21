@@ -1,20 +1,18 @@
-async function loadLanguage(lang) {
-  const res = await fetch(`lang/${lang}.json`);
-  const translations = await res.json();
-  
-  document.querySelectorAll("[data-lang]").forEach(el => {
-    const key = el.getAttribute("data-lang");
-    el.textContent = translations[key];
-  });
-}
+// Maus-Gradient Effekt
+const cursorFollower = document.createElement('div');
+cursorFollower.classList.add('cursor-follower');
+document.body.appendChild(cursorFollower);
 
-loadLanguage("de");
-
-document.getElementById("lang-switch").addEventListener("click", () => {
-  const current = document.documentElement.lang;
-  const next = current === "de" ? "en" : "de";
-  document.documentElement.lang = next;
-  loadLanguage(next);
-  document.getElementById("lang-de").classList.toggle("active", next === "de");
-  document.getElementById("lang-en").classList.toggle("active", next === "en");
+document.addEventListener('mousemove', (e) => {
+  cursorFollower.style.left = (e.clientX - 150) + 'px';
+  cursorFollower.style.top = (e.clientY - 150) + 'px';
 });
+
+document.addEventListener('mouseleave', () => {
+  cursorFollower.style.opacity = '0';
+});
+
+document.addEventListener('mouseenter', () => {
+  cursorFollower.style.opacity = '1';
+});
+
