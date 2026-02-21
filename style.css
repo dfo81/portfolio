@@ -13,25 +13,38 @@
   opacity: 0.8;
   border-radius: 50%;
   filter: blur(40px);
-  background: linear-gradient(45deg, rgba(61, 207, 182, 1) 0%, rgba(61, 207, 182, 0.3) 100%);
+  background: linear-gradient(45deg, rgba(61, 207, 182, 0.2) 50%, rgba(61, 207, 182, 0.1) 100%);
 }
 
 body {
   background: #000;
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  
+}
+
+section.hero {
+  position: relative;
+}
+
+.scroll-wrapper {
+  position: absolute;
+  background-color: #ffffff25;
+  left: -10px;
+  right: -10px;;
+  transform: skewY(-3deg);
+  top: 60vh;
+  height: 100px;
 }
 
 .scroll-container {
-  background-color: #ffffff50;
+  background-color: #ffffff25;
   position: fixed;
-  top: 90%;
-  left: -10px;
-  width: 110vw;
-  transform: translateY(-50%) rotate(-5deg);
-  transform-origin: center;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
   white-space: nowrap;
+  overflow-x: hidden;
+  width: 1000px;
 }
 
 .scroll-text {
@@ -40,15 +53,11 @@ body {
   font-weight: bold;
   color: #fff;
   font-family: Arial, sans-serif;
-  /* Breite x2 damit nahtloser Loop */
-  animation: scrollLeft 25s linear infinite;
+  padding: 15px;
+  animation: scrollLeft 20s linear infinite;
 }
 
 @keyframes scrollLeft {
-  from {
-    transform: translateX(100vw);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
 }
