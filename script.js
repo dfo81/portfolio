@@ -1,18 +1,51 @@
 // Maus-Gradient Effekt
-const cursorFollower = document.createElement('div');
-cursorFollower.classList.add('cursor-follower');
-document.body.appendChild(cursorFollower);
-
 document.addEventListener('mousemove', (e) => {
-  cursorFollower.style.left = (e.clientX - 150) + 'px';
-  cursorFollower.style.top = (e.clientY - 150) + 'px';
+  document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+  document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
 });
 
-document.addEventListener('mouseleave', () => {
-  cursorFollower.style.opacity = '0';
-});
+// Dark / Ligth mode 
+/* const toggle = document.querySelector('#theme-toggle');
 
-document.addEventListener('mouseenter', () => {
-  cursorFollower.style.opacity = '1';
-});
+toggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  if (html.dataset.theme === 'light') {
+    html.dataset.theme = 'dark';
+  } else {
+    html.dataset.theme = 'light';
+  }
+}); */
 
+/* function applyTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[key]) el.textContent = translations[key];
+      });
+      document.documentElement.lang = currentLang;
+    }
+
+    async function switchLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      await loadLanguage(lang);
+      applyTranslations();
+
+      // Button-Styles aktualisieren
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    // ── Events ───────────────────────────────────────────────────
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => switchLanguage(btn.dataset.lang));
+    });
+
+    // ── Init ─────────────────────────────────────────────────────
+    (async () => {
+      await loadLanguage(currentLang);
+      applyTranslations();
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+      });
+    })(); */

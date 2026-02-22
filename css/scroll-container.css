@@ -1,0 +1,36 @@
+.scroll-wrapper {
+  background-color: var(--color-scroll);
+  transform: skewY(-3deg);
+  height: 62px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1440px;
+  white-space: nowrap;
+  display: flex;
+}
+
+/* .scroll-container {
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  animation: scrollLeft 5s linear infinite;
+}
+
+.scroll-text, img {
+    font-family: var(--font-text);
+    color: var(--color-accent);
+  flex-shrink: 0;
+  margin: 0 1rem;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+ */

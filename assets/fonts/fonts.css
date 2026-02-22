@@ -1,11 +1,11 @@
 @font-face {
-    font-family: firacode;
+    font-family: 'firacode';
     src: url(./Fira_Code/static/FiraCode-Regular.ttf);
     font-display: swap;
 }
 
 @font-face {
-    font-family: karla;
+    font-family: 'karla';
     src: url(./Karla/static/Karla-Regular.ttf);
     font-display: swap;
 }
