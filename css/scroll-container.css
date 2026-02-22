@@ -7,30 +7,30 @@
   max-width: 1440px;
   white-space: nowrap;
   display: flex;
+  margin-bottom: 40px;
 }
 
-/* .scroll-container {
+.scroll-container {
   display: flex;
-  
   align-items: center;
-  justify-content: center;
-  overflow-x: hidden;
-  animation: scrollLeft 5s linear infinite;
+  justify-content: space-between;
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scrollLeft 25s linear infinite;
 }
 
 .scroll-text, img {
-    font-family: var(--font-text);
-    color: var(--color-accent);
-  flex-shrink: 0;
+  font-size: 2rem;
+  font-family: var(--font-text);
+  color: var(--color-accent);
   margin: 0 1rem;
 }
 
 @keyframes scrollLeft {
   from {
-    transform: translate(0);
+    transform: translateX(0);
   }
   to {
     transform: translateX(-100%);
   }
 }
- */
