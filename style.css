@@ -39,8 +39,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(100px circle at var(--cursor-x) var(--cursor-y), var(--color-accent), transparent 50%);
-  filter: blur(60px);
+  background: radial-gradient(150px circle at var(--cursor-x) var(--cursor-y), var(--color-accent), transparent 50%);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 10;
 }

@@ -16,7 +16,7 @@
   justify-content: space-between;
   flex-shrink: 0;
   min-width: 100%;
-  animation: scrollLeft 20s linear infinite;
+  animation: scrollLeft 48s linear infinite;
 }
 
 .scroll-text, img {
