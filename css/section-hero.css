@@ -37,7 +37,8 @@ header {
 }
 
 .logo {
-  height: 64px;
+  width: 72px;
+  height: 42px;
 }
 
 nav {
@@ -73,65 +74,4 @@ nav a {
 .title h2 {
   font-family: "firacode";
   font-size: 2.5rem;
-}
-
-/* hier beginnt die grausamkeit */
-.title-buttons {
-  display: flex;
-  padding-top: 24px;
-  gap: 40px;
-}
-
-.marquee-button {
-  --padding-x: 40px;
-  position: relative;
-  display: inline-flex;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 24px var(--padding-x);
-  border-radius: 100px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.text-placeholder {
-  visibility: hidden;
-  display: inline-block;
-}
-
-.marquee-content {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  padding-left: var(--padding-x);
-  will-change: transform;
-  gap: var(--marquee-gap, 0px);
-  transition: all 0.3s ease;
-}
-
-.marquee-content span {
-  flex-shrink: 0;
-}
-
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Wird per JS als CSS-Variable gesetzt */
-    transform: translateX(var(--marquee-translate));
-  }
-}
-
-.marquee-button:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-.marquee-button:hover .marquee-content {
-  animation: marquee-scroll var(--marquee-duration, 3s) linear infinite;
 }

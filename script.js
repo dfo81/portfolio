@@ -19,20 +19,29 @@ toggle.addEventListener('click', () => {
 
 document.querySelectorAll('.marquee-button').forEach(button => {
   const content = button.querySelector('.marquee-content');
-  const spans = content.querySelectorAll('span');
-  const textWidth = spans[0].offsetWidth;
-  const buttonWidth = button.offsetWidth;
-
-  const gap = buttonWidth + 20;
-  const translateAmount = -(textWidth + gap);
-  const speed = 90; // px/s
-
-  // Duration auf exakt ganzzahlige Frameanzahl (60hz) anpassen
-  const rawDuration = Math.abs(translateAmount) / speed;
-  const frames = Math.round(rawDuration * 60);
-  const duration = frames / 60;
-
+  const gap = button.offsetWidth;
+  const translateAmount = -(content.querySelector('span').offsetWidth + gap);
+  
   content.style.setProperty('--marquee-gap', gap + 'px');
   content.style.setProperty('--marquee-translate', translateAmount + 'px');
-  button.style.setProperty('--marquee-duration', duration + 's');
+});
+
+function setMarqueeDuration(button, speed = 120) {
+  const translateAmount = parseFloat(button.querySelector('.marquee-content').style.getPropertyValue('--marquee-translate'));
+  const frames = Math.round(Math.abs(translateAmount) / speed * 60);
+  button.style.setProperty('--marquee-duration', (frames / 60) + 's');
+}
+
+document.querySelectorAll('.marquee-button').forEach(button => setMarqueeDuration(button));
+
+// Marquee Button Mouse Leave Animation
+document.querySelectorAll('.marquee-button').forEach(button => {
+  button.addEventListener('mouseleave', () => {
+    button.classList.add('leaving');
+    
+    // Entferne die "leaving" Klasse nach der Animation
+    button.addEventListener('animationend', () => {
+      button.classList.remove('leaving');
+    }, { once: true });
+  });
 });
