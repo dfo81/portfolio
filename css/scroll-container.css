@@ -8,6 +8,7 @@
   white-space: nowrap;
   display: flex;
   margin-bottom: 40px;
+  z-index: 100;
 }
 
 .scroll-container {

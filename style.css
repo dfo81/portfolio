@@ -31,7 +31,7 @@ body {
 }
 
 
-/* Mouse follow shadow */
+/* Mouse gradient effect */
 body::before {
   content: "";
   position: fixed;
@@ -44,10 +44,3 @@ body::before {
   pointer-events: none;
   z-index: 10;
 }
-
-
-
-
-
-
-

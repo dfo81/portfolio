@@ -1,72 +1,65 @@
-/* Scrolled buttons */
-.title-buttons {
+.scrollable-buttons {
   display: flex;
-  padding-top: 24px;
-  gap: 40px;
+  gap: 48px;
 }
 
-.marquee-button {
-  --padding-x: 40px;
-  position: relative;
-  display: inline-flex;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 24px var(--padding-x);
-  border-radius: 100px;
-  border: 1px solid #ccc;
+.wrapper {
+  display: flex;
+  border: 1px solid white;
   cursor: pointer;
-  transition: border-color 0.3s ease-in-out;
+  border-radius: 96px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease;
 }
 
-.text-placeholder {
-  visibility: hidden;
-  display: inline-block;
-}
-
-.marquee-content {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  padding-left: var(--padding-x);
-  will-change: transform;
-  gap: var(--marquee-gap, 0px);
-  transition: color 0.3s ease-in-out;
-}
-
-.marquee-content span {
-  flex-shrink: 0;
-}
-
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(var(--marquee-translate));
-  }
-}
-
-@keyframes marquee-scroll-back {
-  0% {
-    transform: translateX(calc(var(--marquee-translate) + 50%));
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.marquee-button:hover {
+.wrapper:hover {
   border-color: var(--color-accent);
+}
+
+.wrapper .content {
+  font-size: 18px;
+  padding: 24px;
+  transition: color 0.3s ease;
+}
+
+.wrapper:hover .content {
   color: var(--color-accent);
 }
 
-.marquee-button:hover .marquee-content {
-  animation: marquee-scroll var(--marquee-duration, 2s) linear infinite;
+.wrapper .scroll-text {
+  font-size: 18px;
+  padding: 24px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transform: translateX(100%);
+  will-change: transform;
 }
 
-.marquee-button.leaving .marquee-content {
-  animation: marquee-scroll-back 0.1s ease-out forwards !important;
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
