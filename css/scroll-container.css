@@ -8,8 +8,10 @@
   white-space: nowrap;
   display: flex;
   margin-bottom: 40px;
-  z-index: 100;
+  backdrop-filter: blur(5px);
+  z-index: 1;
 }
+
 
 .scroll-container {
   display: flex;

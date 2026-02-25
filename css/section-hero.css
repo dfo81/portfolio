@@ -76,6 +76,13 @@ nav a {
   font-size: 2.5rem;
 }
 
+.lateral-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  position: relative;
+}
+
 .left-lateral {
   position: absolute;
   left: 96px;
@@ -85,11 +92,39 @@ nav a {
   align-items: center;
   height: 312px;
   gap: 24px;
-  z-index: 0;
 }
 
-.left-lateral img {
+.lateral-image {
   width: 30px;
+  animation: move 0.2s infinite;
+}
+
+.lateral-image-wrapper {
+  position: relative;
+  width: 30px;
+  height: 30px; /* an deine SVG-Höhe anpassen */
+}
+
+.lateral-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.img-default {
+  animation: crossfade 1s infinite ease-in-out;
+}
+
+.img-moving {
+  animation: crossfade 1s infinite ease-in-out reverse;
+}
+
+@keyframes crossfade {
+  0%   { opacity: 1; }
+  45%  { opacity: 1; }
+  55%  { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .vertical-line {
