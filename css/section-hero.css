@@ -83,52 +83,63 @@ nav a {
   position: relative;
 }
 
-.left-lateral {
+.left-lateral, .right-lateral {
   position: absolute;
-  left: 96px;
   bottom: 0;
+  gap: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 312px;
-  gap: 24px;
 }
 
-.lateral-image {
-  width: 30px;
-  animation: move 0.2s infinite;
+.left-lateral {
+  left: 96px;
 }
 
-.lateral-image-wrapper {
-  position: relative;
-  width: 30px;
-  height: 30px; /* an deine SVG-Höhe anpassen */
+.right-lateral {
+  right: 96px;
 }
 
-.lateral-image-wrapper img {
+.inlay-arrow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  transform: translateY(15px);
+  animation: bounce 1.5s infinite;
 }
 
-.img-default {
-  animation: crossfade 1s infinite ease-in-out;
+@keyframes bounce {
+  0% {
+    transform: translateY(15px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(15px)
+  }
 }
 
-.img-moving {
-  animation: crossfade 1s infinite ease-in-out reverse;
-}
-
-@keyframes crossfade {
-  0%   { opacity: 1; }
-  45%  { opacity: 1; }
-  55%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-.vertical-line {
-  height: 100%;
+.left-lateral .vertical-line {
+  height: 240px;
   width: 1px;
   border: 1px solid var(--color-accent);
+}
+ 
+.right-lateral .vertical-line {
+  height: 186px;
+  width: 1px;
+  border: 1px solid white;
+}
+
+.right-lateral a {
+  transform: rotate(-90deg);
+  color: white;
+  font-family: 'karla';
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 48px;
+  transition: color 0.3s ease-in-out;
+}
+
+.right-lateral a:hover {
+  color: var(--color-accent);
 }

@@ -21,6 +21,7 @@ html {
   font-size: 16px;
   color: var(--font-color);
   font-family: var(--font-text);
+  scrollbar-width: none;
 }
 
 body {
