@@ -36,9 +36,25 @@ header {
   justify-content: space-between;
 }
 
-.logo {
+.logo, .logo-white {
   width: 72px;
   height: 42px;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.logo-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.logo-wrapper:hover .logo {
+  opacity: 0;
 }
 
 nav {
@@ -136,7 +152,7 @@ nav a {
   font-family: 'karla';
   font-size: 18px;
   text-decoration: none;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
   transition: color 0.3s ease-in-out;
 }
 
