@@ -67,10 +67,29 @@ nav img {
 }
 
 nav a {
+  padding-top: 18px;
   text-decoration: none;
   color: var(--color-light);
   font-family: "firacode";
   font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+nav a img {
+  height: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover img {
+  opacity: 1;
 }
 
 .title {
@@ -85,6 +104,7 @@ nav a {
 .title h1 {
   font-family: "karla";
   font-size: 8rem;
+  padding-bottom: 24px;
 }
 
 .title h2 {
@@ -113,7 +133,7 @@ nav a {
 }
 
 .right-lateral {
-  right: 96px;
+  right: 46px;
 }
 
 .inlay-arrow {

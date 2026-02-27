@@ -7,7 +7,7 @@
   display: flex;
   border: 1px solid white;
   cursor: pointer;
-  border-radius: 96px;
+  border-radius: 100px;
   overflow: hidden;
   position: relative;
   transition: border-color 0.3s ease;
@@ -19,7 +19,7 @@
 
 .wrapper .content {
   font-size: 18px;
-  padding: 24px;
+  padding: 16px;
   transition: color 0.3s ease;
 }
 
@@ -29,7 +29,7 @@
 
 .wrapper .scroll-text {
   font-size: 18px;
-  padding: 24px;
+  padding: 16px;
   position: absolute;
   left: 0;
   width: 100%;

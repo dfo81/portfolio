@@ -10,13 +10,18 @@
   margin-bottom: 40px;
   backdrop-filter: blur(4px);
   z-index: 1;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 24px,
+    black calc(100% - 24px),
+    transparent 100%
+  );
 }
-
 
 .scroll-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-shrink: 0;
   min-width: 100%;
   animation: scrollLeft 48s linear infinite;
@@ -26,7 +31,7 @@
   font-size: 2rem;
   font-family: var(--font-text);
   color: var(--color-accent);
-  margin: 0 1rem;
+  margin: 0 24px;
 }
 
 @keyframes scrollLeft {
