@@ -1,0 +1,23 @@
+.about-box {
+    position: relative;
+    margin: 144px 112px;
+}
+
+.hero-picture {
+    position: absolute;
+    border-radius: 30px;
+    top: -30px;
+    left: 46px;
+    height: 568px;
+    width: 568px;
+    z-index: 1;
+}
+
+.hero-hover-bg {
+  opacity: 0.25;
+  transition: opacity 0.2s ease;
+}
+
+.hero-picture:hover ~ .hero-hover-bg {
+  opacity: 1;
+}
