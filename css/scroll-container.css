@@ -27,7 +27,7 @@
   animation: scrollLeft 48s linear infinite;
 }
 
-.scroll-text, img {
+ .scroll-text, .scroll-container img {
   font-size: 2rem;
   font-family: var(--font-text);
   color: var(--color-accent);
