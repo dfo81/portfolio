@@ -1,6 +1,10 @@
-.about-box {
+/* * {
+  outline: 1px solid white;
+} */
+
+.about-images-box {
     position: relative;
-    margin: 144px 112px;
+    margin: 174px 112px;
 }
 
 .hero-picture {

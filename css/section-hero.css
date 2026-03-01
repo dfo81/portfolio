@@ -1,5 +1,5 @@
 section.hero {
-  min-height: 100vh;
+  min-height: min(100dvh, 900px);
   background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
   display: flex;
   align-items: center;
@@ -180,7 +180,7 @@ nav a:hover .radio-button {
   font-family: "karla";
   font-size: 18px;
   text-decoration: none;
-  margin-bottom: 72px;
+  margin-bottom: 70px;
   transition: color 0.3s ease-in-out;
 }
 
