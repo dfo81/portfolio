@@ -1,0 +1,41 @@
+/* * {
+  outline: 1px solid white;
+}
+ */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-box {
+  height: 150px;
+  width: min(100%, 1440px);
+  margin: 144px 112px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-image {
+  border-radius: 30px;
+}
+
+.about-me-box {
+  display: flex;
+  padding-top: 112px;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-text-box {
+  border-radius: 30px;
+  border: 1px solid #3dcfb6;
+  background-color: rgba(61, 207, 183, 0.1);
+  height: 568px;
+  width: 568px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
