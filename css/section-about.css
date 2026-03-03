@@ -11,7 +11,7 @@
 .about-box {
   height: 150px;
   width: min(100%, 1440px);
-  margin: 144px 112px;
+  padding: 144px 96px;
   height: auto;
   display: flex;
   justify-content: space-between;

@@ -11,6 +11,10 @@
   overflow: hidden;
   position: relative;
   transition: border-color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .wrapper:hover {
