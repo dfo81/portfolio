@@ -1,15 +1,5 @@
-.scrollable-buttons {
-  display: flex;
-  gap: 48px;
-}
-
 .wrapper {
-  display: flex;
   border: 1px solid white;
-  cursor: pointer;
-  border-radius: 100px;
-  overflow: hidden;
-  position: relative;
   transition: border-color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
