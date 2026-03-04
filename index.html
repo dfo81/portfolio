@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon/icon_light.png" type="image/x-icon" media="(prefers-color-scheme: dark)" />
     <script defer src="script.js"></script>
     <script defer src="/js/scrollable-buttons.js"></script>
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="/assets/fonts/fonts.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/css/section-hero.css" />
@@ -16,14 +17,19 @@
     <title>Portfolio</title>
   </head>
 
-  <body>
+  <body class="flex flex-col bg-bg">
     <!-- hero section -->
-    <section class="hero">
-      <header>
+    <section class="flex items-center flex-col hero">
+      <header class="flex w-full justify-center h-[98px]">
         <!-- header -->
-        <div class="header-content">
-          <nav>
-            <img class="lang-btn" src="/assets/img/icons/lang_switch_default.svg" alt="" />
+        <div class="flex items-center px-24 justify-between header-content">
+          <nav class="flex gap-6 items-center">
+            <div class="relative cursor-pointer lang-wrapper">
+              <img class="lang-img lang-en-default transition-opacity duration-200 pointer-events-none" src="/assets/img/icons/lang_switch_default.svg" />
+              <img class="lang-img lang-en-hover absolute inset-0 transition-opacity duration-200 opacity-0 pointer-events-none" src="/assets/img/icons/lang_switch_default_hover.svg" />
+              <img class="lang-img lang-de-default absolute inset-0 transition-opacity duration-200 opacity-0 pointer-events-none" src="/assets/img/icons/lang_switch_german.svg" />
+              <img class="lang-img lang-de-hover absolute inset-0 transition-opacity duration-200 opacity-0 pointer-events-none" src="/assets/img/icons/lang_switch_german_hover.svg" />
+            </div>
             <a href="" data-lang="about">
               About me
               <img class="radio-button" src="/assets/img/icons/radio_button.svg" alt="" />
@@ -39,9 +45,9 @@
           </nav>
 
           <!-- Logo -->
-          <div class="logo-wrapper">
-            <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
-            <img class="logo" src="/assets/img/logo/logo_aquamarine.png" alt="" />
+          <div class="relative group cursor-pointer">
+            <img class="logo-white w-18 h-[42px]" src="/assets/img/logo/logo_w_bracket.png" alt="" />
+            <img class="group-hover:opacity-0 absolute top-0 transition-opacity duration-300 ease" src="/assets/img/logo/logo_aquamarine.png" alt="" />
           </div>
         </div>
       </header>

@@ -1,79 +1,18 @@
 section.hero {
   min-height: min(100dvh, 900px);
   background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 98px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
   background: linear-gradient(180deg, rgba(28, 28, 28, 1) 25%, rgba(28, 28, 28, 0.06) 100%);
 }
 
 .header-content {
-  display: flex;
-  height: 100%;
   width: min(100%, 1440px);
-  padding: 0 96px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo,
-.logo-white {
-  width: 72px;
-  height: 42px;
-}
-
-.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.logo-wrapper {
-  position: relative;
-  cursor: pointer;
-}
-
-.logo-wrapper:hover .logo {
-  opacity: 0;
-}
-
-nav {
-  display: flex;
-  gap: 24px;
-  position: relative;
-}
-
-nav img {
-  cursor: pointer;
-  transition: content 0.2s ease;
-}
-
-.lang-hover {
-  position: absolute;
-  opacity: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: opacity 0.2s ease;
-}
-
-.lang-hover:hover {
-  opacity: 1;
 }
 
 nav a {
-  padding-top: 18px;
+  margin-top: 0 18px;
   text-decoration: none;
   color: var(--color-light);
   font-family: "firacode";

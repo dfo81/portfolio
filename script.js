@@ -6,30 +6,35 @@ document.addEventListener("mousemove", (e) => {
 
 
 // Language switch 
-const langBtn = document.querySelector('.lang-btn');
+const wrapper = document.querySelector('.lang-wrapper');
 let isDE = false;
+let isClicking = false;
 
-const imgs = {
-  en_default: '/assets/img/icons/lang_switch_default.svg',
-  en_hover: '/assets/img/icons/lang_switch_default_hover.svg',
-  de_default: '/assets/img/icons/lang_switch_german.svg',
-  de_hover: '/assets/img/icons/lang_switch_german_hover.svg',
-}
+const show = (selector) => {
+  document.querySelectorAll('.lang-img').forEach(img => img.style.opacity = '0');
+  document.querySelector(selector).style.opacity = '1';
+};
 
-langBtn.addEventListener('mouseenter', () => {
-  langBtn.src = isDE ? imgs.de_hover : imgs.en_hover;
+show('.lang-en-default');
+
+wrapper.addEventListener('mouseenter', () => {
+  show(isDE ? '.lang-de-hover' : '.lang-en-hover');
 });
 
-langBtn.addEventListener('mouseleave', () => {
-  langBtn.src = isDE ? imgs.de_default : imgs.en_default;
+wrapper.addEventListener('mouseleave', () => {
+  if (isClicking) return;
+  show(isDE ? '.lang-de-default' : '.lang-en-default');
 });
 
-langBtn.addEventListener('click', () => {
+wrapper.addEventListener('mousedown', () => {
+  isClicking = true;
+});
+
+wrapper.addEventListener('click', () => {
   isDE = !isDE;
-  langBtn.src = isDE ? imgs.de_hover : imgs.en_hover;
+  show(isDE ? '.lang-de-hover' : '.lang-en-hover');
+  setTimeout(() => { isClicking = false; }, 50);
 });
-
-
 
 
 // Dark / Ligth mode
