@@ -8,37 +8,16 @@ header {
   background: linear-gradient(180deg, rgba(28, 28, 28, 1) 25%, rgba(28, 28, 28, 0.06) 100%);
 }
 
-.header-content {
-  width: min(100%, 1440px);
-}
-
-nav a {
-  font-family: "firacode";
-  font-size: 1.25rem;
+nav a.nav-link .radio-button {
+  opacity: 0;
   transition: opacity 0.2s ease;
 }
 
-nav a img {
-  transition: opacity 0.2s ease;
-}
-
-nav a:hover .radio-button {
+nav a.nav-link .link-text:hover + .radio-button {
   opacity: 1;
 }
 
-.title h1 {
-  font-family: "karla";
-  font-size: 8rem;
-  padding-bottom: 24px;
-}
-
-.title h2 {
-  font-family: "firacode";
-  font-size: 2.5rem;
-}
-
 .inlay-arrow {
-  position: absolute;
   transform: translateY(15px);
   animation: bounce 1.5s infinite;
 }
@@ -55,25 +34,7 @@ nav a:hover .radio-button {
   }
 }
 
-.left-lateral .vertical-line {
-  height: 240px;
-  width: 1px;
-  border: 1px solid var(--color-accent);
-}
-
-.right-lateral .vertical-line {
-  height: 186px;
-  width: 1px;
-  border: 1px solid white;
-}
-
 .right-lateral a {
-  transform: rotate(-90deg);
-  color: white;
-  font-family: "karla";
-  font-size: 18px;
-  text-decoration: none;
-  margin-bottom: 70px;
   transition: color 0.3s ease-in-out;
 }
 
@@ -81,14 +42,90 @@ nav a:hover .radio-button {
   color: var(--color-accent);
 }
 
-.contact-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-left: 14px;
-  gap: 4px;
-}
-
 .img-hover:hover, .img-hover:hover ~ .radio-button {
   opacity: 1;
+}
+
+.wrapper {
+  transition: border-color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper:hover {
+  border-color: var(--color-accent);
+}
+
+.wrapper .content {
+  transition: color 0.3s ease;
+}
+
+.wrapper .scroll-content {
+  transform: translateX(100%);
+  will-change: transform;
+}
+
+.wrapper:hover .content, .scroll-content {
+  color: var(--color-accent);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.scroll-wrapper {
+  background-color: var(--color-scroll);
+  transform: skewY(-3deg);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 24px,
+    black calc(100% - 24px),
+    transparent 100%
+  );
+}
+
+.scroll-container {
+  animation: scrollLeft 48s linear infinite;
+}
+
+ .scroll-text, .scroll-container img {
+  font-family: var(--font-text);
+  color: var(--color-accent);
+  margin: 0 24px;
+  font-size: 2rem;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }

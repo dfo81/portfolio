@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="/assets/fonts/fonts.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/css/section-hero.css" />
-    <link rel="stylesheet" href="/css/scroll-buttons.css" />
-    <link rel="stylesheet" href="/css/scroll-container.css" />
-    <link rel="stylesheet" href="/css/section-about.css" />
     <title>Portfolio</title>
   </head>
 
@@ -22,7 +19,7 @@
     <section class="flex items-center flex-col hero">
       <header class="flex w-full justify-center h-[98px]">
         <!-- header -->
-        <div class="flex items-center px-24 justify-between header-content">
+        <div class="flex items-center px-24 justify-between w-full max-w-[1440px]">
           <nav class="flex gap-6 items-center">
             <div class="relative cursor-pointer lang-wrapper">
               <img class="lang-img lang-en-default transition-opacity duration-200 pointer-events-none" src="/assets/img/icons/lang_switch_default.svg" />
@@ -30,17 +27,17 @@
               <img class="lang-img lang-de-default absolute inset-0 transition-opacity duration-200 opacity-0 pointer-events-none" src="/assets/img/icons/lang_switch_german.svg" />
               <img class="lang-img lang-de-hover absolute inset-0 transition-opacity duration-200 opacity-0 pointer-events-none" src="/assets/img/icons/lang_switch_german_hover.svg" />
             </div>
-            <a href="" data-lang="about" class="flex flex-col mt-2">
-              About me
-              <img class="radio-button h-2 opacity-0" src="/assets/img/icons/radio_button.svg" alt="" />
+            <a href="" data-lang="about" class="flex flex-col mt-2 nav-link font-['firacode'] text-xl transition-opacity duration-200 ease-in-out">
+              <span class="link-text">About me</span>
+              <img class="radio-button h-2 opacity-0 pointer-events-none" src="/assets/img/icons/radio_button.svg" alt="" />
             </a>
-            <a href="" data-lang="skills" class="flex flex-col mt-2">
-              Skills
-              <img class="radio-button h-2 opacity-0" src="/assets/img/icons/radio_button.svg" alt="" />
+            <a href="" data-lang="skills" class="flex flex-col mt-2 nav-link font-['firacode'] text-xl transition-opacity duration-200 ease-in-out">
+              <span class="link-text">Skills</span>
+              <img class="radio-button h-2 opacity-0 pointer-events-none" src="/assets/img/icons/radio_button.svg" alt="" />
             </a>
-            <a href="" data-lang="projects" class="flex flex-col mt-2">
-              Projects
-              <img class="radio-button h-2 opacity-0" src="/assets/img/icons/radio_button.svg" alt="" />
+            <a href="" data-lang="projects" class="flex flex-col mt-2 nav-link font-['firacode'] text-xl transition-opacity duration-200 ease-in-out">
+              <span class="link-text">Projects</span>
+              <img class="radio-button h-2 opacity-0 pointer-events-none" src="/assets/img/icons/radio_button.svg" alt="" />
             </a>
           </nav>
 
@@ -54,23 +51,23 @@
 
       <!-- title on hero page-->
       <div class="flex flex-col items-center gap-2 flex-1 justify-center title">
-        <h2>Frontend Developer</h2>
-        <h1>Dieter Foos</h1>
+        <h2 class="font-['firacode'] text-[2.5rem]">Frontend Developer</h2>
+        <h1 class="text-[8rem] pb-6">Dieter Foos</h1>
         <div class="flex gap-12">
-          <div class="flex cursor-pointer rounded-[100px] overflow-hidden relative wrapper">
-            <div class="content">Check my work</div>
-            <div class="scroll-text">Check my work</div>
+          <div class="flex cursor-pointer rounded-[100px] overflow-hidden relative border border-[var(--color-light)] wrapper">
+            <div class="text-[18px] p-4 content">Check my work</div>
+            <div class="text-[18px] absolute p-4 w-full scroll-content">Check my work</div>
           </div>
-          <div class="flex cursor-pointer rounded-[100px] overflow-hidden relative wrapper">
-            <div class="content">Contact me</div>
-            <div class="scroll-text">Contact me</div>
+          <div class="flex cursor-pointer rounded-[100px] overflow-hidden relative border border-[var(--color-light)] wrapper">
+            <div class="text-[18px] p-4 content">Contact me</div>
+            <div class="text-[18px] absolute p-4 w-full scroll-content">Contact me</div>
           </div>
         </div>
       </div>
 
       <!-- scroll text banner -->
-      <div class="scroll-wrapper">
-        <div class="scroll-container">
+      <div class="flex h-[62px] max-w-[1440px] mb-[40px] scroll-wrapper">
+        <div class="flex items-center shrink-0 scroll-container">
           <span class="scroll-text"> Awailable for remote work </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="scroll-text"> Frontend Developer </span>
@@ -80,7 +77,7 @@
           <span class="scroll-text">Open to work</span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
         </div>
-        <div class="scroll-container">
+        <div class="flex items-center shrink-0 scroll-container">
           <span class="scroll-text"> Awailable for remote work </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="scroll-text"> Frontend Developer </span>
@@ -96,37 +93,38 @@
       <div class="w-full max-w-[1440px] relative">
         <div class="absolute bottom-0 left-24 gap-3 flex flex-col items-center left-lateral">
           <img src="/assets/img/icons/Rectangle.svg" />
-          <img class="inlay-arrow" src="/assets/img/icons/arrow_down.svg" alt="" />
-          <div class="vertical-line"></div>
+          <img class="absolute inlay-arrow" src="/assets/img/icons/arrow_down.svg" alt="" />
+          <div class="h-[240px] border border-[var(--color-accent)]"></div>
         </div>
 
         <div class="absolute bottom-0 right-12 gap-3 flex flex-col items-center right-lateral">
-          <a href="mailto:info@dieter-foos.de">info@dieter-foos.de</a>
-          <div class="contact-icon">
+          <a class="decoration-0 mb-[70px] text-[18px] -rotate-90" href="mailto:info@dieter-foos.de">info@dieter-foos.de</a>
+          <div class="relative flex ml-[14px] gap-1">
             <img src="/assets/img/icons/git_aquamarine.svg" alt="" />
             <img class="absolute cursor-pointer opacity-0 transition-opacity duration-200 ease img-hover" src="/assets/img/icons/Github.svg" alt="" />
             <img class="opacity-0 transition-opacity duration-200 ease radio-button" src="/assets/img/icons/radio_button.svg" alt="" />
           </div>
-          <div class="contact-icon">
+          <div class="relative flex ml-[14px] gap-1">
             <img src="/assets/img/icons/linkedin_aquamarine.svg" alt="" />
             <img class="absolute cursor-pointer opacity-0 transition-opacity duration-200 ease img-hover" src="/assets/img/icons/Linkedin_hover.svg" alt="" />
             <img class="opacity-0 transition-opacity duration-200 ease radio-button" src="/assets/img/icons/radio_button.svg" alt="" />
           </div>
-          <div class="vertical-line"></div>
+          <div class="h-[186px] border border-[var(--color-light)]"></div>
         </div>
       </div>
     </section>
 
     <!-- about section -->
-    <section class="about">
-      <div class="about-box">
-        <div class="hero-image-box">
-          <img class="hero-image" src="/assets/img/hero_picture.jpg" alt="" />
+    <section class="flex items-center justify-center">
+      <div class="flex py-[184px] px-[96px] justify-between w-full max-w-[1440px]">
+        <div class="relative group">
+          <img class="opacity-30 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
+          <img class="absolute left-12 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
         </div>
-        <div class="about-me-box">
-          <h2>Who i am</h2>
-          <div class="about-text-box">
-            <h1>About me</h1>
+        <div class="flex flex-col pt-28 gap-6">
+          <h2 class="text-2xl text-accent">Who I Am</h2>
+          <div class="rounded-[30px] border border-accent bg-[rgba(61,207,183,0.1)] h-142 w-142 p-8 flex flex-col gap-10">
+            <h1 class="text-6xl font-['firacode'] text-accent">About me</h1>
             <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias labore est tenetur, amet molestiae vel incidunt fugit voluptatibus? Repudiandae quam tenetur deleniti, nesciunt quos velit necessitatibus in dolorem ea suscipit? Doloremque
               similique sit doloribus aut aspernatur repellendus, enim minus eius voluptatibus fuga ratione nemo soluta, nulla necessitatibus, possimus ex incidunt quae sint asperiores? Iusto, corporis eaque? Asperiores quaerat quisquam minus?
@@ -135,6 +133,27 @@
             </span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- skill set section -->
+    <section class="flex items-center justify-center w-full max-w-[1440px]">
+      <div class="flex flex-col gap-6">
+        <h2 class="text-2xl text-accent">Technologies</h2>
+        <div class="rounded-[30px] border border-accent bg-[rgba(61,207,183,0.1)] h-142 w-142 p-8 flex flex-col gap-10"></div>
+      </div>
+      <div>
+        <img src="/assets/img/icons/angular.svg" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
       </div>
     </section>
   </body>

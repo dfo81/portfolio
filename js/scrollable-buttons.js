@@ -19,7 +19,7 @@ const stopScroll = (content, text) => {
 
 const initWrapper = (wrapper) => {
   const content = wrapper.querySelector(".content");
-  const text = wrapper.querySelector(".scroll-text");
+  const text = wrapper.querySelector(".scroll-content");
 
   wrapper.addEventListener("mouseenter", () => startScroll(content, text));
   wrapper.addEventListener("mouseleave", () => stopScroll(content, text));
