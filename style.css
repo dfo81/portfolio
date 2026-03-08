@@ -1,6 +1,6 @@
 * {
   scroll-behavior: smooth;
-/*   outline: 1px solid red; */
+ /*  outline: 1px solid red; */
 }
 
 html {
@@ -21,4 +21,6 @@ body::before {
   filter: blur(90px);
   pointer-events: none;
   z-index: 10;
+  opacity: var(--cursor-opacity, 1);
+  transition: opacity 0.3s ease;
 }

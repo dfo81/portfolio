@@ -4,6 +4,14 @@ document.addEventListener("mousemove", (e) => {
   document.documentElement.style.setProperty("--cursor-y", e.clientY + "px");
 });
 
+document.addEventListener('mouseleave', () => {
+  document.documentElement.style.setProperty('--cursor-opacity', '0');
+});
+
+document.addEventListener('mouseenter', () => {
+  document.documentElement.style.setProperty('--cursor-opacity', '1');
+});
+
 
 // Language switch 
 const wrapper = document.querySelector('.lang-wrapper');

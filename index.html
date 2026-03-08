@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/fonts/fonts.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/css/section-hero.css" />
+    <link rel="stylesheet" href="/css/below.css" />
     <title>Portfolio</title>
   </head>
 
@@ -19,7 +20,7 @@
     <section class="flex items-center flex-col hero">
       <header class="flex w-full justify-center h-[98px]">
         <!-- header -->
-        <div class="flex items-center px-24 justify-between w-full max-w-[1440px]">
+        <div class="flex items-center px-24 justify-between w-full max-w-360">
           <nav class="flex gap-6 items-center">
             <div class="relative cursor-pointer lang-wrapper">
               <img class="lang-img lang-en-default transition-opacity duration-200 pointer-events-none" src="/assets/img/icons/lang_switch_default.svg" />
@@ -90,11 +91,11 @@
       </div>
 
       <!-- laterals on hero page -->
-      <div class="w-full max-w-[1440px] relative">
+      <div class="w-full max-w-360 relative">
         <div class="absolute bottom-0 left-24 gap-3 flex flex-col items-center left-lateral">
           <img src="/assets/img/icons/Rectangle.svg" />
           <img class="absolute inlay-arrow" src="/assets/img/icons/arrow_down.svg" alt="" />
-          <div class="h-[240px] border border-[var(--color-accent)]"></div>
+          <div class="h-60 border border-[var(--color-accent)]"></div>
         </div>
 
         <div class="absolute bottom-0 right-12 gap-3 flex flex-col items-center right-lateral">
@@ -116,15 +117,15 @@
 
     <!-- about section -->
     <section class="flex items-center justify-center">
-      <div class="flex py-[184px] px-[96px] justify-between w-full max-w-[1440px]">
-        <div class="relative group">
+      <div class="flex py-46 px-24 justify-between w-full max-w-360">
+        <div class="relative group mb-auto">
           <img class="opacity-30 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
           <img class="absolute left-12 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
         </div>
         <div class="flex flex-col pt-28 gap-6">
           <h2 class="text-2xl text-accent">Who I Am</h2>
           <div class="rounded-[30px] border border-accent bg-[rgba(61,207,183,0.1)] h-142 w-142 p-8 flex flex-col gap-10">
-            <h1 class="text-6xl font-['firacode'] text-accent">About me</h1>
+            <h1 class="text-6xl font-['firacode'] text-accent font-bold">About me</h1>
             <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias labore est tenetur, amet molestiae vel incidunt fugit voluptatibus? Repudiandae quam tenetur deleniti, nesciunt quos velit necessitatibus in dolorem ea suscipit? Doloremque
               similique sit doloribus aut aspernatur repellendus, enim minus eius voluptatibus fuga ratione nemo soluta, nulla necessitatibus, possimus ex incidunt quae sint asperiores? Iusto, corporis eaque? Asperiores quaerat quisquam minus?
@@ -137,23 +138,64 @@
     </section>
 
     <!-- skill set section -->
-    <section class="flex items-center justify-center w-full max-w-[1440px]">
-      <div class="flex flex-col gap-6">
-        <h2 class="text-2xl text-accent">Technologies</h2>
-        <div class="rounded-[30px] border border-accent bg-[rgba(61,207,183,0.1)] h-142 w-142 p-8 flex flex-col gap-10"></div>
-      </div>
-      <div>
-        <img src="/assets/img/icons/angular.svg" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+    <section class="">
+      <div class="relative flex w-full max-w-360 mx-auto">
+        <div class="absolute top-30 -left-80 w-150 h-150 rounded-full bg-[radial-gradient(circle,#08463B4D,transparent)] blur-xl"></div>
+
+        <div class="flex flex-col gap-12">
+          <h2 class="text-2xl text-accent">Technologies</h2>
+          <div class="rounded-[30px] border border-accent bg-[rgba(61,207,183,0.1)] h-142 w-142 p-8 flex flex-col gap-10">
+            <h1 class="text-6xl font-['firacode'] text-accent font-bold">Skill Set</h1>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eius veniam nihil animi, iusto sunt optio quidem suscipit neque nam, nostrum facere similique deserunt aut incidunt, cum placeat libero quaerat?</span>
+          </div>
+        </div>
+
+        <div class="flex flex-flow items-center gap-2">
+          <div>
+            <img class="h-auto w-auto" src="/assets/img/icons/Property 1=HTML.svg" alt="" />
+            <span>HTML</span>
+          </div>
+          <div>
+            <img class="h-auto w-auto" src="/assets/img/icons/Property 1=CSS.svg" alt="" />
+            <span>CSS</span>
+          </div>
+          <div>
+            <img class="h-auto w-auto" src="/assets/img/icons/Property 1=JavaScript.svg" alt="" />
+            <span>JavaScript</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=Git.svg" alt="" />
+            <span>Git</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=Rest-Api.svg" alt="" />
+            <span>Rest-Api</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=Scrum.svg" alt="" />
+            <span>Scrum</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=Firebase.svg" alt="" />
+            <span>Firebase</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=Angular.svg" alt="" />
+            <span>Angular</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=TypeScript.svg" alt="" />
+            <span>TypeScript</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=React.svg" alt="" />
+            <span>React</span>
+          </div>
+          <div>
+            <img src="/assets/img/icons/Property 1=GrowthMindset.svg" alt="" />
+            <span>GrowthMindset</span>
+          </div>
+        </div>
       </div>
     </section>
   </body>
