@@ -117,7 +117,7 @@
 
     <!-- about section -->
     <section class="flex items-center justify-center">
-      <div class="flex py-46 px-24 justify-between w-full max-w-360">
+      <div class="flex pt-48 pb-24 px-24 justify-between w-full max-w-360">
         <div class="relative group mb-auto">
           <img class="opacity-30 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
           <img class="absolute left-12 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
@@ -138,11 +138,11 @@
     </section>
 
     <!-- skill set section -->
-    <section class="">
-      <div class="relative flex w-full max-w-360 mx-auto">
+    <section class="mb-24">
+      <div class="relative flex w-full max-w-360 mx-auto px-24 justify-between">
         <div class="absolute top-30 -left-80 w-150 h-150 rounded-full bg-[radial-gradient(circle,#08463B4D,transparent)] blur-xl"></div>
 
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-6">
           <h2 class="text-2xl text-accent">Technologies</h2>
           <div class="rounded-[30px] border border-accent bg-[rgba(61,207,183,0.1)] h-142 w-142 p-8 flex flex-col gap-10">
             <h1 class="text-6xl font-['firacode'] text-accent font-bold">Skill Set</h1>
@@ -150,17 +150,17 @@
           </div>
         </div>
 
-        <div class="flex flex-flow items-center gap-2">
-          <div>
-            <img class="h-auto w-auto" src="/assets/img/icons/Property 1=HTML.svg" alt="" />
+        <div class="flex flex-wrap w-158 gap-14 py-20 skill-items">
+          <div class="">
+            <img src="/assets/img/icons/Property 1=HTML.svg" alt="" />
             <span>HTML</span>
           </div>
           <div>
-            <img class="h-auto w-auto" src="/assets/img/icons/Property 1=CSS.svg" alt="" />
+            <img src="/assets/img/icons/Property 1=CSS.svg" alt="" />
             <span>CSS</span>
           </div>
           <div>
-            <img class="h-auto w-auto" src="/assets/img/icons/Property 1=JavaScript.svg" alt="" />
+            <img src="/assets/img/icons/Property 1=JavaScript.svg" alt="" />
             <span>JavaScript</span>
           </div>
           <div>
@@ -193,10 +193,38 @@
           </div>
           <div>
             <img src="/assets/img/icons/Property 1=GrowthMindset.svg" alt="" />
-            <span>GrowthMindset</span>
+            <span>Growth <br>Mindset</span>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- portfolio section -->
+     <section class="flex w-full max-w-360 justify-center mx-auto">
+      <div class="flex flex-col w-full max-w-360 gap-[41px]">
+        <div class="flex flex-col gap-5">
+          <h2 class="text-2xl text-accent">Portfolio</h2>
+          <h1 class="text-6xl font-['firacode'] text-accent font-bold">Featured Projects</h1>
+        </div>
+        <span>Explore a selection of my work here - interact with <br>projects to see my skills in action</span>
+        <div>
+          <div class="flex justify-between p-12 border-y border-accent project-item cursor-pointer transition-bg-color duration-300">
+            <h2 class="text-2xl">Join</h2>
+            <div>
+              HTML
+              I CSS I JavaScript
+            </div>
+          </div>
+          <div class="flex justify-between p-12 border-y border-accent project-item cursor-pointer transition-bg-color duration-300">
+            <h2>El Pollo Loco</h2>
+            <div></div>
+          </div>
+          <div class="flex justify-between p-12 border-y border-accent project-item cursor-pointer transition-bg-color duration-300">
+            <h2>DA Bubble</h2>
+            <div></div>
+          </div>
+        </div>
+      </div>
+     </section>
   </body>
 </html>
