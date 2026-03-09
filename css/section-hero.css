@@ -1,5 +1,5 @@
 section.hero {
-  min-height: min(100dvh, 900px);
+  min-height: min(100dvh, 950px);
   height: min(100dvh, 900px);
   background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
 }
@@ -16,6 +16,57 @@ nav a.nav-link .radio-button {
 nav a.nav-link .link-text:hover + .radio-button {
   opacity: 1;
 }
+
+/* lang switch */
+.lang-img {
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* === DEFAULT STATE (EN) === */
+.lang-en-hover   { opacity: 0; }
+.lang-en-default { opacity: 1; }
+.lang-de-hover   { opacity: 0; }
+.lang-de-default { opacity: 0; }
+
+/* Hover im Default-State: EN hover zeigen */
+.lang-wrapper:not(.active):hover .lang-en-hover   { opacity: 1; }
+.lang-wrapper:not(.active):hover .lang-en-default { opacity: 0; }
+
+/* === ACTIVE STATE (DE) === */
+.lang-wrapper.active .lang-en-hover   { opacity: 0; }
+.lang-wrapper.active .lang-en-default { opacity: 0; }
+.lang-wrapper.active .lang-de-default { opacity: 1; }
+
+/* Hover im Active-State: DE hover zeigen */
+.lang-wrapper.active:hover .lang-de-hover   { opacity: 1; }
+.lang-wrapper.active:hover .lang-de-default { opacity: 0; }
+
+/* Linke Hälfte: default cursor, rechte Hälfte: pointer */
+.lang-wrapper {
+  cursor: default;
+  position: relative;
+}
+
+.lang-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.lang-en-hover,
+.lang-de-hover,
+.lang-de-default,
+.lang-en-default {
+  pointer-events: none; /* Maus-Events nur auf dem Wrapper */
+}
+
+
+
+
 
 .inlay-arrow {
   transform: translateY(15px);
