@@ -22,11 +22,15 @@
         <!-- header -->
         <div class="flex items-center px-24 justify-between w-full max-w-360">
           <nav class="flex gap-6 items-center">
-            <div id="toggle-btn" class="relative cursor-pointer lang-wrapper">
-              <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_default_hover.svg" />
-              <img class="lang-img lang-en-default absolute top-0" src="/assets/img/icons/lang_switch_default.svg" />
-              <img class="lang-img lang-de-hover absolute top-0 opacity-0" src="/assets/img/icons/lang_switch_german_hover.svg" />
-              <img class="lang-img lang-de-default absolute top-0 opacity-0" src="/assets/img/icons/lang_switch_german.svg" />
+            <div id="toggle-btn" class="relative">
+              <div class="relative lang-en-wrapper">
+                <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_default.svg" />
+                <img class="lang-img lang-en-hover absolute top-0" src="/assets/img/icons/lang_switch_default_hover.svg" />
+              </div>
+              <div class="relative lang-de-wrapper">
+                <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_german.svg" />
+                <img class="lang-img lang-de-hover absolute top-0" src="/assets/img/icons/lang_switch_german_hover.svg" />
+              </div>
             </div>
             <a href="" data-lang="about" class="flex flex-col mt-2 nav-link font-['firacode'] text-xl transition-opacity duration-200 ease-in-out">
               <span class="link-text">About me</span>

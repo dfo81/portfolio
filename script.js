@@ -14,6 +14,13 @@ function updateButton(state) {
   button.classList.toggle('active', state);
 }
 
+// Language switch by enter keydown
+button.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    button.click();
+  }
+});
 
 
 

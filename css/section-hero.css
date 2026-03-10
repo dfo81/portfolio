@@ -17,53 +17,38 @@ nav a.nav-link .link-text:hover + .radio-button {
   opacity: 1;
 }
 
+
+
+
+
+
 /* lang switch */
 .lang-img {
   transition: opacity 0.2s ease-in-out;
 }
 
-/* === DEFAULT STATE (EN) === */
-.lang-en-hover   { opacity: 0; }
-.lang-en-default { opacity: 1; }
-.lang-de-hover   { opacity: 0; }
-.lang-de-default { opacity: 0; }
+/* EN Wrapper: standardmäßig sichtbar */
+.lang-en-wrapper { display: block; cursor: default; }
+.lang-de-wrapper { display: none;  cursor: pointer; }
 
-/* Hover im Default-State: EN hover zeigen */
-.lang-wrapper:not(.active):hover .lang-en-hover   { opacity: 1; }
-.lang-wrapper:not(.active):hover .lang-en-default { opacity: 0; }
+/* DE Wrapper: sichtbar wenn active */
+#toggle-btn.active .lang-en-wrapper { display: none; }
+#toggle-btn.active .lang-de-wrapper { display: block; }
 
-/* === ACTIVE STATE (DE) === */
-.lang-wrapper.active .lang-en-hover   { opacity: 0; }
-.lang-wrapper.active .lang-en-default { opacity: 0; }
-.lang-wrapper.active .lang-de-default { opacity: 1; }
+/* Cursor tauschen wenn active */
+#toggle-btn.active .lang-en-wrapper { cursor: pointer; }
+#toggle-btn.active .lang-de-wrapper { cursor: default; }
 
-/* Hover im Active-State: DE hover zeigen */
-.lang-wrapper.active:hover .lang-de-hover   { opacity: 1; }
-.lang-wrapper.active:hover .lang-de-default { opacity: 0; }
-
-/* Linke Hälfte: default cursor, rechte Hälfte: pointer */
-.lang-wrapper {
-  cursor: default;
-  position: relative;
-}
-
-.lang-wrapper::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  cursor: pointer;
-}
-
+/* Hover-Bilder liegen immer oben */
 .lang-en-hover,
-.lang-de-hover,
-.lang-de-default,
-.lang-en-default {
-  pointer-events: none; /* Maus-Events nur auf dem Wrapper */
+.lang-de-hover {
+  z-index: 1;
+  opacity: 0;
 }
 
+/* Nur Hover-Bild einblenden, Default bleibt sichtbar darunter */
+.lang-en-wrapper:hover .lang-en-hover { opacity: 1; }
+.lang-de-wrapper:hover .lang-de-hover { opacity: 1; }
 
 
 
