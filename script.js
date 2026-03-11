@@ -23,6 +23,20 @@ button.addEventListener('keydown', (e) => {
 });
 
 
+// Hover click event
+button.addEventListener('click', (e) => {
+  const rect = button.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
+  const half = rect.width / 2;
+
+  if (isEn && clickX > half) return;
+  if (!isEn && clickX < half) return;
+
+  isEn = !isEn;
+  localStorage.setItem('toggleState', isEn);
+  updateButton(isEn);
+});
+
 
 
 

@@ -18,7 +18,9 @@ nav a.nav-link .link-text:hover + .radio-button {
 }
 
 
-
+* {
+  outline: 1px solid red;
+}
 
 
 
@@ -49,6 +51,28 @@ nav a.nav-link .link-text:hover + .radio-button {
 /* Nur Hover-Bild einblenden, Default bleibt sichtbar darunter */
 .lang-en-wrapper:hover .lang-en-hover { opacity: 1; }
 .lang-de-wrapper:hover .lang-de-hover { opacity: 1; }
+
+/* Cursor per ::after */
+#toggle-btn:not(.active)::after,
+#toggle-btn.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#toggle-btn:not(.active)::after { right: 0; }
+#toggle-btn.active::after { left: 0; }
+
+/* Hover auf dem toggle-btn selbst triggern statt auf dem Wrapper */
+#toggle-btn:not(.active):hover .lang-en-hover { opacity: 1; }
+#toggle-btn.active:hover .lang-de-hover { opacity: 1; }
+
+
+
 
 
 
