@@ -1,5 +1,6 @@
 * {
   scroll-behavior: smooth;
+  outline: 1px solid red;
 }
 
 html {
@@ -22,4 +23,8 @@ body::before {
   z-index: 10;
   opacity: var(--cursor-opacity, 1);
   transition: opacity 0.3s ease;
+}
+
+.b {
+  outline: 1px solid red;
 }
