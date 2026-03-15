@@ -14,6 +14,7 @@ function updateButton(state) {
   button.classList.toggle('active', state);
 }
 
+
 // Language switch by enter keydown
 button.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
@@ -38,10 +39,6 @@ button.addEventListener('click', (e) => {
 });
 
 
-
-
-
-
 // Mouse gradient effect
 document.addEventListener("mousemove", (e) => {
   document.documentElement.style.setProperty("--cursor-x", e.clientX + "px");
@@ -57,6 +54,21 @@ document.addEventListener('mouseenter', () => {
 });
 
 
+
+// Project icons visibility
+const projectItems = document.querySelectorAll('.project-item');
+
+projectItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    const key = item.dataset.project;
+    document.querySelector(`.project-icon[data-project="${key}"]`).classList.add('visible');
+  });
+
+  item.addEventListener('mouseleave', () => {
+    const key = item.dataset.project;
+    document.querySelector(`.project-icon[data-project="${key}"]`).classList.remove('visible');
+  });
+});
 // Dark / Ligth mode
 /* const toggle = document.querySelector('#theme-toggle');
 

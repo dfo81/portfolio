@@ -1,3 +1,22 @@
+.section-card {
+    border-radius: 30px;
+    border: 1px solid var(--color-accent);
+    background-color: rgba(61,207,183,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 568px;
+    width: 568px;
+    padding: 32px;
+}
+
+.card-title {
+    font-size: 60px;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
 .skill-items div {
     display: flex;
     flex-direction: column;
@@ -21,6 +40,97 @@
     font-family: var(--font-text);
 }
 
+.project-item:first-child {
+    border-top: 1px solid var(--color-accent);
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  border-bottom: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.project-item h2 {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.project-item div {
+    display: flex;
+    gap: 8px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.project-item div img {
+    height: 22px;
+}
+
 .project-item:hover {
     background-color: #3DCFB64D;
+    transition: 0.2s;
+}
+
+.project-item:hover .arrow-outward {
+    opacity: 1;
+}
+
+.project-icon-container {
+  position: relative;
+  width: 295px; 
+}
+
+.project-icon {
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-icon.visible {
+    opacity: 1;
+}
+
+.project-title {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow-outward {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    transition: opacity 0.2s ease;
+}
+
+
+/* references */
+.references {
+    height: 274px;
+}
+
+.arrow-back {
+    padding-left: 4px;
+}
+
+.arrow-back-hover {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.arrow-back-hover:hover .arrow-back {
+    padding: 0;
+}
+
+.arrow-back-hover:hover {
+    opacity: 1;
+}
+
+.circle-white {
+    height: 8px;
+    width: 8px;
 }
