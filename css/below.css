@@ -112,25 +112,36 @@
     height: 274px;
 }
 
-.arrow-back {
-    padding-left: 4px;
+.arrows-wrapper {
+    cursor: pointer;
+    position: relative;
 }
 
-.arrow-back-hover {
+.arrow-back-default, .arrow-forward-default {
+    transition: transform 0.2s ease;
+}
+
+.arrow-back-hover, .arrow-forward-hover {
     position: absolute;
     top: 0;
     opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.arrow-back-hover:hover .arrow-back {
-    padding: 0;
+.arrows-wrapper:hover .arrow-back-default {
+    transform: translateX(-4px);
 }
 
-.arrow-back-hover:hover {
+.arrows-wrapper:hover .arrow-forward-default {
+    transform: translateX(4px);
+}
+
+.arrows-wrapper:hover .arrow-back-hover {
     opacity: 1;
+    transform: translateX(-4px);
 }
 
-.circle-white {
-    height: 8px;
-    width: 8px;
+.arrows-wrapper:hover .arrow-forward-hover {
+    opacity: 1;
+    transform: translateX(4px);
 }
