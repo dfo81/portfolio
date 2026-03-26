@@ -80,3 +80,46 @@ toggle.addEventListener('click', () => {
     html.dataset.theme = 'light';
   }
 }); */
+
+
+const cards = document.querySelectorAll(".card");
+
+let current = 0;
+
+function updateCarousel() {
+  cards.forEach((card, index) => {
+    card.classList.remove("left", "center", "right");
+
+    if (index === current) {
+      card.classList.add("center");
+    } 
+    else if (index === (current - 1 + cards.length) % cards.length) {
+      card.classList.add("left");
+    } 
+    else if (index === (current + 1) % cards.length) {
+      card.classList.add("right");
+    } 
+    else {
+      card.classList.add("hidden");
+    }
+  });
+}
+
+// 👉 NEXT
+function nextSlide() {
+  current = (current + 1) % cards.length;
+  updateCarousel();
+}
+
+// 👉 PREV
+function prevSlide() {
+  current = (current - 1 + cards.length) % cards.length;
+  updateCarousel();
+}
+
+// Events
+document.querySelector(".arrow-forward-default").parentElement.addEventListener("click", nextSlide);
+document.querySelector(".arrow-back-default").parentElement.addEventListener("click", prevSlide);
+
+// init
+updateCarousel();

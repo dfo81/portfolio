@@ -145,3 +145,62 @@
     opacity: 1;
     transform: translateX(4px);
 }
+
+
+
+
+
+
+
+
+
+
+.carousel {
+  position: relative;
+  width: 900px;
+  height: 300px;
+  overflow: hidden; /* wichtig für abgeschnittene Karten */
+}
+
+/* Basis */
+.card {
+  position: absolute;
+  width: 420px;
+  height: 250px;
+  background: #1f3d39;
+  border: 1px solid #00ffc3;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+/* CENTER */
+.card.center {
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 3;
+  opacity: 1;
+}
+
+/* LEFT (leicht rausgeschoben) */
+.card.left {
+  transform: translate(-140%, -50%) scale(0.85);
+  opacity: 0.6;
+  z-index: 2;
+}
+
+/* RIGHT */
+.card.right {
+  transform: translate(40%, -50%) scale(0.85);
+  opacity: 0.6;
+  z-index: 2;
+}
+
+/* alles andere */
+.card.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
