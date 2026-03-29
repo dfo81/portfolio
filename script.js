@@ -82,44 +82,49 @@ toggle.addEventListener('click', () => {
 }); */
 
 
-const cards = document.querySelectorAll(".card");
 
-let current = 0;
+const cards = Array.from(document.querySelectorAll(".card"));
+const order = [2, 0, 1]; // slots: left, center, right
+const classes = ["left", "center", "right"];
+let isAnimating = false;
 
-function updateCarousel() {
-  cards.forEach((card, index) => {
-    card.classList.remove("left", "center", "right");
-
-    if (index === current) {
-      card.classList.add("center");
-    } 
-    else if (index === (current - 1 + cards.length) % cards.length) {
-      card.classList.add("left");
-    } 
-    else if (index === (current + 1) % cards.length) {
-      card.classList.add("right");
-    } 
-    else {
-      card.classList.add("hidden");
-    }
+function applyClasses() {
+  cards.forEach((card, i) => {
+    card.className = "card " + classes[order.indexOf(i)];
   });
 }
 
-// 👉 NEXT
-function nextSlide() {
-  current = (current + 1) % cards.length;
-  updateCarousel();
+function go(dir) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  // Karte die rausfliegt sofort auf far-Seite teleportieren
+  const exitIndex = order[dir === 1 ? 0 : 2]; // left raus bei next, right raus bei prev
+  cards[exitIndex].className = "card " + (dir === 1 ? "far-right" : "far-left");
+
+  // Reihenfolge rotieren
+  if (dir === 1) order.push(order.shift());
+  else           order.unshift(order.pop());
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      applyClasses();
+      updateDots();
+      setTimeout(() => { isAnimating = false; }, 500);
+    });
+  });
 }
 
-// 👉 PREV
-function prevSlide() {
-  current = (current - 1 + cards.length) % cards.length;
-  updateCarousel();
+const dots = document.querySelectorAll(".dot-white");
+
+function updateDots() {
+  const centerIndex = order[1]; // wer ist gerade center?
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === centerIndex);
+  });
 }
 
-// Events
-document.querySelector(".arrow-forward-default").parentElement.addEventListener("click", nextSlide);
-document.querySelector(".arrow-back-default").parentElement.addEventListener("click", prevSlide);
-
-// init
-updateCarousel();
+applyClasses();
+updateDots();
+document.querySelector(".arrow-forward-default").parentElement.addEventListener("click", () => go(1));
+document.querySelector(".arrow-back-default").parentElement.addEventListener("click", () => go(-1));

@@ -156,51 +156,59 @@
 
 
 .carousel {
-  position: relative;
-  width: 900px;
-  height: 300px;
-  overflow: hidden; /* wichtig für abgeschnittene Karten */
+  position: relative; 
+  width: 1440px;
+  height: 274px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 100px,
+    black calc(100% - 100px),
+    transparent 100%
+  );
 }
 
-/* Basis */
 .card {
   position: absolute;
-  width: 420px;
-  height: 250px;
-  background: #1f3d39;
-  border: 1px solid #00ffc3;
+  width: 632px;
+  height: 274px;
+  background: rgba(63, 207, 183, 0.10);
+  border: 1px solid var(--color-accent);
   border-radius: 20px;
   padding: 20px;
   color: white;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.5s ease;
+  transform: translateX(-50%) translateY(-50%) translateX(var(--offset, 0px)) scale(var(--scale, 0.85));
+  opacity: var(--opacity, 0.6);
+  transition: transform 0.5s ease, opacity 0.5s ease, background 0.5s ease;
 }
 
-/* CENTER */
 .card.center {
-  transform: translate(-50%, -50%) scale(1);
+  --offset: 0px;
+  --scale: 1;
+  --opacity: 1;
+  background: rgba(63, 207, 183, 0.30);
   z-index: 3;
-  opacity: 1;
 }
 
-/* LEFT (leicht rausgeschoben) */
 .card.left {
-  transform: translate(-140%, -50%) scale(0.85);
-  opacity: 0.6;
+  --offset: -676px;
+  --scale: 0.9;
+  --opacity: 0.6;
   z-index: 2;
 }
 
-/* RIGHT */
 .card.right {
-  transform: translate(40%, -50%) scale(0.85);
-  opacity: 0.6;
+  --offset: 676px;
+  --scale: 0.9;
+  --opacity: 0.6;
   z-index: 2;
 }
 
-/* alles andere */
-.card.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+.card.far-left  { --offset: -1460px; opacity: 0; transition: none; }
+.card.far-right { --offset: 1460px;  opacity: 0; transition: none; }
+
+.dot { transition: opacity 0.3s ease; }
+.dot.active { content: url("/assets/img/icons/eclipse_accent.svg"); opacity: 1; }
