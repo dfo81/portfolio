@@ -115,7 +115,7 @@ function go(dir) {
   });
 }
 
-const dots = document.querySelectorAll(".dot-white");
+const dots = document.querySelectorAll(".dot");
 
 function updateDots() {
   const centerIndex = order[1]; // wer ist gerade center?

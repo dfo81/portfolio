@@ -5,6 +5,12 @@
 }
 
 @font-face {
+    font-family: "firacode-bold";
+    src: url(./Fira_Code/static/FiraCode-Bold.ttf);
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'karla';
     src: url(./Karla/static/Karla-Regular.ttf);
     font-display: swap;
