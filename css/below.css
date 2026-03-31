@@ -78,7 +78,7 @@
 }
 
 .project-item:hover {
-    background-color: #3DCFB64D;
+    background-color: rgba(61, 207, 182, 0.3);
     transition: 0.2s;
 }
 
@@ -218,3 +218,44 @@
     content: url("/assets/img/icons/eclipse_accent.svg"); 
     opacity: 1; 
 }
+
+/* Contact me section */
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 10px;
+    border-top: 1px solid #3DCFB680;
+    border-bottom: 1px solid #3DCFB680;
+}
+
+.contact-item:hover {
+    border-top: 1px solid #3DCFB6;
+    border-bottom: 1px solid #3DCFB6;
+}
+
+
+
+
+.checkbox {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox img  {
+   position: absolute;
+   inset: 0;
+   opacity: 0;
+   transition: opacity 0.2s ease;
+}
+
+.checkbox .checkbox-default {opacity: 1;}
+
+.checkbox:hover .hover-default {opacity: 1;}
+
+.checkbox.active .checkbox-checked {opacity: 1;}
+
+.checkbox.active:hover .hover-checked {opacity: 1;}

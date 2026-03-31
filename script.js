@@ -128,3 +128,8 @@ applyClasses();
 updateDots();
 document.querySelector(".arrow-forward-default").parentElement.addEventListener("click", () => go(1));
 document.querySelector(".arrow-back-default").parentElement.addEventListener("click", () => go(-1));
+
+// checkbox changes
+document.querySelectorAll('.checkbox').forEach(el => {
+  el.addEventListener('click', () => el.classList.toggle('active'));
+});
