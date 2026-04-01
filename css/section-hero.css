@@ -130,6 +130,7 @@ nav a.nav-link .link-text:hover + .circle {
   display: flex;
   font-size: 18px;
   cursor: pointer;
+  width: fit-content;
   border-radius: 100px;
   overflow: hidden;
   position: relative;
@@ -150,7 +151,6 @@ nav a.nav-link .link-text:hover + .circle {
 }
 
 .wrapper .scroll-content {
-  width: 100%;
   padding: 16px;
   transform: translateX(100%);
   will-change: transform;
