@@ -131,5 +131,8 @@ document.querySelector(".arrow-back-default").parentElement.addEventListener("cl
 
 // checkbox changes
 document.querySelectorAll('.checkbox').forEach(el => {
-  el.addEventListener('click', () => el.classList.toggle('active'));
+  el.addEventListener('click', () => {
+    el.classList.toggle('active');
+    document.querySelector('#say-hallo-btn').classList.toggle('active');
+  });
 });

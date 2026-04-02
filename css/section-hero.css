@@ -1,11 +1,43 @@
+/* ==========================================================================
+   HAUPT-STYLESHEET
+   ==========================================================================
+   1. LAYOUT & SECTIONS ....... Hero-Bereich & Grundstruktur
+   2. NAVIGATION .............. Header, Nav-Links & Logo
+   3. KOMPONENTEN ............. Buttons & Interaktive Elemente
+   4. SPRACH-SWITCHER ......... Language Toggle Logik
+   5. SIDEBARS (LATERAL) ...... Seitliche Social-Media & Info-Leisten
+   6. ANIMATIONEN (KEYFRAMES) .. Globale Keyframes & Lauftexte
+   ========================================================================== 
+*/
+
+/* --- 1. LAYOUT & SECTIONS --- */
 section.hero {
   min-height: min(100dvh, 950px);
   height: min(100dvh, 900px);
   background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
 }
 
+/* --- 2. NAVIGATION --- */
 header {
   background: linear-gradient(180deg, rgba(28, 28, 28, 1) 25%, rgba(28, 28, 28, 0.06) 100%);
+}
+
+.logo-wrapper {
+  position: relative;
+  height: 42px;
+  width: 72px;
+  cursor: pointer;
+}
+
+.logo-white {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.logo-wrapper:hover .logo-white {
+  opacity: 1;
 }
 
 .nav-link {
@@ -25,8 +57,56 @@ nav a.nav-link .link-text:hover + .circle {
   opacity: 1;
 }
 
+/* --- 3. KOMPONENTEN --- */
+/* Standard Button mit Scroll-Effekt */
+.button-wrapper {
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--color-light);
+  transition: border-color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-/* lang switch */
+.button-wrapper:hover {
+  border-color: var(--color-accent);
+}
+
+.button-wrapper .content {
+  padding: 16px;
+  position: absolute;
+  transition: color 0.3s ease;
+}
+
+.button-wrapper .scroll-content {
+  padding: 16px;
+  transform: translateX(100%);
+  will-change: transform;
+}
+
+.button-wrapper:hover .content, 
+.scroll-content {
+  color: var(--color-accent);
+}
+
+/* Dekorative Elemente */
+.circle {
+  height: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.inlay-arrow {
+  transform: translateY(15px);
+  animation: bounce 1.5s infinite;
+}
+
+/* --- 4. SPRACH-SWITCHER --- */
 .lang-img {
   transition: opacity 0.2s ease-in-out;
 }
@@ -34,9 +114,9 @@ nav a.nav-link .link-text:hover + .circle {
 .lang-en-wrapper { display: block; cursor: default; }
 .lang-de-wrapper { display: none;  cursor: pointer; }
 
+/* Aktiv-Zustände für Toggle */
 #toggle-btn.active .lang-en-wrapper { display: none; }
 #toggle-btn.active .lang-de-wrapper { display: block; }
-
 #toggle-btn.active .lang-en-wrapper { cursor: pointer; }
 #toggle-btn.active .lang-de-wrapper { cursor: default; }
 
@@ -51,6 +131,7 @@ nav a.nav-link .link-text:hover + .circle {
 .lang-en-wrapper:hover .lang-en-hover { opacity: 1; }
 .lang-de-wrapper:hover .lang-de-hover { opacity: 1; }
 
+/* Klickbare Bereiche für den Switcher */
 #toggle-btn:not(.active)::after,
 #toggle-btn.active::after {
   content: '';
@@ -68,23 +149,7 @@ nav a.nav-link .link-text:hover + .circle {
 #toggle-btn:not(.active):hover .lang-en-hover { opacity: 1; }
 #toggle-btn.active:hover .lang-de-hover { opacity: 1; }
 
-.inlay-arrow {
-  transform: translateY(15px);
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(15px);
-  }
-  50% {
-    transform: translateY(25px);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-
+/* --- 5. SIDEBARS (LATERAL) --- */
 .left-lateral, .right-lateral {
   display: flex;
   flex-direction: column;
@@ -94,18 +159,10 @@ nav a.nav-link .link-text:hover + .circle {
   gap: 12px;
 }
 
-.right-lateral a {
-  transition: color 0.3s ease-in-out;
-}
-
-.right-lateral a:hover {
-  color: var(--color-accent);
-}
-
-.circle {
-  height: 8px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+.social-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
 }
 
 .img-hover {
@@ -119,74 +176,8 @@ nav a.nav-link .link-text:hover + .circle {
   opacity: 1;
 }
 
-.social-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-left: 14px;
-}
-
-.wrapper {
-  display: flex;
-  font-size: 18px;
-  cursor: pointer;
-  width: fit-content;
-  border-radius: 100px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--color-light);
-  transition: border-color 0.3s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.wrapper:hover {
-  border-color: var(--color-accent);
-}
-
-.wrapper .content {
-  padding: 16px;
-  position: absolute;
-  transition: color 0.3s ease;
-}
-
-.wrapper .scroll-content {
-  padding: 16px;
-  transform: translateX(100%);
-  will-change: transform;
-}
-
-.wrapper:hover .content, .scroll-content {
-  color: var(--color-accent);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scrollOut {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scrollIn {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
+/* --- 6. ANIMATIONEN & LAUFTEXT --- */
+/* Unendlicher Ticker (Scroll-Banner) */
 .scroll-wrapper {
   background-color: var(--color-scroll);
   transform: skewY(-3deg);
@@ -205,18 +196,35 @@ nav a.nav-link .link-text:hover + .circle {
   animation: scrollLeft 48s linear infinite;
 }
 
- .scroll-text, .scroll-container img {
+.scroll-text, .scroll-container img {
   font-family: var(--font-text);
   color: var(--color-accent);
   margin: 0 24px;
   font-size: 2rem;
 }
 
+/* Keyframes */
+@keyframes bounce {
+  0%, 100% { transform: translateY(15px); }
+  50% { transform: translateY(25px); }
+}
+
 @keyframes scrollLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes scrollOut {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes scrollIn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
 }

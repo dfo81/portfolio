@@ -47,9 +47,9 @@
           </nav>
 
           <!-- Logo -->
-          <div class="relative group cursor-pointer">
-            <img class="logo-white w-18 h-10.5" src="/assets/img/logo/logo_w_bracket.png" alt="" />
-            <img class="group-hover:opacity-0 absolute top-0 transition-opacity duration-300 ease" src="/assets/img/logo/logo_aquamarine.png" alt="" />
+          <div class="logo-wrapper">
+            <img src="/assets/img/logo/logo_aquamarine.png" alt="" />
+            <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
           </div>
         </div>
       </header>
@@ -59,11 +59,11 @@
         <h2 class="font-['firacode'] text-[2.5rem]">Frontend Developer</h2>
         <h1 class="text-[8rem] pb-6">Dieter Foos</h1>
         <div class="flex gap-12">
-          <div class="wrapper">
+          <div class="button-wrapper">
             <div class="content">Check my work</div>
             <div class="scroll-content">Check my work</div>
           </div>
-          <div class="wrapper">
+          <div class="button-wrapper">
             <div class="content">Contact me</div>
             <div class="scroll-content">Contact me</div>
           </div>
@@ -97,14 +97,14 @@
       <!-- laterals on hero page -->
       <div class="w-full max-w-360 relative">
         <!-- left lateral-->
-        <div class="left-24 left-lateral">
+        <div class="left-24 left-lateral px-2">
           <img src="/assets/img/icons/Rectangle.svg" />
           <img class="absolute inlay-arrow" src="/assets/img/icons/arrow_down.svg" alt="" />
           <div class="h-60 border border-accent"></div>
         </div>
         <!-- right lateral-->
-        <div class="right-12 right-lateral">
-          <a class="decoration-0 mb-17.5 text-[18px] -rotate-90" href="mailto:info@dieter-foos.de">info@dieter-foos.de</a>
+        <div class="right-24 right-lateral">
+          <a class="[writing-mode:vertical-rl] rotate-180 hover:text-accent transition-text duration-200 ease" href="mailto:info@dieter-foos.de">info@dieter-foos.de</a>
           <div class="social-icon">
             <img src="/assets/img/icons/git_aquamarine.svg" alt="" />
             <img class="img-hover" src="/assets/img/icons/Github.svg" alt="" />
@@ -148,6 +148,10 @@
         <div class="section-card">
           <h1 class="card-title">Skill Set</h1>
           <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eius veniam nihil animi, iusto sunt optio quidem suscipit neque nam, nostrum facere similique deserunt aut incidunt, cum placeat libero quaerat?</span>
+          <div class="button-wrapper">
+            <div class="content">Let´s Talk</div>
+            <div class="scroll-content">Let´s Talk</div>
+          </div>
         </div>
       </div>
 
@@ -261,8 +265,9 @@
     </section>
 
     <!-- references section -->
-    <section class="flex items-center flex-col w-full max-w-360 mx-auto gap-24">
+    <section class="flex relative items-center flex-col w-full max-w-360 mx-auto gap-24">
       <h1 class="text-[2rem] text-center font-[firacode] text-accent">What my colleagues say about me</h1>
+      <img class="absolute left-88 top-34 z-20" src="/assets/img/icons/quotes.svg" alt="" />
       <div class="flex justify-center h-68.5 w-full overflow-hidden">
         <div class="carousel">
           <div class="card">Karte 1</div>
@@ -321,12 +326,40 @@
               outlined.
             </span>
           </div>
-          <div class="wrapper">
+          <div class="button-wrapper" id="say-hallo-btn">
             <div class="content">Say Hello ;)</div>
             <div class="scroll-content">Say Hello ;)</div>
           </div>
         </div>
       </div>
     </section>
+    <footer class="flex w-full max-w-360 mx-auto px-24 mb-16 justify-between items-center">
+      <div class="flex flex-col justify-between self-stretch">
+        <div class="logo-wrapper">
+          <img src="/assets/img/logo/logo_aquamarine.png" alt="" />
+          <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
+        </div>
+        <span>Web Developer<br />Munich Germany</span>
+      </div>
+      <div class="text-accent font-[firacode] text-base">&copy; Dieter Foos 2026</div>
+      <div class="flex flex-col gap-1">
+        <a href="" data-lang="about" class="footer-link">
+          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+          <span class="link-text">Github</span>
+        </a>
+        <a href="" data-lang="about" class="footer-link">
+          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+          <span class="link-text">Linkedin</span>
+        </a>
+        <a href="" data-lang="about" class="footer-link">
+          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+          <span class="link-text">Email</span>
+        </a>
+        <a href="" data-lang="about" class="footer-link">
+          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+          <span class="link-text">Legal Notice</span>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>

@@ -234,9 +234,6 @@
     border-bottom: 1px solid #3DCFB6;
 }
 
-
-
-
 .checkbox {
     height: 24px;
     width: 24px;
@@ -259,3 +256,26 @@
 .checkbox.active .checkbox-checked {opacity: 1;}
 
 .checkbox.active:hover .hover-checked {opacity: 1;}
+
+#say-hallo-btn{
+    pointer-events: none;
+}
+
+#say-hallo-btn.active {
+    pointer-events: all;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-accent);
+}
+
+.footer-link:hover .circle {
+    opacity: 1;
+}

@@ -25,4 +25,4 @@ const initWrapper = (wrapper) => {
   wrapper.addEventListener("mouseleave", () => stopScroll(content, text));
 };
 
-document.querySelectorAll(".wrapper").forEach(initWrapper);
+document.querySelectorAll(".button-wrapper").forEach(initWrapper);
