@@ -1,8 +1,8 @@
 /* ==========================================================================
-   HAUPT-STYLESHEET
+   MAIN-STYLESHEET HERO-PAGE
    ==========================================================================
-   1. LAYOUT & SECTIONS ....... Hero-Bereich & Grundstruktur
-   2. NAVIGATION .............. Header, Nav-Links & Logo
+   1. NAVIGATION .............. Header, Nav-Links o& Log
+   2. LAYOUT & SECTIONS ....... Hero-Bereich & Grundstruktur
    3. KOMPONENTEN ............. Buttons & Interaktive Elemente
    4. SPRACH-SWITCHER ......... Language Toggle Logik
    5. SIDEBARS (LATERAL) ...... Seitliche Social-Media & Info-Leisten
@@ -10,15 +10,16 @@
    ========================================================================== 
 */
 
-/* --- 1. LAYOUT & SECTIONS --- */
-section.hero {
-  min-height: min(100dvh, 950px);
-  height: min(100dvh, 900px);
-  background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
-}
-
-/* --- 2. NAVIGATION --- */
+/* --- 1. HEADER & NAVIGATION --- */
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(180deg, rgba(28, 28, 28, 1) 25%, rgba(28, 28, 28, 0.06) 100%);
 }
 
@@ -55,6 +56,13 @@ nav a.nav-link .circle {
 
 nav a.nav-link .link-text:hover + .circle {
   opacity: 1;
+}
+
+/* --- 2. LAYOUT & SECTIONS --- */
+section.hero {
+  min-height: min(100dvh, 950px);
+  height: min(100dvh, 900px);
+  background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
 }
 
 /* --- 3. KOMPONENTEN --- */

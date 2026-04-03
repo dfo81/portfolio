@@ -135,4 +135,14 @@ document.querySelectorAll('.checkbox').forEach(el => {
     el.classList.toggle('active');
     document.querySelector('#say-hallo-btn').classList.toggle('active');
   });
+})
+
+
+// logo ruft index auf
+const logos = document.querySelectorAll('.logo-wrapper');
+
+logos.forEach(logo => {
+  logo.addEventListener('click', () => {
+    logos.forEach(el => el.style.opacity = 0);
+  });
 });

@@ -259,10 +259,12 @@
 
 #say-hallo-btn{
     pointer-events: none;
+    opacity: 0.5;
 }
 
 #say-hallo-btn.active {
     pointer-events: all;
+    opacity: 1;
 }
 
 .footer-link {

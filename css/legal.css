@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
+}
+
+section * {
+    all: revert;
+}
+
+.legal {
+    display: flex;
+    flex-direction: column;
+    width: 1440px;
+    padding: 96px;
+}
+
+.legal a {
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+h2 {
+    color: var(--color-accent);
+}

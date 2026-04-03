@@ -12,48 +12,49 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/css/section-hero.css" />
     <link rel="stylesheet" href="/css/below.css" />
-    <title>Portfolio</title>
+    <title>Portfolio - Dieter Foos</title>
   </head>
 
   <body class="flex flex-col bg-bg">
+    <header>
+      <div class="flex w-full max-w-360 px-24 justify-between">
+        <!-- nav -->
+        <nav class="flex gap-6 items-center">
+          <div id="toggle-btn" class="relative">
+            <div class="relative lang-en-wrapper">
+              <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_default.svg" />
+              <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_default_hover.svg" />
+            </div>
+            <div class="relative lang-de-wrapper">
+              <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_german.svg" />
+              <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_german_hover.svg" />
+            </div>
+          </div>
+          <a href="" data-lang="about" class="nav-link">
+            <span class="link-text">About me</span>
+            <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+          </a>
+          <a href="" data-lang="skills" class="nav-link">
+            <span class="link-text">Skills</span>
+            <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+          </a>
+          <a href="" data-lang="projects" class="nav-link">
+            <span class="link-text">Projects</span>
+            <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+          </a>
+        </nav>
+
+        <!-- Logo -->
+        <div class="logo-wrapper">
+          <img src="/assets/img/logo/logo_aquamarine.png" alt="" />
+          <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
+        </div>
+      </div>
+       
+    </header>
+
     <!-- hero section -->
     <section class="flex items-center flex-col hero">
-      <header class="flex w-full justify-center h-24.5">
-        <!-- header -->
-        <div class="flex items-center px-24 justify-between w-full max-w-360">
-          <nav class="flex gap-6 items-center">
-            <div id="toggle-btn" class="relative">
-              <div class="relative lang-en-wrapper">
-                <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_default.svg" />
-                <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_default_hover.svg" />
-              </div>
-              <div class="relative lang-de-wrapper">
-                <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_german.svg" />
-                <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_german_hover.svg" />
-              </div>
-            </div>
-            <a href="" data-lang="about" class="nav-link">
-              <span class="link-text">About me</span>
-              <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-            </a>
-            <a href="" data-lang="skills" class="nav-link">
-              <span class="link-text">Skills</span>
-              <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-            </a>
-            <a href="" data-lang="projects" class="nav-link">
-              <span class="link-text">Projects</span>
-              <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-            </a>
-          </nav>
-
-          <!-- Logo -->
-          <div class="logo-wrapper">
-            <img src="/assets/img/logo/logo_aquamarine.png" alt="" />
-            <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
-          </div>
-        </div>
-      </header>
-
       <!-- title on hero page-->
       <div class="flex flex-col items-center gap-2 flex-1 justify-center title">
         <h2 class="font-['firacode'] text-[2.5rem]">Frontend Developer</h2>
@@ -94,7 +95,7 @@
         </div>
       </div>
 
-      <!-- laterals on hero page -->
+      <!-- laterals -->
       <div class="w-full max-w-360 relative">
         <!-- left lateral-->
         <div class="left-24 left-lateral px-2">
@@ -142,7 +143,6 @@
     <!-- skill set section -->
     <section class="relative flex w-full max-w-360 mx-auto px-24 justify-between">
       <div class="absolute top-30 -left-80 w-150 h-150 rounded-full bg-[radial-gradient(circle,#08463B4D,transparent)] blur-xl"></div>
-
       <div class="flex flex-col gap-6">
         <h2 class="card-description">Technologies</h2>
         <div class="section-card">
