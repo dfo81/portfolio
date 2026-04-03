@@ -143,6 +143,6 @@ const logos = document.querySelectorAll('.logo-wrapper');
 
 logos.forEach(logo => {
   logo.addEventListener('click', () => {
-    logos.forEach(el => el.style.opacity = 0);
+    window.location.href = 'index.html';
   });
 });

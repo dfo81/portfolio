@@ -15,7 +15,7 @@
     <title>Portfolio - Dieter Foos</title>
   </head>
 
-  <body class="flex flex-col bg-bg">
+  <body class="flex flex-col gap-36 bg-bg">
     <header>
       <div class="flex w-full max-w-360 px-24 justify-between">
         <!-- nav -->
@@ -30,15 +30,15 @@
               <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_german_hover.svg" />
             </div>
           </div>
-          <a href="" data-lang="about" class="nav-link">
+          <a href="#about" data-lang="about" class="nav-link">
             <span class="link-text">About me</span>
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           </a>
-          <a href="" data-lang="skills" class="nav-link">
+          <a href="#skills" data-lang="skills" class="nav-link">
             <span class="link-text">Skills</span>
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           </a>
-          <a href="" data-lang="projects" class="nav-link">
+          <a href="#projects" data-lang="projects" class="nav-link">
             <span class="link-text">Projects</span>
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           </a>
@@ -122,12 +122,12 @@
     </section>
 
     <!-- about section -->
-    <section class="flex pt-10 px-24 justify-between my-36 mx-auto w-full max-w-360">
+    <section id="about" class="flex pt-10 px-24 gap-30 mx-auto w-full max-w-360">
       <div class="relative group mb-auto">
         <img class="opacity-30 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
         <img class="absolute left-12 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
       </div>
-      <div class="flex flex-col pt-16 gap-6">
+      <div class="flex flex-col pt-8 gap-6">
         <h2 class="card-description">Who I Am</h2>
         <div class="section-card">
           <h1 class="card-title">About me</h1>
@@ -141,7 +141,7 @@
     </section>
 
     <!-- skill set section -->
-    <section class="relative flex w-full max-w-360 mx-auto px-24 justify-between">
+    <section id="skills" class="relative flex w-full max-w-360 mx-auto px-24 gap-20">
       <div class="absolute top-30 -left-80 w-150 h-150 rounded-full bg-[radial-gradient(circle,#08463B4D,transparent)] blur-xl"></div>
       <div class="flex flex-col gap-6">
         <h2 class="card-description">Technologies</h2>
@@ -155,7 +155,7 @@
         </div>
       </div>
 
-      <div class="flex flex-wrap w-158 gap-14 py-14 skill-items">
+      <div class="flex flex-wrap gap-14 py-14 skill-items">
         <div>
           <img src="/assets/img/icons/Property 1=HTML.svg" alt="" />
           <span>HTML</span>
@@ -203,15 +203,15 @@
       </div>
     </section>
 
-    <!-- portfolio section -->
-    <section class="flex flex-col w-full max-w-360 mx-auto gap-10.25 px-24 my-36">
+    <!-- projects section -->
+    <section id="projects" class="flex flex-col w-full max-w-360 mx-auto gap-10.25 px-24 relative">
       <div class="flex flex-col gap-5">
         <h2 class="card-description">Portfolio</h2>
         <h1 class="card-title">Featured Projects</h1>
       </div>
       <span>Explore a selection of my work here - interact with <br />projects to see my skills in action</span>
 
-      <div class="flex justify-between">
+      <div class="flex gap-20">
         <div class="flex flex-col w-220">
           <div class="project-item" data-project="join">
             <div class="project-title">
@@ -262,12 +262,18 @@
           </div>
         </div>
       </div>
+
+      <!-- overlay -->
+       <div class="overlay">
+        <div class="">Beschreibung</div>
+        <div>Karte</div>
+       </div>
     </section>
 
     <!-- references section -->
-    <section class="flex relative items-center flex-col w-full max-w-360 mx-auto gap-24">
+    <section class="flex relative items-center flex-col w-full max-w-360 mx-auto gap-20">
       <h1 class="text-[2rem] text-center font-[firacode] text-accent">What my colleagues say about me</h1>
-      <img class="absolute left-88 top-34 z-20" src="/assets/img/icons/quotes.svg" alt="" />
+      <img class="absolute left-88 top-30 z-20" src="/assets/img/icons/quotes.svg" alt="" />
       <div class="flex justify-center h-68.5 w-full overflow-hidden">
         <div class="carousel">
           <div class="card">Karte 1</div>
@@ -291,7 +297,7 @@
     </section>
 
     <!-- contact me section-->
-    <section class="flex my-36 h-135 w-full max-w-360 mx-auto justify-between px-24">
+    <section class="flex h-135 w-full max-w-360 mx-auto gap-20 px-24">
       <div class="flex flex-col gap-10 w-142">
         <h2 class="card-description">Contact me</h2>
         <h1 class="card-title flex w-142 leading-15">Let´s work together</h1>
@@ -343,19 +349,19 @@
       </div>
       <div class="text-accent font-[firacode] text-base">&copy; Dieter Foos 2026</div>
       <div class="flex flex-col gap-1">
-        <a href="" data-lang="about" class="footer-link">
+        <a href="" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="link-text">Github</span>
         </a>
-        <a href="" data-lang="about" class="footer-link">
+        <a href="" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="link-text">Linkedin</span>
         </a>
-        <a href="" data-lang="about" class="footer-link">
+        <a href="" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="link-text">Email</span>
         </a>
-        <a href="" data-lang="about" class="footer-link">
+        <a href="legal.html" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="link-text">Legal Notice</span>
         </a>

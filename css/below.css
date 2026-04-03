@@ -1,7 +1,19 @@
+/* ==========================================================================
+   PROJEKT- & CONTENT-STYLES
+   ==========================================================================
+   1. SECTION CARDS ........... Skill-Karten & Beschreibungen
+   2. PROJECT SECTION ......... Portfolio-Liste & Hover-Effekte
+   3. REFERENCES / CAROUSEL ... Testimonials & Slider-Steuerung
+   4. CONTACT SECTION ......... Formular-Elemente & Checkboxen
+   5. FOOTER .................. Links & Abschluss-Animationen
+   ========================================================================== 
+*/
+
+/* --- 1. SECTION CARDS --- */
 .section-card {
     border-radius: 30px;
     border: 1px solid var(--color-accent);
-    background-color: rgba(61,207,183,0.1);
+    background-color: rgba(61, 207, 183, 0.1);
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -19,10 +31,11 @@
     font-size: 60px;
     color: var(--color-accent);
     font-family: var(--font-bold);
-    font-weight: 700 ;
+    font-weight: 700;
     letter-spacing: -3%;
 }
 
+/* Skill-Items innerhalb der Cards */
 .skill-items div {
     display: flex;
     flex-direction: column;
@@ -34,31 +47,30 @@
 
 .skill-items div img {
     height: 68px;
-    width: 64px;
-    transition: width 125ms ease-in-out;
+    width: 68px;
+    transition: transform 125ms ease-in-out;
 }
 
 .skill-items div img:hover {
-    width: 68px;
+    transform: scale(1.1);
 }
 
 .skill-items span {
     font-family: var(--font-text);
 }
 
-
-/* Project section */
+/* --- 2. PROJECT SECTION --- */
 .project-item:first-child {
     border-top: 1px solid var(--color-accent);
 }
 
 .project-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 3rem;
-  border-bottom: 1px solid var(--color-accent);
-  cursor: pointer;
-  transition: background-color 300ms;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    border-bottom: 1px solid var(--color-accent);
+    cursor: pointer;
+    transition: background-color 300ms;
 }
 
 .project-item h2 {
@@ -86,9 +98,25 @@
     opacity: 1;
 }
 
+/* Project overlay */
+.overlay {
+    position: absolute;
+    top: 164px;
+    height: 656px;
+    width: 1248px;
+    border-radius: 30px;
+    border: 1px solid var(--color-accent);
+    background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
+    display: flex;
+    gap: 88px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Projekt Icons & Hover-Visuals */
 .project-icon-container {
-  position: relative;
-  width: 295px; 
+    position: relative;
+    width: 295px; 
 }
 
 .project-icon {
@@ -114,12 +142,12 @@
     transition: opacity 0.2s ease;
 }
 
-
-/* references */
+/* --- 3. REFERENCES / CAROUSEL --- */
 .references {
     height: 274px;
 }
 
+/* Carousel Steuerung (Pfeile) */
 .arrows-wrapper {
     cursor: pointer;
     position: relative;
@@ -136,90 +164,59 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.arrows-wrapper:hover .arrow-back-default {
-    transform: translateX(-4px);
-}
+.arrows-wrapper:hover .arrow-back-default { transform: translateX(-4px); }
+.arrows-wrapper:hover .arrow-forward-default { transform: translateX(4px); }
+.arrows-wrapper:hover .arrow-back-hover { opacity: 1; transform: translateX(-4px); }
+.arrows-wrapper:hover .arrow-forward-hover { opacity: 1; transform: translateX(4px); }
 
-.arrows-wrapper:hover .arrow-forward-default {
-    transform: translateX(4px);
-}
-
-.arrows-wrapper:hover .arrow-back-hover {
-    opacity: 1;
-    transform: translateX(-4px);
-}
-
-.arrows-wrapper:hover .arrow-forward-hover {
-    opacity: 1;
-    transform: translateX(4px);
-}
-
-/* reference section */
+/* Haupt-Carousel Logik */
 .carousel {
-  position: relative; 
-  width: 1440px;
-  height: 274px;
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 100px,
-    black calc(100% - 100px),
-    transparent 100%
-  );
+    position: relative; 
+    width: 1440px;
+    height: 274px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 100px,
+        black calc(100% - 100px),
+        transparent 100%
+    );
 }
 
 .card {
-  position: absolute;
-  width: 632px;
-  height: 274px;
-  background: rgba(63, 207, 183, 0.10);
-  border: 1px solid var(--color-accent);
-  border-radius: 20px;
-  padding: 20px;
-  color: white;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%) translateX(var(--offset, 0px)) scale(var(--scale, 0.85));
-  opacity: var(--opacity, 0.6);
-  transition: transform 0.5s ease, opacity 0.5s ease, background 0.5s ease;
+    position: absolute;
+    width: 632px;
+    height: 274px;
+    background: rgba(63, 207, 183, 0.10);
+    border: 1px solid var(--color-accent);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) translateX(var(--offset, 0px)) scale(var(--scale, 0.85));
+    opacity: var(--opacity, 0.6);
+    transition: transform 0.5s ease, opacity 0.5s ease, background 0.5s ease;
 }
 
 .card.center {
-  --offset: 0px;
-  --scale: 1;
-  --opacity: 1;
-  background: rgba(63, 207, 183, 0.30);
-  z-index: 3;
+    --offset: 0px;
+    --scale: 1;
+    --opacity: 1;
+    background: rgba(63, 207, 183, 0.30);
+    z-index: 3;
 }
 
-.card.left {
-  --offset: -676px;
-  --scale: 0.9;
-  --opacity: 0.6;
-  z-index: 2;
-}
+.card.left { --offset: -676px; --scale: 0.9; --opacity: 0.6; z-index: 2; }
+.card.right { --offset: 676px; --scale: 0.9; --opacity: 0.6; z-index: 2; }
+.card.far-left { --offset: -1460px; opacity: 0; transition: none; }
+.card.far-right { --offset: 1460px; opacity: 0; transition: none; }
 
-.card.right {
-  --offset: 676px;
-  --scale: 0.9;
-  --opacity: 0.6;
-  z-index: 2;
-}
+.dot { transition: opacity 0.3s ease; }
+.dot.active { content: url("/assets/img/icons/eclipse_accent.svg"); opacity: 1; }
 
-.card.far-left  { --offset: -1460px; opacity: 0; transition: none; }
-.card.far-right { --offset: 1460px;  opacity: 0; transition: none; }
-
-.dot { 
-    transition: opacity 0.3s ease; 
-}
-
-.dot.active { 
-    content: url("/assets/img/icons/eclipse_accent.svg"); 
-    opacity: 1; 
-}
-
-/* Contact me section */
+/* --- 4. CONTACT SECTION --- */
 .contact-item {
     display: flex;
     flex-direction: column;
@@ -234,6 +231,7 @@
     border-bottom: 1px solid #3DCFB6;
 }
 
+/* Custom Checkbox Design */
 .checkbox {
     height: 24px;
     width: 24px;
@@ -242,22 +240,20 @@
     flex-shrink: 0;
 }
 
-.checkbox img  {
-   position: absolute;
-   inset: 0;
-   opacity: 0;
-   transition: opacity 0.2s ease-in-out;
+.checkbox img {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 
-.checkbox .checkbox-default {opacity: 1;}
+.checkbox .checkbox-default { opacity: 1; }
+.checkbox:hover .hover-default { opacity: 1; }
+.checkbox.active .checkbox-checked { opacity: 1; }
+.checkbox.active:hover .hover-checked { opacity: 1; }
 
-.checkbox:hover .hover-default {opacity: 1;}
-
-.checkbox.active .checkbox-checked {opacity: 1;}
-
-.checkbox.active:hover .hover-checked {opacity: 1;}
-
-#say-hallo-btn{
+/* Contact Button Zustände */
+#say-hallo-btn {
     pointer-events: none;
     opacity: 0.5;
 }
@@ -267,11 +263,12 @@
     opacity: 1;
 }
 
+/* --- 5. FOOTER --- */
 .footer-link {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
 }
 
 .footer-link:hover {
