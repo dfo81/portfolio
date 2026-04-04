@@ -15,3 +15,9 @@
     src: url(./Karla/static/Karla-Regular.ttf);
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'karla-bold';
+    src: url(./Karla/static/Karla-Bold.ttf);
+    font-display: swap;
+}
