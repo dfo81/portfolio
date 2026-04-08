@@ -8,8 +8,8 @@
   --color-light: #ffffff;
   --font-color: #D9D9D9;
   --color-scroll: #ffffff12;
-  --font-firacode: "Firacode";
-  --font-firacode-bold: "Firacode-bold";
-  --font-karla: "karla";
-  --font-karla-bold: "karla-bold"
+  --font-second: "Firacode";
+  --font-second-bold: "Firacode-bold";
+  --font-main: "karla";
+  --font-main-bold: "karla-bold"
 }

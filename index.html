@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/assets/img/favicon/icon_dark.png" type="image/x-icon" media="(prefers-color-scheme: light)" />
     <link rel="shortcut icon" href="/assets/img/favicon/icon_light.png" type="image/x-icon" media="(prefers-color-scheme: dark)" />
+    <script src="/js/template.js"></script>
     <script defer src="script.js"></script>
     <script defer src="/js/scrollable-buttons.js"></script>
     <link rel="stylesheet" href="css/tailwind.css" />
@@ -50,15 +51,14 @@
           <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
         </div>
       </div>
-       
     </header>
 
     <!-- hero section -->
     <section class="flex items-center flex-col hero">
       <!-- title on hero page-->
       <div class="flex flex-col items-center gap-2 flex-1 justify-center title">
-        <h2 class="font-['firacode'] text-[2.5rem]">Frontend Developer</h2>
-        <h1 class="text-[8rem] pb-6">Dieter Foos</h1>
+        <h2 class="font-second text-[2.5rem]">Frontend Developer</h2>
+        <h1 class="text-9xl font-bold pb-6">Dieter Foos</h1>
         <div class="flex gap-12">
           <div class="button-wrapper">
             <div class="content">Check my work</div>
@@ -122,12 +122,12 @@
     </section>
 
     <!-- about section -->
-    <section id="about" class="flex pt-10 px-24 gap-30 mx-auto w-full max-w-360">
+    <section id="about" class="flex px-24 mt-10 gap-30 mx-auto w-full max-w-360">
       <div class="relative group mb-auto">
         <img class="opacity-30 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
-        <img class="absolute left-12 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
+        <img class="absolute left-9 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
       </div>
-      <div class="flex flex-col pt-8 gap-6">
+      <div class="flex flex-col pt-12 gap-6">
         <h2 class="card-description">Who I Am</h2>
         <div class="section-card">
           <h1 class="card-title">About me</h1>
@@ -196,20 +196,21 @@
           <img src="/assets/img/icons/Property 1=React.svg" alt="" />
           <span>React</span>
         </div>
-        <div>
+        <div class="relative group">
           <img src="/assets/img/icons/Property 1=GrowthMindset.svg" alt="" />
           <span>Growth <br />Mindset</span>
+          <img class="sticky-note absolute -top-20 left-6 h-34 opacity-0 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/sticky_note.svg" alt="" />
         </div>
       </div>
     </section>
 
     <!-- projects section -->
-    <section id="projects" class="flex flex-col w-full max-w-360 mx-auto gap-10.25 px-24 relative">
+    <section id="projects" class="flex flex-col w-full max-w-360 mx-auto gap-10.25 px-24">
       <div class="flex flex-col gap-5">
         <h2 class="card-description">Portfolio</h2>
         <h1 class="card-title">Featured Projects</h1>
       </div>
-      <span>Explore a selection of my work here - interact with <br />projects to see my skills in action</span>
+      <span>Explore a selection of my work here - interact with projects to see my skills in action</span>
 
       <div class="flex gap-20">
         <div class="flex flex-col w-220">
@@ -259,37 +260,6 @@
           <div class="project-icon top-3/5" data-project="bubble">
             <img src="/assets/img/icons/sub_bg.svg" alt="" />
             <img class="absolute -top-5 -left-5" src="/assets/img/icons/sub_dabubble.svg" alt="" />
-          </div>
-        </div>
-      </div>
-
-      <!-- overlay -->
-      <div class="overlay">
-        <div class="flex h-full flex-col w-[45%] justify-between">
-          <h1 class="text-9xl text-accent">01</h1>
-          <h2 class="text-6xl">Join</h2>
-          <h3>What is this project about?</h3>
-          <span>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.</span>
-          <div>
-            <img src="" alt="" />
-          </div>
-          <div class="flex">
-            <div class="button-wrapper">
-              <div class="content">Say Hello ;)</div>
-              <div class="scroll-content">Say Hello ;)</div>
-            </div>
-            <div class="button-wrapper">
-              <div class="content">Say Hello ;)</div>
-              <div class="scroll-content">Say Hello ;)</div>
-            </div>
-          </div>
-        </div>
-        <div class="w-[55%] h-full flex flex-col gap-10 items-end justify-between">
-          <img class="w-6" src="/assets/img/icons/x_default.svg" alt="" />
-          <img class="w-full" src="/assets/img/icons/sub_join.svg" alt="" />
-          <div class="flex gap-2 items-center">
-            Next Project
-            <img src="/assets/img/icons/arrow_forward.svg" alt="" />
           </div>
         </div>
       </div>
@@ -372,7 +342,7 @@
         </div>
         <span>Web Developer<br />Munich Germany</span>
       </div>
-      <div class="text-accent font-[firacode] text-base">&copy; Dieter Foos 2026</div>
+      <div class="text-accent font-second text-base">&copy; Dieter Foos 2026</div>
       <div class="flex flex-col gap-1">
         <a href="" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />

@@ -1,31 +1,29 @@
-// Language switch 
-const button = document.getElementById('toggle-btn');
-let isEn = localStorage.getItem('toggleState') === 'true';
+// Language switch
+const button = document.getElementById("toggle-btn");
+let isEn = localStorage.getItem("toggleState") === "true";
 
 updateButton(isEn);
 
-button.addEventListener('click', () => {
+button.addEventListener("click", () => {
   isEn = !isEn;
-  localStorage.setItem('toggleState', isEn);
+  localStorage.setItem("toggleState", isEn);
   updateButton(isEn);
 });
 
 function updateButton(state) {
-  button.classList.toggle('active', state);
+  button.classList.toggle("active", state);
 }
 
-
 // Language switch by enter keydown
-button.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
+button.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
     button.click();
   }
 });
 
-
 // Hover click event
-button.addEventListener('click', (e) => {
+button.addEventListener("click", (e) => {
   const rect = button.getBoundingClientRect();
   const clickX = e.clientX - rect.left;
   const half = rect.width / 2;
@@ -34,10 +32,9 @@ button.addEventListener('click', (e) => {
   if (!isEn && clickX < half) return;
 
   isEn = !isEn;
-  localStorage.setItem('toggleState', isEn);
+  localStorage.setItem("toggleState", isEn);
   updateButton(isEn);
 });
-
 
 // Mouse gradient effect
 document.addEventListener("mousemove", (e) => {
@@ -45,28 +42,26 @@ document.addEventListener("mousemove", (e) => {
   document.documentElement.style.setProperty("--cursor-y", e.clientY + "px");
 });
 
-document.addEventListener('mouseleave', () => {
-  document.documentElement.style.setProperty('--cursor-opacity', '0');
+document.addEventListener("mouseleave", () => {
+  document.documentElement.style.setProperty("--cursor-opacity", "0");
 });
 
-document.addEventListener('mouseenter', () => {
-  document.documentElement.style.setProperty('--cursor-opacity', '1');
+document.addEventListener("mouseenter", () => {
+  document.documentElement.style.setProperty("--cursor-opacity", "1");
 });
-
-
 
 // Project icons visibility
-const projectItems = document.querySelectorAll('.project-item');
+const projectItems = document.querySelectorAll(".project-item");
 
-projectItems.forEach(item => {
-  item.addEventListener('mouseenter', () => {
+projectItems.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
     const key = item.dataset.project;
-    document.querySelector(`.project-icon[data-project="${key}"]`).classList.add('visible');
+    document.querySelector(`.project-icon[data-project="${key}"]`).classList.add("visible");
   });
 
-  item.addEventListener('mouseleave', () => {
+  item.addEventListener("mouseleave", () => {
     const key = item.dataset.project;
-    document.querySelector(`.project-icon[data-project="${key}"]`).classList.remove('visible');
+    document.querySelector(`.project-icon[data-project="${key}"]`).classList.remove("visible");
   });
 });
 // Dark / Ligth mode
@@ -80,8 +75,6 @@ toggle.addEventListener('click', () => {
     html.dataset.theme = 'light';
   }
 }); */
-
-
 
 const cards = Array.from(document.querySelectorAll(".card"));
 const order = [2, 0, 1]; // slots: left, center, right
@@ -104,13 +97,15 @@ function go(dir) {
 
   // Reihenfolge rotieren
   if (dir === 1) order.push(order.shift());
-  else           order.unshift(order.pop());
+  else order.unshift(order.pop());
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       applyClasses();
       updateDots();
-      setTimeout(() => { isAnimating = false; }, 500);
+      setTimeout(() => {
+        isAnimating = false;
+      }, 500);
     });
   });
 }
@@ -130,19 +125,56 @@ document.querySelector(".arrow-forward-default").parentElement.addEventListener(
 document.querySelector(".arrow-back-default").parentElement.addEventListener("click", () => go(-1));
 
 // checkbox changes
-document.querySelectorAll('.checkbox').forEach(el => {
-  el.addEventListener('click', () => {
-    el.classList.toggle('active');
-    document.querySelector('#say-hallo-btn').classList.toggle('active');
+document.querySelectorAll(".checkbox").forEach((el) => {
+  el.addEventListener("click", () => {
+    el.classList.toggle("active");
+    document.querySelector("#say-hallo-btn").classList.toggle("active");
   });
-})
+});
 
+// logo ruft index.html auf
+const logos = document.querySelectorAll(".logo-wrapper");
 
-// logo ruft index auf
-const logos = document.querySelectorAll('.logo-wrapper');
-
-logos.forEach(logo => {
-  logo.addEventListener('click', () => {
-    window.location.href = 'index.html';
+logos.forEach((logo) => {
+  logo.addEventListener("click", () => {
+    window.location.href = "index.html";
   });
+});
+
+
+// overlay opener
+document.addEventListener("DOMContentLoaded", () => {
+  const projectItems = document.querySelectorAll(".project-item");
+
+  projectItems.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.stopPropagation();
+      document.body.insertAdjacentHTML("beforeend", getOverlay());
+      document.body.style.overflow = "hidden";
+      window.location.href = "index.html#projects";
+
+      const overlayWrapper = document.getElementById("project-overlay");
+      overlayWrapper.addEventListener("click", (e) => {
+        if (e.target === overlayWrapper) {
+          closeOverlay();
+        }
+      });
+    });
+  });
+});
+
+//close overlay
+function closeOverlay() {
+  const overlay = document.getElementById("project-overlay");
+  if (overlay) {
+    overlay.remove();
+    document.body.style.overflow = "auto";
+  }
+}
+
+//close overlay by escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeOverlay();
+  }
 });

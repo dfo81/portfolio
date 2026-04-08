@@ -1,16 +1,17 @@
 * {
   scroll-behavior: smooth;
-  outline: 1px solid rgba(255, 255, 255, 0.1);
+  /* outline: 1px solid rgba(255, 255, 255, 0.1) */;
 }
 
 html {
   color: var(--font-color);
-  font-family: var(--font-text);
+  font-family: var(--font-main);
+  font-weight: 400;
   scrollbar-width: none;
 }
 
 section[id] {
-  scroll-margin-top: 112px;
+  scroll-margin-top: 64px;
 }
 
 /* Mouse gradient effect */

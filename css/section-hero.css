@@ -3,10 +3,10 @@
    ==========================================================================
    1. NAVIGATION .............. Header, Nav-Links o& Log
    2. LAYOUT & SECTIONS ....... Hero-Bereich & Grundstruktur
-   3. KOMPONENTEN ............. Buttons & Interaktive Elemente
-   4. SPRACH-SWITCHER ......... Language Toggle Logik
+   3. LANGUAGE-SWITCHER ......... Language Toggle Logik
+   4. COMPONENTS ............. Buttons & Interaktive Elemente
    5. SIDEBARS (LATERAL) ...... Seitliche Social-Media & Info-Leisten
-   6. ANIMATIONEN (KEYFRAMES) .. Globale Keyframes & Lauftexte
+   6. ANIMATIONS (KEYFRAMES) .. Globale Keyframes & Lauftexte
    ========================================================================== 
 */
 
@@ -45,7 +45,7 @@ header {
   display: flex;
   flex-direction: column;
   margin-top: 8px;
-  font-family: var(--font-heading);
+  font-family: var(--font-second);
   font-size: 1.25rem;
 }
 
@@ -65,11 +65,51 @@ section.hero {
   background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
 }
 
-/* --- 3. KOMPONENTEN --- */
-/* Standard Button mit Scroll-Effekt */
+/* --- 3. LANGUAGE-SWITCHER --- */
+.lang-img {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.lang-en-wrapper { display: block; cursor: default; }
+.lang-de-wrapper { display: none;  cursor: pointer; }
+
+#toggle-btn.active .lang-en-wrapper { display: none; }
+#toggle-btn.active .lang-de-wrapper { display: block; }
+#toggle-btn.active .lang-en-wrapper { cursor: pointer; }
+#toggle-btn.active .lang-de-wrapper { cursor: default; }
+
+.lang-en-hover,
+.lang-de-hover {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.lang-en-wrapper:hover .lang-en-hover { opacity: 1; }
+.lang-de-wrapper:hover .lang-de-hover { opacity: 1; }
+
+#toggle-btn:not(.active)::after,
+#toggle-btn.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#toggle-btn:not(.active)::after { right: 0; }
+#toggle-btn.active::after { left: 0; }
+
+#toggle-btn:not(.active):hover .lang-en-hover { opacity: 1; }
+#toggle-btn.active:hover .lang-de-hover { opacity: 1; }
+
+/* --- 4. COMPONENTS --- */
 .button-wrapper {
   display: flex;
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
   width: fit-content;
   border-radius: 100px;
@@ -102,7 +142,6 @@ section.hero {
   color: var(--color-accent);
 }
 
-/* Dekorative Elemente */
 .circle {
   height: 8px;
   opacity: 0;
@@ -113,49 +152,6 @@ section.hero {
   transform: translateY(15px);
   animation: bounce 1.5s infinite;
 }
-
-/* --- 4. SPRACH-SWITCHER --- */
-.lang-img {
-  transition: opacity 0.2s ease-in-out;
-}
-
-.lang-en-wrapper { display: block; cursor: default; }
-.lang-de-wrapper { display: none;  cursor: pointer; }
-
-/* Aktiv-Zustände für Toggle */
-#toggle-btn.active .lang-en-wrapper { display: none; }
-#toggle-btn.active .lang-de-wrapper { display: block; }
-#toggle-btn.active .lang-en-wrapper { cursor: pointer; }
-#toggle-btn.active .lang-de-wrapper { cursor: default; }
-
-.lang-en-hover,
-.lang-de-hover {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  opacity: 0;
-}
-
-.lang-en-wrapper:hover .lang-en-hover { opacity: 1; }
-.lang-de-wrapper:hover .lang-de-hover { opacity: 1; }
-
-/* Klickbare Bereiche für den Switcher */
-#toggle-btn:not(.active)::after,
-#toggle-btn.active::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 10;
-}
-
-#toggle-btn:not(.active)::after { right: 0; }
-#toggle-btn.active::after { left: 0; }
-
-#toggle-btn:not(.active):hover .lang-en-hover { opacity: 1; }
-#toggle-btn.active:hover .lang-de-hover { opacity: 1; }
 
 /* --- 5. SIDEBARS (LATERAL) --- */
 .left-lateral, .right-lateral {
@@ -184,8 +180,7 @@ section.hero {
   opacity: 1;
 }
 
-/* --- 6. ANIMATIONEN & LAUFTEXT --- */
-/* Unendlicher Ticker (Scroll-Banner) */
+/* --- 6. ANIMATIONS & SCROLL TEXT --- */
 .scroll-wrapper {
   background-color: var(--color-scroll);
   transform: skewY(-3deg);
@@ -205,7 +200,6 @@ section.hero {
 }
 
 .scroll-text, .scroll-container img {
-  font-family: var(--font-text);
   color: var(--color-accent);
   margin: 0 24px;
   font-size: 2rem;

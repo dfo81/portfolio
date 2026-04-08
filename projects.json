@@ -1,0 +1,66 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Join",
+      "image": "/assets/img/icons/sub_join.svg",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "assets/icons/react.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "assets/icons/tailwind.svg"
+        },
+        {
+          "name": "Node.js",
+          "icon": "assets/icons/nodejs.svg"
+        }
+      ],
+      "links": {
+        "liveTest": "https://mein-projekt.de",
+        "github": "https://github.com/nutzername/projekt"
+      },
+      "content": {
+        "de": {
+            "decription": ""
+        },
+        "en": {
+           "decription": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "El pollo loco",
+      "image": "/assets/img/icons/sub_pollo.svg",
+      "technologies": [
+        {
+          "name": "React",
+          "icon": "assets/icons/react.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "assets/icons/tailwind.svg"
+        },
+        {
+          "name": "Node.js",
+          "icon": "assets/icons/nodejs.svg"
+        }
+      ],
+      "links": {
+        "liveTest": "https://mein-projekt.de",
+        "github": "https://github.com/nutzername/projekt"
+      },
+      "content": {
+        "de": {
+            "decription": "spiel"
+        },
+        "en": {
+           "decription": "game"
+        }
+      }
+    }
+  ]
+}
