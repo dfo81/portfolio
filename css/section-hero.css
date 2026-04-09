@@ -126,13 +126,13 @@ section.hero {
 }
 
 .button-wrapper .content {
-  padding: 16px;
+  padding: 12px 18px;
   position: absolute;
   transition: color 0.3s ease;
 }
 
 .button-wrapper .scroll-content {
-  padding: 16px;
+  padding: 12px 18px;
   transform: translateX(100%);
   will-change: transform;
 }

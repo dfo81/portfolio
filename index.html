@@ -196,10 +196,16 @@
           <img src="/assets/img/icons/Property 1=React.svg" alt="" />
           <span>React</span>
         </div>
-        <div class="relative group">
+        <div class="group note relative">
           <img src="/assets/img/icons/Property 1=GrowthMindset.svg" alt="" />
-          <span>Growth <br />Mindset</span>
-          <img class="sticky-note absolute -top-20 left-6 h-34 opacity-0 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/sticky_note.svg" alt="" />
+          <span class="transition-color duration-200 ease group-hover:text-accent">Growth <br />Mindset</span>
+          <aside class="sticky-note absolute -top-28 -left-1 invisible group-hover:visible h-33 w-49 bg-[url('/assets/img/icons/sticky_note.svg')] flex flex-col items-center p-2">
+            <span class="text-accent text-center"
+              >I have a special<br />
+              interest in learning</span
+            >
+            <img src="/assets/img/icons/Frame 300.svg" alt="" />
+          </aside>
         </div>
       </div>
     </section>
@@ -308,11 +314,11 @@
         </div>
         <div class="contact-item">
           <h2>What´s your email?</h2>
-          <input type="text" placeholder="youremail@mail.com" />
+          <input type="email" placeholder="youremail@mail.com" />
         </div>
         <div class="contact-item">
           <h2>How can I help you?</h2>
-          <input type="text" placeholder="Hello Dieter, I am interested in..." />
+          <textarea id="message" rows="1" placeholder="Your Message..." oninput="autoResize(this)"></textarea>
         </div>
         <div class="flex flex-col mt-10 items-center gap-4">
           <div class="flex gap-4">

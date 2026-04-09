@@ -1,7 +1,7 @@
 getOverlay = () =>
     `<div id="project-overlay" class="fixed inset-0 w-full h-full z-100 items-center justify-center">
       <div class="overlay">
-      <div class="flex h-full flex-col w-[45%] justify-between">
+      <div class="flex h-full flex-col w-1/2 justify-between">
         <div class="flex flex-col">
           <h1 class="text-9xl font-bold text-accent tracking-tight">01</h1>
           <h2 class="text-6xl font-second-bold tracking-tight">Join</h2>
@@ -39,7 +39,7 @@ getOverlay = () =>
           </div>
         </div>
       </div>
-      <div class="w-[55%] h-full flex flex-col gap-10 items-end justify-between">
+      <div class="w-1/2 h-full flex flex-col items-end justify-between">
         <div onclick="closeOverlay()" class="group w-12 cursor-pointer relative">
           <img src="/assets/img/icons/x_default.svg" alt="" />
           <img class="absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease" src="/assets/img/icons/x_hover.svg" alt="">

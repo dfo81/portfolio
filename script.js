@@ -141,34 +141,47 @@ logos.forEach((logo) => {
   });
 });
 
-
 // overlay opener
 document.addEventListener("DOMContentLoaded", () => {
   const projectItems = document.querySelectorAll(".project-item");
 
-  projectItems.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      event.stopPropagation();
-      document.body.insertAdjacentHTML("beforeend", getOverlay());
-      document.body.style.overflow = "hidden";
-      window.location.href = "index.html#projects";
+ projectItems.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.stopPropagation();
+    
+    // 1. Overlay einfügen
+    document.body.insertAdjacentHTML("beforeend", getOverlay());
+    document.body.style.overflow = "hidden";
+    
+    // 2. Verlauf aktualisieren (für die Zurück-Taste)
+    history.pushState({ state: "overlayOpen" }, "", "#projects");
 
-      const overlayWrapper = document.getElementById("project-overlay");
-      overlayWrapper.addEventListener("click", (e) => {
-        if (e.target === overlayWrapper) {
-          closeOverlay();
-        }
-      });
+    // 3. EXPLIZIT zum Anker scrollen
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" }); // "smooth" für sanftes Gleiten, "auto" für Sofort-Sprung
+    }
+
+    const overlayWrapper = document.getElementById("project-overlay");
+    overlayWrapper.addEventListener("click", (e) => {
+      if (e.target === overlayWrapper) {
+        closeOverlay();
+      }
     });
   });
 });
+});
 
 //close overlay
-function closeOverlay() {
+function closeOverlay(isBackAction = false) {
   const overlay = document.getElementById("project-overlay");
   if (overlay) {
     overlay.remove();
     document.body.style.overflow = "auto";
+
+    if (!isBackAction && window.location.hash === "#projects") {
+      history.back();
+    }
   }
 }
 
@@ -178,3 +191,33 @@ document.addEventListener("keydown", (e) => {
     closeOverlay();
   }
 });
+
+
+// back stop
+window.addEventListener("popstate", (event) => {
+  const overlay = document.getElementById("project-overlay");
+  if (overlay) {
+    closeOverlay(true);
+  }
+});
+
+function autoResize(textarea) {
+  textarea.style.height = 'auto';
+  
+  const maxHeight = 164;
+  // Wir prüfen, was kleiner ist: Der Inhalt oder das Limit
+  const newHeight = Math.min(textarea.scrollHeight, maxHeight);
+  
+  textarea.style.height = newHeight + 'px';
+  
+  if (textarea.scrollHeight > maxHeight) {
+    textarea.style.overflowY = 'auto';
+  } else {
+    textarea.style.overflowY = 'hidden';
+  }
+}
+// Im Overlay-Opener nach dem Einfügen des HTMLs:
+const messageArea = document.querySelector('textarea');
+if (messageArea) {
+  messageArea.addEventListener('input', () => autoResize(messageArea));
+}

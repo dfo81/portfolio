@@ -11,309 +11,389 @@
 
 /* --- 1. SECTION CARDS --- */
 .section-card {
-    border-radius: 30px;
-    border: 1px solid var(--color-accent);
-    background-color: rgba(61, 207, 183, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    height: 568px;
-    width: 568px;
-    padding: 32px;
+  border-radius: 30px;
+  border: 1px solid var(--color-accent);
+  background-color: rgba(61, 207, 183, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 568px;
+  width: 568px;
+  padding: 32px;
+  overflow: visible;
 }
 
 .card-description {
-    font-size: 1.5rem;
-    font-family: var(--font-main);
-    color: var(--color-accent);
+  font-size: 1.5rem;
+  font-family: var(--font-main);
+  color: var(--color-accent);
 }
 
 .card-title {
-    font-size: 3.75rem;
-    color: var(--color-accent);
-    font-family: var(--font-second-bold);
-    font-weight: 700;
-    letter-spacing: -3%;
+  font-size: 3.75rem;
+  color: var(--color-accent);
+  font-family: var(--font-second-bold);
+  font-weight: 700;
+  letter-spacing: -3%;
 }
 
 /* Skill-Items innerhalb der Cards */
 .skill-items div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    width: 104px;
-    height: 124px;
-    letter-spacing: -3%;
-    line-height: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 104px;
+  height: 124px;
+  letter-spacing: -3%;
+  line-height: 120%;
 }
 
-.skill-items div img:not(.sticky-note) {
-    height: 68px;
-    width: 68px;
-    transition: transform 125ms ease-in-out;
+.skill-items div img {
+  height: 68px;
+  width: 68px;
+  transition: transform 125ms ease-in-out;
 }
 
-.skill-items div:hover img:not(.sticky-note) {
-    transform: scale(1.1);
+.skill-items div:hover img {
+  transform: scale(1.1);
 }
 
 .skill-items span {
-    font-family: var(--font-main);
+  font-family: var(--font-main);
 }
 
 /* --- 2. PROJECT SECTION --- */
 .project-item:first-child {
-    border-top: 1px solid var(--color-accent);
+  border-top: 1px solid var(--color-accent);
 }
 
 .project-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 3rem;
-    border-bottom: 1px solid var(--color-accent);
-    cursor: pointer;
-    transition: background-color 300ms;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  border-bottom: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: background-color 300ms;
 }
 
 .project-item h2 {
-    font-size: 1.5rem;
-    font-family: var(--font-second-bold);
-    line-height: 120%;
+  font-size: 1.5rem;
+  font-family: var(--font-second-bold);
+  line-height: 120%;
 }
 
 .project-item div {
-    display: flex;
-    gap: 8px;
-    font-size: 18px;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  font-size: 18px;
+  align-items: center;
 }
 
 .project-item div img {
-    height: 22px;
+  height: 22px;
 }
 
 .project-item:hover {
-    background-color: rgba(61, 207, 182, 0.3);
-    transition: 0.2s;
+  background-color: rgba(61, 207, 182, 0.3);
+  transition: 0.2s;
 }
 
 .project-item:hover .arrow-outward {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Project overlay */
 .overlay {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    height: 656px;
-    width: 1248px;
-    border-radius: 30px;
-    border: 1px solid var(--color-accent);
-    background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
-    display: flex;
-    gap: 88px;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 90px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  height: 656px;
+  width: 1248px;
+  border-radius: 30px;
+  border: 1px solid var(--color-accent);
+  background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
+  display: flex;
+  gap: 88px;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 90px;
 }
 
 .overlay-button {
-    display: flex;
-    padding: 12px 24px;
-    border: 1px solid white;
-    border-radius: 100px;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    transition: color 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  padding: 12px 18px;
+  border: 1px solid white;
+  border-radius: 100px;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .overlay-button img {
-    height: 10.3px;
-    transition: transform 0.2s ease;
+  height: 10.3px;
+  transition: transform 0.2s ease;
 }
 
 .overlay-button:hover {
-    color: var(--color-accent);
-    border-color: var(--color-accent);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .overlay-button:hover img {
-    transform: translate(3px, -3px);
+  transform: translate(3px, -3px);
 }
 
 .tech-item {
-    display: flex;
-    height: 24px;
-    gap: 4px;
+  display: flex;
+  height: 24px;
+  gap: 4px;
 }
 
 /* Projekt Icons & Hover-Visuals */
 .project-icon-container {
-    position: relative;
-    width: 295px; 
+  position: relative;
+  width: 295px;
 }
 
 .project-icon {
-    display: flex;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .project-icon.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 .project-title {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .arrow-outward {
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    transition: opacity 0.2s ease;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.2s ease;
 }
 
 /* --- 3. REFERENCES / CAROUSEL --- */
 .references {
-    height: 274px;
+  height: 274px;
 }
 
 /* Carousel Steuerung (Pfeile) */
 .arrows-wrapper {
-    cursor: pointer;
-    position: relative;
+  cursor: pointer;
+  position: relative;
 }
 
-.arrow-back-default, .arrow-forward-default {
-    transition: transform 0.2s ease;
+.arrow-back-default,
+.arrow-forward-default {
+  transition: transform 0.2s ease;
 }
 
-.arrow-back-hover, .arrow-forward-hover {
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+.arrow-back-hover,
+.arrow-forward-hover {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
-.arrows-wrapper:hover .arrow-back-default { transform: translateX(-4px); }
-.arrows-wrapper:hover .arrow-forward-default { transform: translateX(4px); }
-.arrows-wrapper:hover .arrow-back-hover { opacity: 1; transform: translateX(-4px); }
-.arrows-wrapper:hover .arrow-forward-hover { opacity: 1; transform: translateX(4px); }
+.arrows-wrapper:hover .arrow-back-default {
+  transform: translateX(-4px);
+}
+.arrows-wrapper:hover .arrow-forward-default {
+  transform: translateX(4px);
+}
+.arrows-wrapper:hover .arrow-back-hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+.arrows-wrapper:hover .arrow-forward-hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
 
 /* Haupt-Carousel Logik */
 .carousel {
-    position: relative; 
-    width: 1440px;
-    height: 274px;
-    overflow: hidden;
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 100px,
-        black calc(100% - 100px),
-        transparent 100%
-    );
+  position: relative;
+  width: 1440px;
+  height: 274px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 100px, black calc(100% - 100px), transparent 100%);
 }
 
 .card {
-    position: absolute;
-    width: 632px;
-    height: 274px;
-    background: rgba(63, 207, 183, 0.10);
-    border: 1px solid var(--color-accent);
-    border-radius: 20px;
-    padding: 20px;
-    color: white;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) translateX(var(--offset, 0px)) scale(var(--scale, 0.85));
-    opacity: var(--opacity, 0.6);
-    transition: transform 0.5s ease, opacity 0.5s ease, background 0.5s ease;
+  position: absolute;
+  width: 632px;
+  height: 274px;
+  background: rgba(63, 207, 183, 0.1);
+  border: 1px solid var(--color-accent);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) translateX(var(--offset, 0px)) scale(var(--scale, 0.85));
+  opacity: var(--opacity, 0.6);
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease,
+    background 0.5s ease;
 }
 
 .card.center {
-    --offset: 0px;
-    --scale: 1;
-    --opacity: 1;
-    background: rgba(63, 207, 183, 0.30);
-    z-index: 3;
+  --offset: 0px;
+  --scale: 1;
+  --opacity: 1;
+  background: rgba(63, 207, 183, 0.3);
+  z-index: 3;
 }
 
-.card.left { --offset: -676px; --scale: 0.9; --opacity: 0.6; z-index: 2; }
-.card.right { --offset: 676px; --scale: 0.9; --opacity: 0.6; z-index: 2; }
-.card.far-left { --offset: -1460px; opacity: 0; transition: none; }
-.card.far-right { --offset: 1460px; opacity: 0; transition: none; }
+.card.left {
+  --offset: -676px;
+  --scale: 0.9;
+  --opacity: 0.6;
+  z-index: 2;
+}
+.card.right {
+  --offset: 676px;
+  --scale: 0.9;
+  --opacity: 0.6;
+  z-index: 2;
+}
+.card.far-left {
+  --offset: -1460px;
+  opacity: 0;
+  transition: none;
+}
+.card.far-right {
+  --offset: 1460px;
+  opacity: 0;
+  transition: none;
+}
 
-.dot { transition: opacity 0.3s ease; }
-.dot.active { content: url("/assets/img/icons/eclipse_accent.svg"); opacity: 1; }
+.dot {
+  transition: opacity 0.3s ease;
+}
+.dot.active {
+  content: url("/assets/img/icons/eclipse_accent.svg");
+  opacity: 1;
+}
 
 /* --- 4. CONTACT SECTION --- */
 .contact-item {
-    display: flex;
-    flex-direction: column;
-    padding: 32px;
-    gap: 10px;
-    border-top: 1px solid #3DCFB680;
-    border-bottom: 1px solid #3DCFB680;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 10px;
+  border-top: 1px solid #3dcfb680;
+  border-bottom: 1px solid #3dcfb680;
 }
 
-.contact-item:hover {
-    border-top: 1px solid #3DCFB6;
-    border-bottom: 1px solid #3DCFB6;
+.contact-item:hover,
+.contact-item:focus-within {
+  border-top: 1px solid #3dcfb6;
+  border-bottom: 1px solid #3dcfb6;
+}
+
+.contact-item input {
+  outline: none;
+  caret-color: var(--color-accent);
+}
+
+.contact-item textarea {
+  display: block;
+  outline: none;
+  caret-color: var(--color-accent);
+  width: 100%;
+  line-height: 1.5rem; /* Wichtig für die Berechnung */
+  min-height: 1.5rem; /* 1.5 Zeilenhöhe + Padding oben/unten */
+  resize: none;
+  overflow-y: hidden; /* Versteckt den Scrollbalken, solange er nicht gebraucht wird */
+  transition: height 0.2s ease;
+}
+
+.contact-item textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.contact-item textarea::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05) !important; /* Dezent transparent */
+  border-radius: 4px;
+}
+
+/* Der bewegliche Teil (Griff) */
+.contact-item textarea::-webkit-scrollbar-thumb {
+  background: var(--color-accent) !important; /* Hier deine Akzentfarbe rein */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Erzeugt einen kleinen Abstand zur Schiene */
+  background-clip: content-box;
 }
 
 /* Custom Checkbox Design */
 .checkbox {
-    height: 24px;
-    width: 24px;
-    position: relative;
-    cursor: pointer;
-    flex-shrink: 0;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .checkbox img {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.checkbox .checkbox-default { opacity: 1; }
-.checkbox:hover .hover-default { opacity: 1; }
-.checkbox.active .checkbox-checked { opacity: 1; }
-.checkbox.active:hover .hover-checked { opacity: 1; }
+.checkbox .checkbox-default {
+  opacity: 1;
+}
+.checkbox:hover .hover-default {
+  opacity: 1;
+}
+.checkbox.active .checkbox-checked {
+  opacity: 1;
+}
+.checkbox.active:hover .hover-checked {
+  opacity: 1;
+}
 
 /* Contact Button Zustände */
 #say-hallo-btn {
-    pointer-events: none;
-    opacity: 0.5;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 #say-hallo-btn.active {
-    pointer-events: all;
-    opacity: 1;
+  pointer-events: all;
+  opacity: 1;
 }
 
 /* --- 5. FOOTER --- */
 .footer-link {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-    color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .footer-link:hover .circle {
-    opacity: 1;
+  opacity: 1;
 }
