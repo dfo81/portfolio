@@ -43,14 +43,11 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  width: 104px;
-  height: 124px;
-  letter-spacing: -3%;
-  line-height: 120%;
+  margin-bottom: auto;
 }
 
 .skill-items div img {
-  height: 68px;
+  vertical-align: bottom;
   width: 68px;
   transition: transform 125ms ease-in-out;
 }
@@ -60,6 +57,7 @@
 }
 
 .skill-items span {
+  text-align: center;
   font-family: var(--font-main);
 }
 

@@ -64,20 +64,10 @@ projectItems.forEach((item) => {
     document.querySelector(`.project-icon[data-project="${key}"]`).classList.remove("visible");
   });
 });
-// Dark / Ligth mode
-/* const toggle = document.querySelector('#theme-toggle');
 
-toggle.addEventListener('click', () => {
-  const html = document.documentElement;
-  if (html.dataset.theme === 'light') {
-    html.dataset.theme = 'dark';
-  } else {
-    html.dataset.theme = 'light';
-  }
-}); */
-
+// carousell
 const cards = Array.from(document.querySelectorAll(".card"));
-const order = [2, 0, 1]; // slots: left, center, right
+const order = [2, 0, 1]; 
 const classes = ["left", "center", "right"];
 let isAnimating = false;
 
@@ -90,15 +80,10 @@ function applyClasses() {
 function go(dir) {
   if (isAnimating) return;
   isAnimating = true;
-
-  // Karte die rausfliegt sofort auf far-Seite teleportieren
-  const exitIndex = order[dir === 1 ? 0 : 2]; // left raus bei next, right raus bei prev
+  const exitIndex = order[dir === 1 ? 0 : 2];
   cards[exitIndex].className = "card " + (dir === 1 ? "far-right" : "far-left");
-
-  // Reihenfolge rotieren
   if (dir === 1) order.push(order.shift());
   else order.unshift(order.pop());
-
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       applyClasses();
@@ -113,7 +98,7 @@ function go(dir) {
 const dots = document.querySelectorAll(".dot");
 
 function updateDots() {
-  const centerIndex = order[1]; // wer ist gerade center?
+  const centerIndex = order[1];
   dots.forEach((dot, i) => {
     dot.classList.toggle("active", i === centerIndex);
   });
@@ -121,8 +106,16 @@ function updateDots() {
 
 applyClasses();
 updateDots();
-document.querySelector(".arrow-forward-default").parentElement.addEventListener("click", () => go(1));
-document.querySelector(".arrow-back-default").parentElement.addEventListener("click", () => go(-1));
+const nextBtn = document.querySelector(".arrow-forward-default");
+const prevBtn = document.querySelector(".arrow-back-default");
+
+if (nextBtn && nextBtn.parentElement) {
+  nextBtn.parentElement.addEventListener("click", () => go(1));
+}
+
+if (prevBtn && prevBtn.parentElement) {
+  prevBtn.parentElement.addEventListener("click", () => go(-1));
+}
 
 // checkbox changes
 document.querySelectorAll(".checkbox").forEach((el) => {
@@ -145,31 +138,25 @@ logos.forEach((logo) => {
 document.addEventListener("DOMContentLoaded", () => {
   const projectItems = document.querySelectorAll(".project-item");
 
- projectItems.forEach((item) => {
-  item.addEventListener("click", (event) => {
-    event.stopPropagation();
-    
-    // 1. Overlay einfügen
-    document.body.insertAdjacentHTML("beforeend", getOverlay());
-    document.body.style.overflow = "hidden";
-    
-    // 2. Verlauf aktualisieren (für die Zurück-Taste)
-    history.pushState({ state: "overlayOpen" }, "", "#projects");
-
-    // 3. EXPLIZIT zum Anker scrollen
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" }); // "smooth" für sanftes Gleiten, "auto" für Sofort-Sprung
-    }
-
-    const overlayWrapper = document.getElementById("project-overlay");
-    overlayWrapper.addEventListener("click", (e) => {
-      if (e.target === overlayWrapper) {
-        closeOverlay();
+  projectItems.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.stopPropagation();
+      document.body.insertAdjacentHTML("beforeend", getOverlay());
+      document.body.style.overflow = "hidden";
+      history.pushState({ state: "overlayOpen" }, "", "#projects");
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "smooth" });
       }
+
+      const overlayWrapper = document.getElementById("project-overlay");
+      overlayWrapper.addEventListener("click", (e) => {
+        if (e.target === overlayWrapper) {
+          closeOverlay();
+        }
+      });
     });
   });
-});
 });
 
 //close overlay
@@ -192,7 +179,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-
 // back stop
 window.addEventListener("popstate", (event) => {
   const overlay = document.getElementById("project-overlay");
@@ -202,22 +188,17 @@ window.addEventListener("popstate", (event) => {
 });
 
 function autoResize(textarea) {
-  textarea.style.height = 'auto';
-  
+  textarea.style.height = "auto";
   const maxHeight = 164;
-  // Wir prüfen, was kleiner ist: Der Inhalt oder das Limit
   const newHeight = Math.min(textarea.scrollHeight, maxHeight);
-  
-  textarea.style.height = newHeight + 'px';
-  
+  textarea.style.height = newHeight + "px";
   if (textarea.scrollHeight > maxHeight) {
-    textarea.style.overflowY = 'auto';
+    textarea.style.overflowY = "auto";
   } else {
-    textarea.style.overflowY = 'hidden';
+    textarea.style.overflowY = "hidden";
   }
 }
-// Im Overlay-Opener nach dem Einfügen des HTMLs:
-const messageArea = document.querySelector('textarea');
+const messageArea = document.querySelector("textarea");
 if (messageArea) {
-  messageArea.addEventListener('input', () => autoResize(messageArea));
+  messageArea.addEventListener("input", () => autoResize(messageArea));
 }
