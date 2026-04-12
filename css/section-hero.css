@@ -66,46 +66,68 @@ section.hero {
 }
 
 /* --- 3. LANGUAGE-SWITCHER --- */
-.lang-img {
-  transition: opacity 0.2s ease-in-out;
+/* --- 3. LANGUAGE-SWITCHER --- */
+
+#toggle-btn {
+  position: relative;
+  display: inline-block; /* Sorgt dafür, dass der Container sich an den Inhalt anpasst */
 }
 
-.lang-en-wrapper { display: block; cursor: default; }
-.lang-de-wrapper { display: none;  cursor: pointer; }
+/* Der DE-Wrapper gibt die Größe vor */
+.lang-de-wrapper {
+  position: relative; /* Nicht absolute! Er hält den Platz frei */
+  transition: opacity 0.2s ease;
+}
 
-#toggle-btn.active .lang-en-wrapper { display: none; }
-#toggle-btn.active .lang-de-wrapper { display: block; }
-#toggle-btn.active .lang-en-wrapper { cursor: pointer; }
-#toggle-btn.active .lang-de-wrapper { cursor: default; }
-
-.lang-en-hover,
-.lang-de-hover {
+/* Der EN-Wrapper legt sich exakt über den DE-Wrapper */
+.lang-en-wrapper {
   position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover-Logik (Standardbilder verschwinden, Hover-Bilder darunter werden sichtbar) */
+.lang-de-default, 
+.lang-en-default {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.lang-de-hover, 
+.lang-en-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
+}
+
+.lang-de-default:hover, 
+.lang-en-default:hover {
   opacity: 0;
 }
 
-.lang-en-wrapper:hover .lang-en-hover { opacity: 1; }
-.lang-de-wrapper:hover .lang-de-hover { opacity: 1; }
+/* --- Status-Umschaltung --- */
 
-#toggle-btn:not(.active)::after,
-#toggle-btn.active::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 10;
+/* Wenn Englisch aktiv: DE unsichtbar, EN sichtbar */
+#toggle-btn.active .lang-de-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-#toggle-btn:not(.active)::after { right: 0; }
-#toggle-btn.active::after { left: 0; }
-
-#toggle-btn:not(.active):hover .lang-en-hover { opacity: 1; }
-#toggle-btn.active:hover .lang-de-hover { opacity: 1; }
-
+#toggle-btn.active .lang-en-wrapper {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 /* --- 4. COMPONENTS --- */
 .button-wrapper {
   display: flex;

@@ -1,40 +1,33 @@
-// Language switch
 const button = document.getElementById("toggle-btn");
-let isEn = localStorage.getItem("toggleState") === "true";
+let isEnglish = localStorage.getItem("lang") === "true";
+let translations = null;
 
-updateButton(isEn);
+render();
 
-button.addEventListener("click", () => {
-  isEn = !isEn;
-  localStorage.setItem("toggleState", isEn);
-  updateButton(isEn);
-});
+button.addEventListener("click", toggle);
+button.addEventListener("keydown", e => ["Enter", " "].includes(e.key) && (e.preventDefault(), toggle()));
 
-function updateButton(state) {
-  button.classList.toggle("active", state);
+async function toggle() {
+  isEnglish = !isEnglish;
+  localStorage.setItem("lang", isEnglish);
+  await render();
 }
 
-// Language switch by enter keydown
-button.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" || e.key === " ") {
-    e.preventDefault();
-    button.click();
+async function render() {
+  button.classList.toggle("active", isEnglish);
+  if (isEnglish && !translations) {
+    translations = await fetch("/json/en.json").then(r => r.json());
   }
-});
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    const key = el.dataset.lang;
+    if (!el.dataset.original) el.dataset.original = el.textContent;
+    el.textContent = isEnglish ? (translations[key] || el.dataset.original) : el.dataset.original;
+  });
+}
 
-// Hover click event
-button.addEventListener("click", (e) => {
-  const rect = button.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
-  const half = rect.width / 2;
 
-  if (isEn && clickX > half) return;
-  if (!isEn && clickX < half) return;
 
-  isEn = !isEn;
-  localStorage.setItem("toggleState", isEn);
-  updateButton(isEn);
-});
+
 
 // Mouse gradient effect
 document.addEventListener("mousemove", (e) => {

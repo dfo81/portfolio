@@ -187,7 +187,6 @@
   height: 274px;
 }
 
-/* Carousel Steuerung (Pfeile) */
 .arrows-wrapper {
   cursor: pointer;
   position: relative;
@@ -228,8 +227,15 @@
   position: relative;
   width: 1440px;
   height: 274px;
-  overflow: hidden;
+  overflow: visible;
   mask-image: linear-gradient(to right, transparent 0%, black 100px, black calc(100% - 100px), transparent 100%);
+}
+
+.quotes {
+  position: absolute;
+  top: 120px;
+  left: calc(50% - 360px);
+  z-index: 10;
 }
 
 .card {
@@ -238,7 +244,7 @@
   height: 274px;
   background: rgba(63, 207, 183, 0.1);
   border: 1px solid var(--color-accent);
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 20px;
   color: white;
   top: 50%;

@@ -21,26 +21,26 @@
       <div class="flex w-full max-w-360 px-24 justify-between">
         <!-- nav -->
         <nav class="flex gap-6 items-center">
-          <div id="toggle-btn" class="relative">
-            <div class="relative lang-en-wrapper">
-              <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_default.svg" />
-              <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_default_hover.svg" />
-            </div>
+          <div id="toggle-btn">
             <div class="relative lang-de-wrapper">
-              <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_german.svg" />
-              <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_german_hover.svg" />
+              <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_de.svg" />
+              <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_de_hover.svg" />
+            </div>
+            <div class="relative lang-en-wrapper">
+              <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_en.svg" />
+              <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_en_hover.svg" />
             </div>
           </div>
-          <a href="#about" data-lang="about" class="nav-link">
-            <span class="link-text">About me</span>
+          <a href="#about" class="nav-link">
+            <span data-lang="nav_about" class="link-text">Über mich</span>
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           </a>
-          <a href="#skills" data-lang="skills" class="nav-link">
-            <span class="link-text">Skills</span>
+          <a href="#skills" class="nav-link">
+            <span data-lang="skill_set" class="link-text">Fähigkeiten</span>
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           </a>
-          <a href="#projects" data-lang="projects" class="nav-link">
-            <span class="link-text">Projects</span>
+          <a href="#projects" class="nav-link">
+            <span data-lang="my_work" class="link-text">Projekte</span>
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           </a>
         </nav>
@@ -57,16 +57,16 @@
     <section class="flex items-center flex-col hero">
       <!-- title on hero page-->
       <div class="flex flex-col items-center gap-2 flex-1 justify-center title">
-        <h2 class="font-second text-[2.5rem]">Frontend Developer</h2>
+        <h2 data-lang="frontend_developer" class="font-second text-[2.5rem]">Frontend-Entwickler</h2>
         <h1 class="text-9xl font-bold pb-6">Dieter Foos</h1>
         <div class="flex gap-12">
           <div class="button-wrapper">
-            <div class="content">Check my work</div>
-            <div class="scroll-content">Check my work</div>
+            <div data-lang="check_my_work" class="content">Meine Arbeit</div>
+            <div data-lang="check_my_work" class="scroll-content">Meine Arbeit</div>
           </div>
           <div class="button-wrapper">
-            <div class="content">Contact me</div>
-            <div class="scroll-content">Contact me</div>
+            <div data-lang="contact_me" class="content">Schreib mir</div>
+            <div data-lang="contact_me" class="scroll-content">Schreib mir</div>
           </div>
         </div>
       </div>
@@ -74,23 +74,23 @@
       <!-- scroll text banner -->
       <div class="flex h-15.5 max-w-360 mb-10 scroll-wrapper">
         <div class="flex items-center shrink-0 scroll-container">
-          <span class="scroll-text"> Available for remote work </span>
+          <span class="scroll-text"> Remote verfügbar </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="scroll-text"> Frontend Developer </span>
+          <span class="scroll-text"> Frontend-Entwickler </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="scroll-text">Based in Munich </span>
+          <span class="scroll-text"> aus München </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="scroll-text">Open to work</span>
+          <span class="scroll-text"> Bereit für neue Aufgaben </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
         </div>
         <div class="flex items-center shrink-0 scroll-container">
-          <span class="scroll-text"> Available for remote work </span>
+          <span class="scroll-text"> Remote verfügbar </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="scroll-text"> Frontend Developer </span>
+          <span class="scroll-text"> Frontend-Entwickler </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="scroll-text">Based in Munich </span>
+          <span class="scroll-text"> aus München </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="scroll-text">Open to work</span>
+          <span class="scroll-text"> Bereit für neue Aufgaben </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
         </div>
       </div>
@@ -128,9 +128,9 @@
         <img class="absolute left-9 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
       </div>
       <div class="flex flex-col pt-12 gap-6">
-        <h2 class="card-description">Who I Am</h2>
+        <h2 class="card-description">Wer ich bin </h2>
         <div class="section-card">
-          <h1 class="card-title">About me</h1>
+          <h1 class="card-title">Über mich</h1>
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias labore est tenetur, amet molestiae vel incidunt fugit voluptatibus? Repudiandae quam tenetur deleniti, nesciunt quos velit necessitatibus in dolorem ea suscipit? Doloremque
             similique sit doloribus aut aspernatur repellendus, enim minus eius voluptatibus fuga ratione nemo soluta, nulla necessitatibus, possimus ex incidunt quae sint asperiores? Iusto, corporis eaque? Asperiores quaerat quisquam minus? Possimus
@@ -144,9 +144,9 @@
     <section id="skills" class="relative flex w-full max-w-360 mx-auto px-24 gap-20">
       <div class="absolute top-30 -left-80 w-150 h-150 rounded-full bg-[radial-gradient(circle,#08463B4D,transparent)] blur-xl"></div>
       <div class="flex flex-col gap-6">
-        <h2 class="card-description">Technologies</h2>
+        <h2 class="card-description">Technologien</h2>
         <div class="section-card">
-          <h1 class="card-title">Skill Set</h1>
+          <h1 class="card-title">Fähigkeiten</h1>
           <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eius veniam nihil animi, iusto sunt optio quidem suscipit neque nam, nostrum facere similique deserunt aut incidunt, cum placeat libero quaerat?</span>
           <div class="button-wrapper">
             <div class="content">Let´s Talk</div>
@@ -204,7 +204,7 @@
               >I have a special<br />
               interest in learning</span
             >
-            <img class="hover:scale-2" src="/assets/img/icons/Frame 300.svg" alt="" />
+            <img class="hover:scale-105" src="/assets/img/icons/Frame 300.svg" alt="" />
           </aside>
         </div>
       </div>
@@ -214,7 +214,7 @@
     <section id="projects" class="flex flex-col w-full max-w-360 mx-auto gap-10.25 px-24">
       <div class="flex flex-col gap-5">
         <h2 class="card-description">Portfolio</h2>
-        <h1 class="card-title">Featured Projects</h1>
+        <h1 class="card-title">Ausgewählte Projekte</h1>
       </div>
       <span>Explore a selection of my work here - interact with projects to see my skills in action</span>
 
@@ -272,10 +272,10 @@
     </section>
 
     <!-- references section -->
-    <section class="flex relative items-center flex-col w-full max-w-360 mx-auto gap-20">
+    <section class="relative flex items-center flex-col w-full max-w-360 mx-auto gap-20">
       <h1 class="text-[2rem] text-center font-[firacode] text-accent">What my colleagues say about me</h1>
-      <img class="absolute left-88 top-30 z-20" src="/assets/img/icons/quotes.svg" alt="" />
-      <div class="flex justify-center h-68.5 w-full overflow-hidden">
+      <img class="quotes" src="/assets/img/icons/quotes.svg" alt="" />
+      <div class="flex justify-center h-68.5 w-full">
         <div class="carousel">
           <div class="card">Karte 1</div>
           <div class="card">Karte 2</div>
@@ -300,25 +300,25 @@
     <!-- contact me section-->
     <section class="flex h-135 w-full max-w-360 mx-auto gap-20 px-24">
       <div class="flex flex-col gap-10 w-142">
-        <h2 class="card-description">Contact me</h2>
-        <h1 class="card-title flex w-142 leading-15">Let´s work together</h1>
-        <h2 class="card-description">Got a problem to solve?</h2>
+        <h2 class="card-description">Schreibe mir</h2>
+        <h1 class="card-title flex w-142 leading-15">Lass uns zusammenarbeiten</h1>
+        <h2 class="card-description">Gibt es ein Problem zu lösen?</h2>
         <span
           >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus deserunt esse veritatis unde cumque! Mollitia velit iure quaerat. Voluptatem sapiente dolorem voluptatibus ipsa id dolore recusandae perferendis rem, neque enim.</span
         >
       </div>
       <div class="flex flex-col w-154">
         <div class="contact-item">
-          <h2>What´s your name?</h2>
-          <input type="text" placeholder="Your name goes here" />
+          <h2>Wie ist dein Name?</h2>
+          <input type="text" placeholder="Schreibe deinen Namen hier rein" />
         </div>
         <div class="contact-item">
-          <h2>What´s your email?</h2>
-          <input type="email" placeholder="youremail@mail.com" />
+          <h2>Deine Emailadresse?</h2>
+          <input type="email" placeholder="deine.email@mail.com" />
         </div>
         <div class="contact-item">
-          <h2>How can I help you?</h2>
-          <textarea id="message" rows="1" placeholder="Your Message..." oninput="autoResize(this)"></textarea>
+          <h2>Wie kann ich helfen?</h2>
+          <textarea id="message" rows="1" placeholder="Deine Nachricht..." oninput="autoResize(this)"></textarea>
         </div>
         <div class="flex flex-col mt-10 items-center gap-4">
           <div class="flex gap-4">
@@ -364,7 +364,7 @@
         </a>
         <a href="legal.html" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="link-text">Legal Notice</span>
+          <span class="link-text">Impressum</span>
         </a>
       </div>
     </footer>
