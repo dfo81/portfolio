@@ -1,8 +1,35 @@
 {
     "nav_about": "About me",
     "skill_set": "Skills",
-    "my_work": "My work",
+    "projects": "Projects",
+
     "frontend_developer": "Frontend Developer",
     "check_my_work": "Check my work",
-    "contact_me": "Contact me"
+    "contact_me": "Contact me",
+
+    "remote": "Available for remote work",
+    "frontend": "Frontend Developer",
+    "based": "Based in Munich",
+    "open_work": "Open to work",
+
+    "who": "Who i Am",
+    "about_me": "About me",
+    "about_text": "Hey, I'm Dieter! I am deeply passionate about software development. Coming from a technical background, I bring a solid understanding of how code and systems interact. I build solutions that don't just work in theory, but excel in practice. My goal is to leverage my hardware expertise to bridge the gap toward innovative software solutions.",
+    "mindset": "OS-agnostic (Linux, macOS, Windows). I focus on efficient workflows; the terminal and SSH are my essential daily tools.",
+    "method": "Analytical, persistent, and solution-oriented. I love diving deep into problems at the system level and creating elegant solutions through collaboration.",
+
+    "technologies": "Technologies",
+    "skills": "Skill Set",
+    "tech_description": "My foundation is built on technical precision. Today, I combine my system engineering background with modern front-end technologies like HTML, CSS, and JavaScript. I see new frameworks not just as tools, but as opportunities to build more efficient solutions. In the fast-paced world of web development, my drive to constantly master new tech stacks is what keeps me moving forward.",
+    "you_need": "You need",
+    "another": "another skill?",
+    "lets_talk": "Let´s Talk",
+    "interest": "I have a special interest in learning",
+
+    "featured": "Featured Projects",
+
+    "references": "What my colleagues say about me",
+
+    "together": "Let´s work together",
+    "solve_problem": "Got a problem to solve?"
 }

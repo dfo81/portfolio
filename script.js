@@ -5,7 +5,6 @@ let translations = null;
 render();
 
 button.addEventListener("click", toggle);
-button.addEventListener("keydown", e => ["Enter", " "].includes(e.key) && (e.preventDefault(), toggle()));
 
 async function toggle() {
   isEnglish = !isEnglish;
