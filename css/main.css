@@ -262,7 +262,10 @@
   background: rgba(63, 207, 183, 0.1);
   border: 1px solid var(--color-accent);
   border-radius: 30px;
-  padding: 20px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
   top: 50%;
   left: 50%;
@@ -303,6 +306,18 @@
   --offset: 1460px;
   opacity: 0;
   transition: none;
+}
+
+.commentator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.line {
+  height: 1px;
+  flex: 1;
+  border: 1px solid #ffffff;
 }
 
 .dot {
