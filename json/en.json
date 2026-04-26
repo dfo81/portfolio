@@ -30,7 +30,22 @@
     "explore": "Explore a selection of my work here - interact with projects to see my skills in action.",
 
     "references": "What my colleagues say about me",
+    "card1": "Working with Dieter is absolutely straightforward and rewarding. You can always rely on tasks being completed not only on time, but also with great attention to detail.",
+    "card2": "Dieter brings an impressive combination of technical expertise and creative thinking. Even when faced with complex challenges, he always finds an innovative approach that moves the entire project forward.",
+    "card3": "I especially appreciate Dieter’s clear communication and structured way of working. He does an excellent job of maintaining an overview even during stressful phases and motivating the team.",
 
     "together": "Let´s work together",
-    "solve_problem": "Got a problem to solve?"
+    "solve_problem": "Got a problem to solve?",
+    "your_name": "What´s your name?",
+    "write_your_name": "Your name goes here",
+    "your_email": "What´s your email",
+    "write_email": "your.email@email.com",
+    "how_help": "How i can help you?",
+    "message": "Hello Dieter, i am interested in...",
+    "say_hello1": "Say Hello ;)",
+    "say_hello2": "Say Hello ;)",
+
+    "imprint": "Legal Notice",
+
+    "next": "Next Project"
 }

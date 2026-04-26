@@ -238,54 +238,11 @@
       <span data-lang="explore">Entdecke meine Projekte: Erlebe meine Skills direkt in der Anwendung.</span>
 
       <div class="flex gap-20">
-        <div class="flex flex-col w-220">
-          <div class="project-item" data-project="join">
-            <div class="project-title">
-              <h2>Join</h2>
-              <img class="arrow-outward" src="/assets/img/icons/arrow_outward.svg" alt="" />
-            </div>
-            <div>
-              HTML <img src="/assets/img/icons/spacer.svg" alt="" /> CSS <img src="/assets/img/icons/spacer.svg" alt="" /> JavaScript <img src="/assets/img/icons/spacer.svg" alt="" />
-              Firebase
-            </div>
-          </div>
-          <div class="project-item" data-project="pollo">
-            <div class="project-title">
-              <h2>El Pollo Loco</h2>
-              <img class="arrow-outward" src="/assets/img/icons/arrow_outward.svg" alt="" />
-            </div>
-            <div>
-              HTML <img src="/assets/img/icons/spacer.svg" alt="" /> CSS <img src="/assets/img/icons/spacer.svg" alt="" />
-              JavaScript
-            </div>
-          </div>
-          <div class="project-item" data-project="bubble">
-            <div class="project-title">
-              <h2>DA Bubble</h2>
-              <img class="arrow-outward" src="/assets/img/icons/arrow_outward.svg" alt="" />
-            </div>
-            <div>
-              Angular <img src="/assets/img/icons/spacer.svg" alt="" /> TypeScript <img src="/assets/img/icons/spacer.svg" alt="" />
-              Firebase
-            </div>
-          </div>
+        <div id="project-list" class="flex flex-col w-220">
+          <!-- Project list -->
         </div>
-
-        <div class="flex relative project-icon-container">
-          <div class="project-icon top-1" data-project="join">
-            <img src="/assets/img/icons/sub_bg.svg" alt="" />
-            <img class="absolute -top-5 -left-5" src="/assets/img/icons/sub_join.svg" alt="" />
-          </div>
-
-          <div class="project-icon top-1/3" data-project="pollo">
-            <img src="/assets/img/icons/sub_bg.svg" alt="" />
-            <img class="absolute -top-5 -left-5" src="/assets/img/icons/sub_elpollo.svg" alt="" />
-          </div>
-
-          <div class="project-icon top-3/5" data-project="bubble">
-            <img src="/assets/img/icons/sub_bg.svg" alt="" />
-            <img class="absolute -top-5 -left-5" src="/assets/img/icons/sub_dabubble.svg" alt="" />
-          </div>
+        <div id="project-preview" class="flex relative project-icon-container">  
+          <!-- preview icons -->
         </div>
       </div>
     </section>
@@ -297,21 +254,21 @@
       <div class="flex justify-center h-68.5 w-full">
         <div class="carousel">
           <div class="card">
-            <span>Die Zusammenarbeit mit Dieter ist absolut unkompliziert und bereichernd. Man kann sich immer darauf verlassen, dass Aufgaben nicht nur termingerecht, sondern auch mit Blick fürs Detail gelöst werden.</span>
+            <span data-lang="card1">Die Zusammenarbeit mit Dieter ist absolut unkompliziert und bereichernd. Man kann sich immer darauf verlassen, dass Aufgaben nicht nur termingerecht, sondern auch mit Blick fürs Detail gelöst werden.</span>
             <div class="commentator">
               <div class="line"></div>
               <span>Gideon Albrecht</span>
             </div>
           </div>
           <div class="card">
-            <span>Dieter bringt eine beeindruckende Mischung aus technischem Know-how und kreativem Denken mit. Selbst bei komplexen Herausforderungen findet er immer einen innovativen Ansatz, der das gesamte Projekt weiterbringt.</span>
+            <span data-lang="card2">Dieter bringt eine beeindruckende Mischung aus technischem Know-how und kreativem Denken mit. Selbst bei komplexen Herausforderungen findet er immer einen innovativen Ansatz, der das gesamte Projekt weiterbringt.</span>
             <div class="commentator">
               <div class="line"></div>
               <span>Alina Hofmann</span>
             </div>
           </div>
           <div class="card">
-            <span>Besonders schätze ich die klare Kommunikation und die strukturierte Arbeitsweise von [Dein Name]. Es gelingt ihm/ihr hervorragend, auch in stressigen Phasen den Überblick zu behalten und das Team zu motivieren.</span>
+            <span data-lang="card3">Besonders schätze ich die klare Kommunikation und die strukturierte Arbeitsweise von Dieter. Es gelingt ihm hervorragend, auch in stressigen Phasen den Überblick zu behalten und das Team zu motivieren.</span>
             <div class="commentator">
               <div class="line"></div>
               <span>Andreas Scheck</span>
@@ -346,16 +303,16 @@
       </div>
       <div class="flex flex-col w-154">
         <div class="contact-item">
-          <h2>Wie ist dein Name?</h2>
-          <input type="text" placeholder="Schreibe deinen Namen hier rein" />
+          <h2 data-lang="your_name">Wie ist dein Name?</h2>
+          <input data-lang="write_your_name" type="text" placeholder="Schreibe deinen Namen hier rein" />
         </div>
         <div class="contact-item">
-          <h2>Deine Emailadresse?</h2>
-          <input type="email" placeholder="deine.email@mail.com" />
+          <h2 data-lang="your_email">Deine Emailadresse?</h2>
+          <input data-lang="write_email" type="email" placeholder="deine.email@email.com" />
         </div>
         <div class="contact-item">
-          <h2>Wie kann ich helfen?</h2>
-          <textarea id="message" rows="1" placeholder="Deine Nachricht..." oninput="autoResize(this)"></textarea>
+          <h2 data-lang="how_help">Wie kann ich helfen?</h2>
+          <textarea data-lang="message" id="message" rows="1" placeholder="Hallo Dieter, frage an dich..." oninput="autoResize(this)"></textarea>
         </div>
         <div class="flex flex-col mt-10 items-center gap-4">
           <div class="flex gap-4">
@@ -366,13 +323,13 @@
               <img class="hover-checked" src="/assets/img/icons/checkbox=Checked hover.svg" alt="" />
             </div>
             <span
-              >I´ve read the <a class="text-accent hover:text-white hover:underline hover:decoration-accent underline-offset-8 transition:underline duration-200 ease-in-out" href="#">privacy policy </a>and agree to the proccessing of my data as
+              >I´ve read the <a class="text-accent hover:text-white hover:underline hover:decoration-accent underline-offset-8 transition:underline duration-200 ease-in-out" href="legal.html">privacy policy </a>and agree to the proccessing of my data as
               outlined.
             </span>
           </div>
           <div class="button-wrapper" id="say-hallo-btn">
-            <div class="content">Say Hello ;)</div>
-            <div class="scroll-content">Say Hello ;)</div>
+            <div data-lang="say_hello1" class="content">Sag Hallo ;)</div>
+            <div data-lang="say_hello2"  class="scroll-content">Sag Hallo ;)</div>
           </div>
         </div>
       </div>
@@ -401,7 +358,7 @@
         </a>
         <a href="legal.html" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="link-text">Impressum</span>
+          <span data-lang="imprint" class="link-text">Impressum</span>
         </a>
       </div>
     </footer>
