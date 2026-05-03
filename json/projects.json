@@ -23,8 +23,8 @@
         }
       ],
       "links": {
-        "liveTest": "https://mein-projekt.de",
-        "github": "https://github.com/nutzername/projekt"
+        "liveTest": "https://join.dieter-foos.de",
+        "github": "https://github.com/dfo81/Join"
       },
       "content": {
         "de": {
@@ -51,49 +51,57 @@
         {
           "name": "Javascript",
           "icon": "assets/img/icons/javascript.svg"
+        },
+        {
+          "name": "Canvas",
+          "icon": "assets/img/icons/canvas.png"
         }
       ],
       "links": {
-        "liveTest": "https://mein-projekt.de",
-        "github": "https://github.com/nutzername/projekt"
+        "liveTest": "https:/el-pollo-loco.dieter-foos.de",
+        "github": "https://github.com/dfo81/el-pollo-loco"
       },
       "content": {
         "de": {
-            "decription": "spiel"
+            "decription": "Ein Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, sich in einer gefährlichen Wüste voller Kakteen, aggressiver Hühner und fliegender Flaschen zu behaupten. Sammle Münzen und Tabasco-Flaschen, um den Endboss zu besiegen."
         },
         "en": {
-           "decription": "game"
+           "decription": "A jump-and-run game based on an object-oriented programming approach. Join Pepe on his journey through a desert landscape filled with obstacles and enemies. Collect coins and salsa bottles to take down the final boss."
         }
       }
     },
     {
       "id": 3,
       "title": "Pokedex",
-      "image": "/assets/img/icons/sub_dabubble.svg",
+      "image": "/assets/img/icons/pokedex.png",
       "technologies": [
         {
           "name": "HTML",
           "icon": "assets/img/icons/html.svg"
         },
         {
-          "name": "Tailwind CSS",
+          "name": "CSS",
           "icon": "assets/img/icons/css.svg"
         },
         {
           "name": "Javascript",
           "icon": "assets/img/icons/javascript.svg"
+        },
+        {
+          "name": "Rest-API",
+          "icon": "assets/img/icons/restapi.png"
         }
       ],
       "links": {
-        "liveTest": "https://mein-projekt.de",
-        "github": "https://github.com/nutzername/projekt"
+        "liveTest": "https://pokedex.dieter-foos.de",
+        "github": "https://github.com/dfo81/pokedex"
       },
       "content": {
         "de": {
-            "decription": "spiel"
+            "decription": "Basierend auf der PokeAPI ist dies eine interaktive Enzyklopädie für Pokémon. Das Projekt demonstriert den sauberen Umgang mit asynchronen API-Anfragen, die Verarbeitung von JSON-Daten und deren dynamische Anzeige in einem benutzerfreundlichen Interface."
         },
         "en": {
-           "decription": "game"
+           "decription": "Based on the PokeAPI, this project is an interactive encyclopedia for Pokémon. It demonstrates the clean handling of asynchronous API requests, processing JSON data, and dynamically rendering it within a user-friendly interface."
         }
       }
     }

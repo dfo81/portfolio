@@ -60,14 +60,14 @@
         <h2 data-lang="frontend_developer" class="font-second text-[2.5rem]">Frontend-Entwickler</h2>
         <h1 class="text-9xl font-bold pb-6">Dieter Foos</h1>
         <div class="flex gap-12">
-          <div class="button-wrapper">
+          <a class="button-wrapper" href="#projects">
             <div data-lang="check_my_work" class="content">Meine Arbeit</div>
             <div data-lang="check_my_work" class="scroll-content">Meine Arbeit</div>
-          </div>
-          <div class="button-wrapper">
+          </a>
+          <a class="button-wrapper" href="#contact">
             <div data-lang="contact_me" class="content">Schreib mir</div>
             <div data-lang="contact_me" class="scroll-content">Schreib mir</div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -105,17 +105,17 @@
         </div>
         <!-- right lateral-->
         <div class="right-24 right-lateral">
-          <a class="[writing-mode:vertical-rl] rotate-180 hover:text-accent transition-text duration-200 ease" href="mailto:info@dieter-foos.de">info@dieter-foos.de</a>
-          <div class="social-icon">
+          <a class="[writing-mode:vertical-rl] rotate-180 hover:text-accent transition-text duration-200 ease" href="mailto:contact@dieter-foos.de">contact@dieter-foos.de</a>
+          <a class="social-icon" href="https://github.com/dfo81">
             <img src="/assets/img/icons/git_aquamarine.svg" alt="" />
             <img class="img-hover" src="/assets/img/icons/Github.svg" alt="" />
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          </div>
-          <div class="social-icon">
+          </a>
+          <a class="social-icon" href="https://www.linkedin.com/in/dieter-foos-7a13a63ba/">
             <img src="/assets/img/icons/linkedin_aquamarine.svg" alt="" />
             <img class="img-hover" src="/assets/img/icons/Linkedin_hover.svg" alt="" />
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          </div>
+          </a>
           <div class="h-46.5 border border-light"></div>
         </div>
       </div>
@@ -170,10 +170,10 @@
             <span data-lang="you_need" class="font-bold text-3xl">Fehlt eine</span>
             <span data-lang="another" class="font-bold text-3xl text-accent">bestimmte Qualifikation?</span>
           </div>
-          <div class="button-wrapper">
+          <a class="button-wrapper" href="#contact">
             <div data-lang="lets_talk" class="content">Lass uns reden</div>
             <div data-lang="lets_talk" class="scroll-content">Lass uns reden</div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -294,15 +294,18 @@
     </section>
 
     <!-- contact me section-->
-    <section class="flex h-135 w-full max-w-360 mx-auto gap-20 px-24">
+    <section id="contact" class="flex h-135 w-full max-w-360 mx-auto gap-20 px-24">
       <div class="flex flex-col gap-10 w-142">
         <h2 data-lang="contact_me" class="card-description">Schreibe mir</h2>
         <h1 data-lang="together" class="card-title flex w-142 leading-15">Lass uns zusammenarbeiten</h1>
         <h2 data-lang="solve_problem" class="card-description">Gibt es ein Problem zu lösen?</h2>
-        <span> Ich bin immer auf der Suche nach spannenden Herausforderungen im Frontend-Bereich. Egal, ob es um eine neue Web-App oder die Optimierung einer bestehenden Plattform geht – ich unterstütze Sie gerne mit sauberem Code und einem Auge für Design. </span>
+        <span data-lang="contact_span">
+          Ich bin immer auf der Suche nach spannenden Herausforderungen im Frontend-Bereich. Egal, ob es um eine neue Web-App oder die Optimierung einer bestehenden Plattform geht – ich unterstütze dich gerne mit sauberem Code und einem Auge für
+          Design.
+        </span>
         <div>
-          <span>Suchen Sie Unterstützung in der Frontend-Entwicklung?</span><br>
-          <span class="text-accent"> Dann lassen Sie uns reden! </span>
+          <span data-lang="looking_for">Bist du auf der suche nach unterstützung?</span>
+          <span data-lang="lets_talk" class="text-accent"> Dann lass uns reden! </span>
         </div>
       </div>
       <div class="flex flex-col w-154">
@@ -326,10 +329,11 @@
               <img class="checkbox-checked" src="/assets/img/icons/checkbox=Checked.svg" alt="" />
               <img class="hover-checked" src="/assets/img/icons/checkbox=Checked hover.svg" alt="" />
             </div>
-            <span
-              >I´ve read the <a class="text-accent hover:text-white hover:underline hover:decoration-accent underline-offset-8 transition:underline duration-200 ease-in-out" href="legal.html">privacy policy </a>and agree to the proccessing of my data
-              as outlined.
-            </span>
+            <div>
+              <span data-lang="read">Ich habe die</span>
+              <a data-lang="privacy" class="text-accent hover:text-white hover:underline hover:decoration-accent underline-offset-8 transition:underline duration-200 ease" href="legal.html">Datenschutzerklärung </a>
+              <span data-lang="data"> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu. </span>
+            </div>
           </div>
           <div class="button-wrapper" id="say-hallo-btn">
             <div data-lang="say_hello1" class="content">Sag Hallo ;)</div>
@@ -348,15 +352,15 @@
       </div>
       <div class="text-accent font-second text-base">&copy; Dieter Foos 2026</div>
       <div class="flex flex-col gap-1">
-        <a href="" class="footer-link">
+        <a href="https://github.com/dfo81" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="link-text">Github</span>
         </a>
-        <a href="" class="footer-link">
+        <a href="https://www.linkedin.com/in/dieter-foos-7a13a63ba/" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="link-text">Linkedin</span>
         </a>
-        <a href="" class="footer-link">
+        <a href="mailto:contact@dieter-foos.de" class="footer-link">
           <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           <span class="link-text">Email</span>
         </a>
