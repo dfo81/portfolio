@@ -66,16 +66,14 @@ section.hero {
 }
 
 /* --- 3. LANGUAGE-SWITCHER --- */
-/* --- 3. LANGUAGE-SWITCHER --- */
-
 #toggle-btn {
   position: relative;
-  display: inline-block; /* Sorgt dafür, dass der Container sich an den Inhalt anpasst */
+  display: inline-block; 
 }
 
 /* Der DE-Wrapper gibt die Größe vor */
 .lang-de-wrapper {
-  position: relative; /* Nicht absolute! Er hält den Platz frei */
+  position: relative; 
   transition: opacity 0.2s ease;
 }
 
@@ -215,6 +213,7 @@ section.hero {
     black calc(100% - 24px),
     transparent 100%
   );
+  padding: 8px 0;
 }
 
 .scroll-container {
@@ -223,8 +222,14 @@ section.hero {
 
 .scroll-text, .scroll-container img {
   color: var(--color-accent);
-  margin: 0 24px;
-  font-size: 2rem;
+  padding: 0 24px;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .scroll-text {
+    font-size: 2rem;
+  }
 }
 
 /* Keyframes */
