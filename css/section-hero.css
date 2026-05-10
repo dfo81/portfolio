@@ -213,7 +213,7 @@ section.hero {
     black calc(100% - 24px),
     transparent 100%
   );
-  padding: 8px 0;
+  padding: 4px 0;
 }
 
 .scroll-container {
@@ -223,10 +223,13 @@ section.hero {
 .scroll-text, .scroll-container img {
   color: var(--color-accent);
   padding: 0 24px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 @media (min-width: 768px) {
+  .scroll-wrapper {
+    padding: 8px 0;
+  }
   .scroll-text {
     font-size: 2rem;
   }

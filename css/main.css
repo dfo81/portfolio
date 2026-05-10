@@ -17,7 +17,6 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  height: 568px;
   width: 568px;
   padding: 32px;
   overflow: visible;
@@ -59,6 +58,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-bottom: auto;
   width: 68px;
@@ -172,11 +172,6 @@
 }
 
 /* Projekt Icons & Hover-Visuals */
-.project-icon-container {
-  position: relative;
-  width: 295px;
-}
-
 .project-icon {
   display: flex;
   position: absolute;
@@ -251,7 +246,7 @@
 
 .quotes {
   position: absolute;
-  top: 120px;
+  top: calc(50% - 150px);
   left: calc(50% - 360px);
   z-index: 10;
 }
@@ -307,6 +302,39 @@
   --offset: 1460px;
   opacity: 0;
   transition: none;
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 500px;
+  }
+  .card.left {
+    --offset: -500px;
+  }
+  .card.right {
+    --offset: 500px;
+  }
+  .quotes {
+    left: calc(50% - 295px);
+  }
+}
+
+@media (max-width: 610px) {
+  .card {
+    width: 280px;
+    padding: 24px 20px;
+  }
+  .card.left {
+    --offset: -280px;
+  }
+  .card.right {
+    --offset: 280px;
+  }
+  .quotes {
+    width: 50px;
+    top: calc(50% - 100px);
+    left: calc(50% - 160px);
+  }
 }
 
 .commentator {

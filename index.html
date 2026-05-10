@@ -62,7 +62,7 @@
       <div class="flex flex-col items-center gap-2 flex-1 justify-center title">
         <h2 data-lang="frontend_developer" class="font-second text-lg sm:text-xl md:text-3xl lg:text-[2.5rem]">Frontend-Entwickler</h2>
         <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold pb-6">Dieter Foos</h1>
-        <div class="flex gap-12">
+        <div class="flex gap-6 sm:gap-12">
           <a class="button-wrapper" href="#projects">
             <div data-lang="check_my_work" class="content">Meine Arbeit</div>
             <div data-lang="check_my_work" class="scroll-content">Meine Arbeit</div>
@@ -75,7 +75,7 @@
       </div>
 
       <!-- scroll text banner -->
-      <div class="flex max-w-360 mb-10 scroll-wrapper">
+      <div class="flex max-w-360 sm:mb-10 mb-3 scroll-wrapper">
         <div class="flex items-center shrink-0 scroll-container">
           <span data-lang="remote" class="scroll-text"> Remote verfügbar </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />
@@ -104,7 +104,7 @@
         <div class="left-6 sm:left-12 md:left-24 left-lateral px-2">
           <img src="/assets/img/icons/Rectangle.svg" />
           <img class="absolute inlay-arrow" src="/assets/img/icons/arrow_down.svg" alt="" />
-          <div class="h-60 border border-accent"></div>
+          <div class="left-line h-30 [@media(min-height:768px)]:h-60 border border-accent"></div>
         </div>
         <!-- right lateral-->
         <div class="right-6 sm:right-12 md:right-24 right-lateral">
@@ -122,13 +122,13 @@
             <img class="img-hover" src="/assets/img/icons/Linkedin_hover.svg" alt="" />
             <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
           </a>
-          <div class="h-46.5 border border-light"></div>
+          <div class="right-line h-15 [@media(min-height:768px)]:h-44.5 border border-light"></div>
         </div>
       </div>
     </section>
 
     <!-- about section -->
-    <section id="about" class="flex px-24 mt-10 gap-30 mx-auto w-full max-w-360">
+    <section id="about" class="flex flex-col 2xl:flex-row px-24 mt-10 gap-10 2xl:gap-30 mx-auto w-full max-w-360 items-center">
       <div class="relative group mb-auto">
         <img class="opacity-30 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
         <img class="absolute left-9 -top-10 rounded-[30px]" src="/assets/img/hero_picture.jpg" alt="" />
@@ -162,7 +162,7 @@
     </section>
 
     <!-- skill set section -->
-    <section id="skills" class="relative flex w-full max-w-360 mx-auto px-24 gap-20">
+    <section id="skills" class="relative flex flex-col 2xl:flex-row w-full max-w-360 mx-auto px-24 gap-20 items-center">
       <div class="absolute top-30 -left-80 w-150 h-150 rounded-full bg-[radial-gradient(circle,#08463B4D,transparent)] blur-xl"></div>
       <div class="flex flex-col gap-6">
         <h2 data-lang="technologies" class="card-description">Technologien</h2>
@@ -183,7 +183,7 @@
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-18 my-14 skill-items">
+      <div class="skill-items grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-10 sm:gap-20 mx-auto">
         <div>
           <img src="/assets/img/icons/Property 1=HTML.svg" alt="" />
           <span>HTML</span>
@@ -244,10 +244,10 @@
       <span data-lang="explore">Entdecke meine Projekte: Erlebe meine Skills direkt in der Anwendung.</span>
 
       <div class="flex gap-20">
-        <div id="project-list" class="flex flex-col w-220">
+        <div id="project-list" class="flex flex-col w-full">
           <!-- Project list -->
         </div>
-        <div id="project-preview" class="flex relative project-icon-container">
+        <div id="project-preview" class="hidden xl:flex relative min-w-[295px]">
           <!-- preview icons -->
         </div>
       </div>

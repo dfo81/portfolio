@@ -16,7 +16,6 @@ const getProjectList = (project) => {
 }; 
 
 const getProjectPrev = (project, index, total) => {
-  // Berechnet die vertikale Position basierend auf dem Index
   const positions = ["top-1", "top-1/3", "top-3/5", "top-3/4"];
   const posClass = positions[index] || "top-0";
 
@@ -29,13 +28,9 @@ const getProjectPrev = (project, index, total) => {
 };
 
 const getOverlay = (project, nextProjectName) => {
-  // 1. Die richtige Beschreibung wählen
   const description = isEnglish ? project.content.en.decription : project.content.de.decription;
-  
-  // 2. Statische Texte basierend auf isEnglish wählen
   const headline = isEnglish ? "What is this project about?" : "Worum geht es in diesem Projekt?";
   const nextText = isEnglish ? "Next Project" : "Nächstes Projekt";
-
   const techHtml = project.technologies.map(tech => `
     <div class="tech-item">
       <img src="${tech.icon}" alt="" />
@@ -44,7 +39,7 @@ const getOverlay = (project, nextProjectName) => {
   `).join('');
 
   return `
-    <div id="project-overlay" class="fixed inset-0 w-full h-full z-100 items-center justify-center">
+    <div id="project-overlay" class="fixed inset-0 h-full z-100 items-center justify-center">
       <div class="overlay">
         <div class="flex h-full flex-col w-1/2 justify-between">
           <div class="flex flex-col">
