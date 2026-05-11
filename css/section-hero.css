@@ -129,7 +129,7 @@ section.hero {
 /* --- 4. COMPONENTS --- */
 .button-wrapper {
   display: flex;
-  font-size: 1.125rem;
+  font-size: 1rem;
   cursor: pointer;
   width: fit-content;
   border-radius: 100px;
@@ -139,6 +139,12 @@ section.hero {
   transition: border-color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  .button-wrapper {
+    font-size: 1.125rem;
+  }
 }
 
 .button-wrapper:hover {

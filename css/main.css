@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 568px;
+  max-width: 568px;
   padding: 32px;
   overflow: visible;
 }
@@ -29,11 +29,17 @@
 }
 
 .card-title {
-  font-size: 3.75rem;
+  font-size: 2.5rem;
   color: var(--color-accent);
   font-family: var(--font-second-bold);
   font-weight: 700;
   letter-spacing: -3%;
+}
+
+@media (min-width: 768px) {
+  .card-title {
+    font-size: 3.75rem;
+  }
 }
 
 .about-items {
@@ -86,11 +92,20 @@
 
 .project-item {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 1rem;
   border-bottom: 1px solid var(--color-accent);
   cursor: pointer;
+  gap: 12px;
   transition: background-color 300ms;
+}
+
+@media (min-width: 640px) {
+  .project-item {
+    flex-direction: row;
+    padding: 3rem;
+  }
 }
 
 .project-item h2 {
@@ -332,7 +347,7 @@
   }
   .quotes {
     width: 50px;
-    top: calc(50% - 100px);
+    top: calc(50% - 130px);
     left: calc(50% - 160px);
   }
 }
