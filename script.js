@@ -1,4 +1,4 @@
-const button = document.getElementById("toggle-btn");
+const buttons = document.querySelectorAll(".toggle-btn");
 let isEnglish = localStorage.getItem("lang") === "true";
 let translations = null;
 let allProjects = []; 
@@ -7,7 +7,7 @@ renderLang();
 renderProject();
 
 // --- Funktionen für Sprache ---
-button.addEventListener("click", toggle);
+buttons.forEach(btn => btn.addEventListener("click", toggle));
 
 async function toggle() {
   isEnglish = !isEnglish;
@@ -16,7 +16,7 @@ async function toggle() {
 }
 
 async function renderLang() {
-  if (button) button.classList.toggle("active", isEnglish);
+  buttons.forEach(btn => btn.classList.toggle("active", isEnglish));
   
   // 1. Übersetzungen laden, falls Englisch aktiv ist
   if (isEnglish && !translations) {

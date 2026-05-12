@@ -29,16 +29,18 @@
 }
 
 .card-title {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   color: var(--color-accent);
   font-family: var(--font-second-bold);
   font-weight: 700;
   letter-spacing: -3%;
+  line-height: 30px;
 }
 
 @media (min-width: 768px) {
   .card-title {
     font-size: 3.75rem;
+    line-height: 50px;
   }
 }
 
@@ -101,13 +103,6 @@
   transition: background-color 300ms;
 }
 
-@media (min-width: 640px) {
-  .project-item {
-    flex-direction: row;
-    padding: 3rem;
-  }
-}
-
 .project-item h2 {
   font-size: 1.5rem;
   font-family: var(--font-second-bold);
@@ -116,9 +111,20 @@
 
 .project-item div {
   display: flex;
-  gap: 8px;
-  font-size: 18px;
+  gap: 4px;
+  font-size: 1rem;
   align-items: center;
+}
+
+@media (min-width: 640px) {
+  .project-item {
+    flex-direction: row;
+    padding: 3rem;
+  }
+  .project-item div {
+    font-size: 1.125rem;
+    gap: 8px;
+  }
 }
 
 .project-item div img {
@@ -477,3 +483,5 @@
 .footer-link:hover .circle {
   opacity: 1;
 }
+
+
