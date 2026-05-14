@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/assets/img/favicon/icon_dark.png" type="image/x-icon" media="(prefers-color-scheme: light)" />
     <link rel="shortcut icon" href="/assets/img/favicon/icon_light.png" type="image/x-icon" media="(prefers-color-scheme: dark)" />
-    <script src="/js/template.js"></script>
-    <script defer src="script.js"></script>
-    <script defer src="/js/scrollable-buttons.js"></script>
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <script type="module" src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/section-hero.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <title>Portfolio - Dieter Foos</title>
@@ -55,7 +53,7 @@
           <div id="mobile-btn">
             <img src="/assets/img/icons/2. Menu icon.svg" alt="" />
           </div>
-          <div id="mobile-menu" class="rounded-[30px] border-1 border-accent bg-gradient-to-bl from-[#08463B] to-[#1C1C1C]">
+          <div id="mobile-menu">
             <a href="#about" class="nav-link">
               <span data-lang="nav_about" class="link-text">Über mich</span>
               <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
@@ -156,9 +154,9 @@
 
     <!-- about section -->
     <section id="about" class="flex flex-col 2xl:flex-row px-6 md:px-24 gap-10 2xl:gap-30 mx-auto w-full max-w-360 items-center">
-      <div class="group mb-auto grid grid-cols-1 grid-rows-1">
-        <img class="col-start-1 row-start-1 opacity-30 z-0 group-hover:opacity-100 transition-opacity duration-200" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
-        <img class="col-start-1 row-start-1 rounded-[30px] z-10 w-135 align-self-start justify-self-end" src="/assets/img/hero_picture.jpg" alt="" />
+      <div class="group relative mb-auto w-135 aspect-square max-w-full sm:w-142 sm:h-142">
+        <img class="absolute top-0 right-0 w-135 aspect-square max-w-full opacity-30 z-0 group-hover:opacity-100 transition-opacity duration-200 sm:top-auto sm:right-auto sm:bottom-0 sm:left-0" src="/assets/img/icons/photo_bg_hover.svg" alt="" />
+        <img class="absolute top-0 right-0 w-135 aspect-square max-w-full rounded-[30px] object-cover z-10" src="/assets/img/hero_picture.jpg" alt="" />
       </div>
       <div class="flex flex-col pt-12 gap-6">
         <h2 data-lang="who" class="card-description">Wer ich bin</h2>
@@ -347,11 +345,11 @@
       <div class="flex flex-col max-w-142">
         <div class="contact-item">
           <h2 data-lang="your_name">Wie ist dein Name?</h2>
-          <input data-lang="write_your_name" type="text" placeholder="Schreibe deinen Namen hier rein" />
+          <input id="contact-name" data-lang="write_your_name" type="text" placeholder="Schreibe deinen Namen hier rein" />
         </div>
         <div class="contact-item">
           <h2 data-lang="your_email">Deine Emailadresse?</h2>
-          <input data-lang="write_email" type="email" placeholder="deine.email@email.com" />
+          <input id="contact-email" data-lang="write_email" type="email" placeholder="deine.email@email.com" />
         </div>
         <div class="contact-item">
           <h2 data-lang="how_help">Wie kann ich helfen?</h2>
@@ -375,6 +373,7 @@
             <div data-lang="say_hello1" class="content">Sag Hallo ;)</div>
             <div data-lang="say_hello2" class="scroll-content">Sag Hallo ;)</div>
           </div>
+          <p id="contact-status" class="hidden text-center" role="status" aria-live="polite"></p>
         </div>
       </div>
     </section>

@@ -60,7 +60,7 @@ nav a.nav-link .link-text:hover + .circle {
 
 /* Standardzustand (Zu) */
 #mobile-menu {
-  position: absolute;  /* statt fixed */
+  position: absolute;
   top: 30px;
   right: 20px;
   width: 215px;
@@ -70,6 +70,9 @@ nav a.nav-link .link-text:hover + .circle {
   opacity: 0;
   pointer-events: none;
   overflow: hidden;
+  border: 1px solid var(--color-accent);
+  border-radius: 30px;
+  background: linear-gradient(to bottom left, var(--color-bg-second), var(--color-bg));
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
 }
 

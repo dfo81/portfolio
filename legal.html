@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/assets/img/favicon/icon_dark.png" type="image/x-icon" media="(prefers-color-scheme: light)" />
     <link rel="shortcut icon" href="/assets/img/favicon/icon_light.png" type="image/x-icon" media="(prefers-color-scheme: dark)" />
-    <script defer src="script.js"></script>
-    <script defer src="/js/scrollable-buttons.js"></script>
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <script type="module" src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/section-hero.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/legal.css" />
@@ -18,15 +17,15 @@
 
   <body>
     <header>
-      <div class="flex w-full max-w-360 px-24 justify-between">
+      <div class="flex px-6 md:px-24 w-full max-w-360 justify-between">
         <!-- nav -->
-        <nav class="flex gap-6 items-center">
-          <div id="toggle-btn">
-            <div class="relative lang-de-wrapper">
+        <nav class="hidden min-[840px]:flex gap-6">
+          <div class="toggle-btn">
+            <div class="lang-de-wrapper">
               <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_de.svg" />
               <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_de_hover.svg" />
             </div>
-            <div class="relative lang-en-wrapper">
+            <div class="lang-en-wrapper">
               <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_en.svg" />
               <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_en_hover.svg" />
             </div>
@@ -50,8 +49,37 @@
           <img src="/assets/img/logo/logo_aquamarine.png" alt="" />
           <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
         </div>
+        <!-- mobile menu -->
+        <div class="flex items-center gap-4 min-[840px]:hidden">
+          <div id="mobile-btn">
+            <img src="/assets/img/icons/2. Menu icon.svg" alt="" />
+          </div>
+          <div id="mobile-menu">
+            <a href="index.html#about" class="nav-link">
+              <span data-lang="nav_about" class="link-text">Über mich</span>
+              <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+            </a>
+            <a href="index.html#skills" class="nav-link">
+              <span data-lang="skill_set" class="link-text">Fähigkeiten</span>
+              <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+            </a>
+            <a href="index.html#projects" class="nav-link">
+              <span data-lang="projects" class="link-text">Projekte</span>
+              <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+            </a>
+            <div class="toggle-btn">
+              <div class="lang-de-wrapper">
+                <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_de.svg" />
+                <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_de_hover.svg" />
+              </div>
+              <div class="lang-en-wrapper">
+                <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_en.svg" />
+                <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_en_hover.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-       
     </header>
 
     <section class="legal">

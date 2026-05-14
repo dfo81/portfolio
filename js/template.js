@@ -1,6 +1,11 @@
-const getProjectList = (project) => { 
+/**
+ * Returns the HTML for one entry in the textual project list.
+ * @param {Object} project A project descriptor from `projects.json`.
+ * @returns {string} HTML markup.
+ */
+export const getProjectList = (project) => {
   const techList = project.technologies
-    .map(tech => tech.name)
+    .map((tech) => tech.name)
     .join(` <img src="/assets/img/icons/spacer.svg" alt="" /> `);
   return `
     <div class="project-item" data-project="${project.title.toLowerCase()}">
@@ -13,9 +18,16 @@ const getProjectList = (project) => {
       </div>
     </div>
   `;
-}; 
+};
 
-const getProjectPrev = (project, index, total) => {
+/**
+ * Returns the HTML for one preview-icon shown next to the project list.
+ * @param {Object} project A project descriptor from `projects.json`.
+ * @param {number} index Zero-based index of the project (controls vertical position).
+ * @param {number} total Total project count (currently unused, kept for API stability).
+ * @returns {string} HTML markup.
+ */
+export const getProjectPrev = (project, index, total) => {
   const positions = ["top-1", "top-1/3", "top-3/5", "top-3/4"];
   const posClass = positions[index] || "top-0";
 
@@ -27,23 +39,34 @@ const getProjectPrev = (project, index, total) => {
   `;
 };
 
-const getOverlay = (project, nextProjectName) => {
+/**
+ * Returns the HTML for the project-detail overlay.
+ * @param {Object} project The project to display.
+ * @param {string} nextProjectName Title of the next project (rendered into the "Next" link).
+ * @param {boolean} isEnglish Whether the UI is currently in English.
+ * @returns {string} HTML markup.
+ */
+export const getOverlay = (project, nextProjectName, isEnglish) => {
   const description = isEnglish ? project.content.en.decription : project.content.de.decription;
   const headline = isEnglish ? "What is this project about?" : "Worum geht es in diesem Projekt?";
   const nextText = isEnglish ? "Next Project" : "Nächstes Projekt";
-  const techHtml = project.technologies.map(tech => `
+  const techHtml = project.technologies
+    .map(
+      (tech) => `
     <div class="tech-item">
       <img src="${tech.icon}" alt="" />
       <span>${tech.name}</span>
     </div>
-  `).join('');
+  `
+    )
+    .join("");
 
   return `
     <div id="project-overlay" class="fixed inset-0 h-full z-100 items-center justify-center">
       <div class="overlay">
         <div class="flex h-full flex-col w-1/2 justify-between">
           <div class="flex flex-col">
-            <h1 class="text-9xl font-bold text-accent tracking-tight">${String(project.id).padStart(2, '0')}</h1>
+            <h1 class="text-9xl font-bold text-accent tracking-tight">${String(project.id).padStart(2, "0")}</h1>
             <h2 class="text-6xl font-second-bold tracking-tight">${project.title}</h2>
           </div>
           <div class="flex flex-col gap-6">
@@ -61,7 +84,7 @@ const getOverlay = (project, nextProjectName) => {
             <img src="/assets/img/icons/x_default.svg" />
             <img class="absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity" src="/assets/img/icons/x_hover.svg">
           </div>
-          
+
           <img class="w-full" src="${project.image}" alt="" />
 
           <div onclick="openNextProject('${nextProjectName}')" class="group flex gap-2 cursor-pointer items-center text-accent text-2xl hover:text-white duration-200 ease">
