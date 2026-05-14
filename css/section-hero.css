@@ -58,6 +58,27 @@ nav a.nav-link .link-text:hover + .circle {
   opacity: 1;
 }
 
+/* Standardzustand (Zu) */
+#mobile-menu {
+  position: absolute;  /* statt fixed */
+  top: 30px;
+  right: 20px;
+  width: 215px;
+  padding: 24px 40px;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+}
+
+#mobile-menu.is-active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(40px);
+  pointer-events: auto;
+}
 /* --- 2. LAYOUT & SECTIONS --- */
 section.hero {
   min-height: min(100dvh, 950px);
@@ -66,66 +87,63 @@ section.hero {
 }
 
 /* --- 3. LANGUAGE-SWITCHER --- */
-#toggle-btn {
+/* --- 3. LANGUAGE-SWITCHER --- */
+.toggle-btn {
   position: relative;
-  display: inline-block; 
+  top: 8px;
+  height: 40px;
+  width: 96px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 10;
 }
 
-/* Der DE-Wrapper gibt die Größe vor */
-.lang-de-wrapper {
-  position: relative; 
-  transition: opacity 0.2s ease;
-}
-
-/* Der EN-Wrapper legt sich exakt über den DE-Wrapper */
+.lang-de-wrapper, 
 .lang-en-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 
-/* Hover-Logik (Standardbilder verschwinden, Hover-Bilder darunter werden sichtbar) */
-.lang-de-default, 
-.lang-en-default {
-  position: relative;
-  z-index: 2;
-  transition: opacity 0.2s ease;
-  cursor: pointer;
-}
-
+/* Hover-Logik für die Bilder */
 .lang-de-hover, 
 .lang-en-hover {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
   z-index: 1;
 }
 
-.lang-de-default:hover, 
-.lang-en-default:hover {
+/* Standard: DE anzeigen, EN verstecken */
+.lang-de-wrapper { opacity: 1; pointer-events: auto; }
+.lang-en-wrapper { opacity: 0; pointer-events: none; }
+
+/* Status: Englisch aktiv (.active) */
+.toggle-btn.active .lang-de-wrapper { 
+  opacity: 0; 
+  pointer-events: none; 
+}
+.toggle-btn.active .lang-en-wrapper { 
+  opacity: 1; 
+  pointer-events: auto; 
+}
+
+/* Hover-Effekt: Standardbild weg, Hover-Bild da */
+.lang-de-wrapper:hover .lang-de-default,
+.lang-en-wrapper:hover .lang-en-default {
   opacity: 0;
 }
 
-/* --- Status-Umschaltung --- */
-
-/* Wenn Englisch aktiv: DE unsichtbar, EN sichtbar */
-#toggle-btn.active .lang-de-wrapper {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-#toggle-btn.active .lang-en-wrapper {
+.lang-de-wrapper:hover .lang-de-hover,
+.lang-en-wrapper:hover .lang-en-hover {
   opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
 }
+
 /* --- 4. COMPONENTS --- */
 .button-wrapper {
   display: flex;
@@ -208,6 +226,10 @@ section.hero {
 
 /* --- 6. ANIMATIONS & SCROLL TEXT --- */
 .scroll-wrapper {
+  display: flex;           /* explizit statt Tailwind */
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
   background-color: var(--color-scroll);
   transform: skewY(-3deg);
   backdrop-filter: blur(4px);
@@ -220,10 +242,16 @@ section.hero {
     transparent 100%
   );
   padding: 4px 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  contain: layout;
 }
 
 .scroll-container {
   animation: scrollLeft 48s linear infinite;
+  will-change: transform;
+  min-width: 100%;
+  flex-shrink: 0;
 }
 
 .scroll-text, .scroll-container img {

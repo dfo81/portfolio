@@ -16,17 +16,17 @@
     <title>Portfolio - Dieter Foos</title>
   </head>
 
-  <body class="flex flex-col gap-24 2xl:gap-36 bg-bg">
+  <body class="flex relative flex-col gap-24 2xl:gap-36 bg-bg">
     <header>
       <div class="flex px-6 md:px-24 w-full max-w-360 justify-between">
         <!-- nav -->
-        <nav class="hidden min-[840px]:flex gap-6 items-center nav">
-          <div id="toggle-btn" class="toggle-btn">
-            <div class="relative lang-de-wrapper">
+        <nav class="hidden min-[840px]:flex gap-6">
+          <div class="toggle-btn">
+            <div class="lang-de-wrapper">
               <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_de.svg" />
               <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_de_hover.svg" />
             </div>
-            <div class="relative lang-en-wrapper">
+            <div class="lang-en-wrapper">
               <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_en.svg" />
               <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_en_hover.svg" />
             </div>
@@ -51,9 +51,11 @@
           <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
         </div>
         <!-- mobile menu -->
-        <div id="mobile-btn" class="flex relative min-[840px]:hidden cursor-pointer">
-          <img src="/assets/img/icons/2. Menu icon.svg" alt="" />
-          <div id="mobile-menu" class="flex-col p-10 absolute top-12 -left-38 rounded-[30px] border-1 border-accent bg-gradient-to-bl from-[#08463B] to-[#1C1C1C]">
+        <div class="flex items-center gap-4 min-[840px]:hidden">
+          <div id="mobile-btn">
+            <img src="/assets/img/icons/2. Menu icon.svg" alt="" />
+          </div>
+          <div id="mobile-menu" class="rounded-[30px] border-1 border-accent bg-gradient-to-bl from-[#08463B] to-[#1C1C1C]">
             <a href="#about" class="nav-link">
               <span data-lang="nav_about" class="link-text">Über mich</span>
               <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
@@ -66,12 +68,12 @@
               <span data-lang="projects" class="link-text">Projekte</span>
               <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
             </a>
-            <div class="toggle-btn pt-4">
-              <div class="relative lang-de-wrapper">
+            <div class="toggle-btn">
+              <div class="lang-de-wrapper">
                 <img class="lang-img lang-de-default" src="/assets/img/icons/lang_switch_de.svg" />
                 <img class="lang-img lang-de-hover" src="/assets/img/icons/lang_switch_de_hover.svg" />
               </div>
-              <div class="relative lang-en-wrapper">
+              <div class="lang-en-wrapper">
                 <img class="lang-img lang-en-default" src="/assets/img/icons/lang_switch_en.svg" />
                 <img class="lang-img lang-en-hover" src="/assets/img/icons/lang_switch_en_hover.svg" />
               </div>
@@ -100,7 +102,7 @@
       </div>
 
       <!-- scroll text banner -->
-      <div class="flex max-w-360 sm:mb-10 mb-3 scroll-wrapper">
+      <div class="max-w-360 sm:mb-10 mb-3 scroll-wrapper">
         <div class="flex items-center shrink-0 scroll-container">
           <span data-lang="remote" class="scroll-text"> Remote verfügbar </span>
           <img src="/assets/img/icons/radio_button.svg" alt="" />

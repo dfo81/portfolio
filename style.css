@@ -1,6 +1,6 @@
 * {
   scroll-behavior: smooth;
-  /* outline: 1px solid rgba(255, 0, 0, 0.1); */
+  outline: 1px solid rgba(255, 0, 0, 0.1);
 }
 
 html {
@@ -8,6 +8,8 @@ html {
   font-family: var(--font-main);
   font-weight: 400;
   scrollbar-width: none;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 section[id] {
@@ -20,7 +22,8 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
   height: 100%;
   background: radial-gradient(150px circle at var(--cursor-x) var(--cursor-y), var(--color-accent), transparent 50%);
   filter: blur(90px);

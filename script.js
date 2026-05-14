@@ -1,36 +1,42 @@
 const buttons = document.querySelectorAll(".toggle-btn");
 let isEnglish = localStorage.getItem("lang") === "true";
 let translations = null;
-let allProjects = []; 
+let allProjects = [];
 
 renderLang();
 renderProject();
 
 // --- Funktionen für Sprache ---
-buttons.forEach(btn => btn.addEventListener("click", toggle));
+buttons.forEach((btn) => btn.addEventListener("click", toggle));
 
-async function toggle() {
+async function toggle(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const menu = document.getElementById("mobile-menu");
+  const wasActive = menu.classList.contains("is-active");
   isEnglish = !isEnglish;
   localStorage.setItem("lang", isEnglish);
   await renderLang();
+  if (wasActive) {
+    menu.classList.add("is-active");
+  }
 }
 
 async function renderLang() {
-  buttons.forEach(btn => btn.classList.toggle("active", isEnglish));
-  
-  // 1. Übersetzungen laden, falls Englisch aktiv ist
+  buttons.forEach((btn) => btn.classList.toggle("active", isEnglish));
   if (isEnglish && !translations) {
     try {
-      translations = await fetch("/json/en.json").then(r => r.json());
+      translations = await fetch("/json/en.json").then((r) => r.json());
     } catch (e) {
       console.error("EN-JSON konnte nicht geladen werden", e);
     }
   }
 
-  document.querySelectorAll("[data-lang]").forEach(el => {
+  document.querySelectorAll("[data-lang]").forEach((el) => {
     const key = el.dataset.lang;
 
-    // 2. WICHTIG: Speichere den deutschen Text als "Original", falls noch nicht geschehen
     if (!el.dataset.original) {
       if (el.placeholder) {
         el.dataset.original = el.placeholder;
@@ -39,16 +45,10 @@ async function renderLang() {
       }
     }
 
-    // 3. Bestimme das Ziel-Wort: 
-    // Wenn Englisch -> nimm Wert aus JSON (oder Original als Fallback)
-    // Wenn Deutsch -> nimm IMMER das gespeicherte Original
-    const targetText = isEnglish 
-      ? (translations ? translations[key] : el.dataset.original) 
-      : el.dataset.original;
+    const targetText = isEnglish ? (translations ? translations[key] : el.dataset.original) : el.dataset.original;
 
-    // 4. Den Text nur zuweisen, wenn targetText auch wirklich existiert
     if (targetText !== undefined) {
-      if (el.placeholder !== undefined && el.hasAttribute('placeholder')) {
+      if (el.placeholder !== undefined && el.hasAttribute("placeholder")) {
         el.placeholder = targetText;
       } else {
         el.textContent = targetText;
@@ -57,17 +57,50 @@ async function renderLang() {
   });
 }
 
+const menu = document.getElementById("mobile-menu");
+const menuBtn = document.getElementById("mobile-btn");
+
+// Burger-Button (Öffnen/Schließen)
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menu.classList.toggle("is-active");
+});
+
+// Klicks INNERHALB des Menüs
+menu.addEventListener("click", (e) => {
+  const isNavLink = e.target.closest(".nav-link");
+  const isLangToggle = e.target.closest(".toggle-btn");
+
+  if (isNavLink) {
+    // Nur bei Links schließen
+    menu.classList.remove("is-active");
+  }
+
+  if (isLangToggle) {
+    // Beim Sprachwechsel: Klick stoppen, damit das Menü OFFEN bleibt
+    e.stopPropagation();
+    // Hier wird NUR deine toggle() Funktion für die Sprache aufgerufen
+  }
+});
+
+// Klick AUẞERHALB schließt das Menü weiterhin
+document.addEventListener("click", (e) => {
+  if (menu.classList.contains("is-active") && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
+    menu.classList.remove("is-active");
+  }
+});
+
 // --- Funktionen für Projekte ---
 async function renderProject() {
-  const listContainer = document.getElementById('project-list');
-  const iconContainer = document.getElementById('project-preview');
+  const listContainer = document.getElementById("project-list");
+  const iconContainer = document.getElementById("project-preview");
 
   if (!listContainer || !iconContainer) return;
   try {
-    let response = await fetch('./json/projects.json');
+    let response = await fetch("./json/projects.json");
     let data = await response.json();
-    allProjects = data.projects; 
-    
+    allProjects = data.projects;
+
     listContainer.innerHTML = "";
     iconContainer.innerHTML = "";
 
@@ -77,10 +110,9 @@ async function renderProject() {
     });
 
     initHoverEffects();
-    initClickEffects(allProjects); 
-
+    initClickEffects(allProjects);
   } catch (error) {
-    console.error('Fehler beim Laden der Daten:', error);
+    console.error("Fehler beim Laden der Daten:", error);
   }
 }
 
@@ -128,7 +160,7 @@ function renderOverlay(projectData, nextProjectName) {
 }
 
 function openNextProject(projectName) {
-  const index = allProjects.findIndex(p => p.title === projectName);
+  const index = allProjects.findIndex((p) => p.title === projectName);
   const projectData = allProjects[index];
   const nextIndex = (index + 1) % allProjects.length;
   const nextProjectName = allProjects[nextIndex].title;
@@ -161,10 +193,9 @@ document.addEventListener("mouseenter", () => {
   document.documentElement.style.setProperty("--cursor-opacity", "1");
 });
 
-
 // carousell
 const cards = Array.from(document.querySelectorAll(".card"));
-const order = [2, 0, 1]; 
+const order = [2, 0, 1];
 const classes = ["left", "center", "right"];
 let isAnimating = false;
 
@@ -230,7 +261,6 @@ logos.forEach((logo) => {
     window.location.href = "index.html";
   });
 });
-
 
 //close overlay
 function closeOverlay(isBackAction = false) {
