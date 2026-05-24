@@ -7,19 +7,19 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "assets/img/icons/html.svg"
+          "icon": "/assets/img/icons/html.svg"
         },
         {
           "name": "CSS",
-          "icon": "assets/img/icons/css.svg"
+          "icon": "/assets/img/icons/css.svg"
         },
         {
           "name": "Javascript",
-          "icon": "assets/img/icons/javascript.svg"
+          "icon": "/assets/img/icons/javascript.svg"
         },
         {
           "name": "Firebase",
-          "icon": "assets/img/icons/firebase.svg"
+          "icon": "/assets/img/icons/firebase.svg"
         }
       ],
       "links": {
@@ -28,10 +28,10 @@
       },
       "content": {
         "de": {
-            "decription": "Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen und weise Benutzern sowie Kategorien zu."
+            "description": "Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen und weise Benutzern sowie Kategorien zu."
         },
         "en": {
-           "decription": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+           "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
         }
       }
     },
@@ -42,19 +42,19 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "assets/img/icons/html.svg"
+          "icon": "/assets/img/icons/html.svg"
         },
         {
           "name": "CSS",
-          "icon": "assets/img/icons/css.svg"
+          "icon": "/assets/img/icons/css.svg"
         },
         {
           "name": "Javascript",
-          "icon": "assets/img/icons/javascript.svg"
+          "icon": "/assets/img/icons/javascript.svg"
         },
         {
           "name": "Canvas",
-          "icon": "assets/img/icons/canvas.png"
+          "icon": "/assets/img/icons/canvas.png"
         }
       ],
       "links": {
@@ -63,10 +63,10 @@
       },
       "content": {
         "de": {
-            "decription": "Ein Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, sich in einer gefährlichen Wüste voller Kakteen, aggressiver Hühner und fliegender Flaschen zu behaupten. Sammle Münzen und Tabasco-Flaschen, um den Endboss zu besiegen."
+            "description": "Ein Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, sich in einer gefährlichen Wüste voller Kakteen, aggressiver Hühner und fliegender Flaschen zu behaupten. Sammle Münzen und Tabasco-Flaschen, um den Endboss zu besiegen."
         },
         "en": {
-           "decription": "A jump-and-run game based on an object-oriented programming approach. Join Pepe on his journey through a desert landscape filled with obstacles and enemies. Collect coins and salsa bottles to take down the final boss."
+           "description": "A jump-and-run game built on an object-oriented approach. Help Pepe survive in a dangerous desert filled with cacti, aggressive chickens, and flying bottles. Collect coins and tabasco bottles to take down the final boss."
         }
       }
     },
@@ -77,19 +77,19 @@
       "technologies": [
         {
           "name": "HTML",
-          "icon": "assets/img/icons/html.svg"
+          "icon": "/assets/img/icons/html.svg"
         },
         {
           "name": "CSS",
-          "icon": "assets/img/icons/css.svg"
+          "icon": "/assets/img/icons/css.svg"
         },
         {
           "name": "Javascript",
-          "icon": "assets/img/icons/javascript.svg"
+          "icon": "/assets/img/icons/javascript.svg"
         },
         {
           "name": "Rest-API",
-          "icon": "assets/img/icons/restapi.png"
+          "icon": "/assets/img/icons/restapi.png"
         }
       ],
       "links": {
@@ -98,10 +98,10 @@
       },
       "content": {
         "de": {
-            "decription": "Basierend auf der PokeAPI ist dies eine interaktive Enzyklopädie für Pokémon. Das Projekt demonstriert den sauberen Umgang mit asynchronen API-Anfragen, die Verarbeitung von JSON-Daten und deren dynamische Anzeige in einem benutzerfreundlichen Interface."
+            "description": "Basierend auf der PokeAPI ist dies eine interaktive Enzyklopädie für Pokémon. Das Projekt demonstriert den sauberen Umgang mit asynchronen API-Anfragen, die Verarbeitung von JSON-Daten und deren dynamische Anzeige in einem benutzerfreundlichen Interface."
         },
         "en": {
-           "decription": "Based on the PokeAPI, this project is an interactive encyclopedia for Pokémon. It demonstrates the clean handling of asynchronous API requests, processing JSON data, and dynamically rendering it within a user-friendly interface."
+           "description": "Based on the PokeAPI, this project is an interactive encyclopedia for Pokémon. It demonstrates the clean handling of asynchronous API requests, processing JSON data, and dynamically rendering it within a user-friendly interface."
         }
       }
     }

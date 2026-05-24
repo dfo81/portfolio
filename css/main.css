@@ -1,12 +1,12 @@
 /* ==========================================================================
-   PROJEKT- & CONTENT-STYLES
+   PROJECT & CONTENT STYLES
    ==========================================================================
-   1. SECTION CARDS ........... Skill-Karten & Beschreibungen
-   2. PROJECT SECTION ......... Portfolio-Liste & Hover-Effekte
-   3. REFERENCES / CAROUSEL ... Testimonials & Slider-Steuerung
-   4. CONTACT SECTION ......... Formular-Elemente & Checkboxen
-   5. FOOTER .................. Links & Abschluss-Animationen
-   ========================================================================== 
+   1. SECTION CARDS ........... Skill cards & descriptions
+   2. PROJECT SECTION ......... Portfolio list & hover effects
+   3. REFERENCES / CAROUSEL ... Testimonials & slider controls
+   4. CONTACT SECTION ......... Form elements & checkboxes
+   5. FOOTER .................. Links & closing animations
+   ==========================================================================
 */
 
 /* --- 1. SECTION CARDS --- */
@@ -61,7 +61,7 @@
   height: 32px;
 }
 
-/* Skill-Items innerhalb der Cards */
+/* Skill items inside the cards */
 .skill-items div {
   display: flex;
   flex-direction: column;
@@ -180,7 +180,7 @@
   gap: 4px;
 }
 
-/* Projekt Icons & Hover-Visuals */
+/* Project icons & hover visuals */
 .project-icon {
   display: flex;
   position: absolute;
@@ -244,7 +244,7 @@
   transform: translateX(4px);
 }
 
-/* Haupt-Carousel Logik */
+/* Main carousel logic */
 .carousel {
   position: relative;
   width: 1440px;
@@ -392,10 +392,10 @@
   outline: none;
   caret-color: var(--color-accent);
   width: 100%;
-  line-height: 1.5rem; /* Wichtig für die Berechnung */
-  min-height: 1.5rem; /* 1.5 Zeilenhöhe + Padding oben/unten */
+  line-height: 1.5rem; /* important for height calculation */
+  min-height: 1.5rem; /* 1.5 line height + vertical padding */
   resize: none;
-  overflow-y: hidden; /* Versteckt den Scrollbalken, solange er nicht gebraucht wird */
+  overflow-y: hidden; /* hide scrollbar until needed */
   transition: height 0.2s ease;
 }
 
@@ -404,15 +404,15 @@
 }
 
 .contact-item textarea::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05) !important; /* Dezent transparent */
+  background: rgba(0, 0, 0, 0.05) !important; /* subtle transparent track */
   border-radius: 4px;
 }
 
-/* Der bewegliche Teil (Griff) */
+/* Scrollbar thumb */
 .contact-item textarea::-webkit-scrollbar-thumb {
-  background: var(--color-accent) !important; /* Hier deine Akzentfarbe rein */
+  background: var(--color-accent) !important; /* accent colour */
   border-radius: 10px;
-  border: 2px solid transparent; /* Erzeugt einen kleinen Abstand zur Schiene */
+  border: 2px solid transparent; /* small gap from the track */
   background-clip: content-box;
 }
 
@@ -445,7 +445,7 @@
   opacity: 1;
 }
 
-/* Contact Button Zustände */
+/* Contact button states */
 #say-hallo-btn {
   pointer-events: none;
   opacity: 0.5;

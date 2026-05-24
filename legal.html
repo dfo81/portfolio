@@ -90,7 +90,7 @@
       <h2 id="m56">Kontaktmöglichkeiten</h2>
       <p>E-Mail-Adresse: <a href="mailto:contact@dieter-foos.de">contact@dieter-foos.de</a> <br />Telefon: +4915783446357</p>
 
-      <h1>Datenschutzerklärung</h1>
+      <h1 id="privacy" class="scroll-mt-28">Datenschutzerklärung</h1>
       <h2 id="m716">Präambel</h2>
       <p>
         Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang verarbeiten. Die
@@ -560,33 +560,36 @@
         >
       </p>
     </section>
-    <footer class="flex w-full max-w-360 mx-auto px-24 mb-16 justify-between items-center">
-      <div class="flex flex-col justify-between self-stretch">
-        <div class="logo-wrapper">
-          <img src="/assets/img/logo/logo_aquamarine.png" alt="" />
-          <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
+    <footer class="flex flex-col w-full max-w-360 mx-auto px-6 gap-8 md:px-24 mb-16">
+      <div class="flex items-center justify-between w-full">
+        <div class="flex flex-col justify-between self-stretch">
+          <div class="logo-wrapper">
+            <img src="/assets/img/logo/logo_aquamarine.png" alt="" />
+            <img class="logo-white" src="/assets/img/logo/logo_w_bracket.png" alt="" />
+          </div>
+          <span>Web Developer<br />Munich Germany</span>
         </div>
-        <span>Web Developer<br />Munich Germany</span>
+        <div class="text-accent font-second text-base hidden md:flex">&copy; Dieter Foos 2026</div>
+        <div class="flex flex-col gap-1">
+          <a href="https://github.com/dfo81" class="footer-link">
+            <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+            <span class="link-text">Github</span>
+          </a>
+          <a href="https://www.linkedin.com/in/dieter-foos-7a13a63ba/" class="footer-link">
+            <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+            <span class="link-text">Linkedin</span>
+          </a>
+          <a href="mailto:contact@dieter-foos.de" class="footer-link">
+            <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+            <span class="link-text">Email</span>
+          </a>
+          <a href="index.html" class="footer-link">
+            <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
+            <span data-lang="nav_about" class="link-text">Über mich</span>
+          </a>
+        </div>
       </div>
-      <div class="text-accent font-[firacode] text-base">&copy; Dieter Foos 2026</div>
-      <div class="flex flex-col gap-1">
-        <a href="https://github.com/dfo81" data-lang="about" class="footer-link">
-          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="link-text">Github</span>
-        </a>
-        <a href="https://www.linkedin.com/in/dieter-foos-7a13a63ba/" data-lang="about" class="footer-link">
-          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="link-text">Linkedin</span>
-        </a>
-        <a href="mailto:contact@dieter-foos.de" data-lang="about" class="footer-link">
-          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="link-text">Email</span>
-        </a>
-        <a href="" data-lang="about" class="footer-link">
-          <img class="circle" src="/assets/img/icons/radio_button.svg" alt="" />
-          <span class="link-text">Legal Notice</span>
-        </a>
-      </div>
+      <div class="text-accent font-second text-base flex md:hidden self-center">&copy; Dieter Foos 2026</div>
     </footer>
   </body>
 </html>

@@ -1,13 +1,13 @@
 /* ==========================================================================
-   MAIN-STYLESHEET HERO-PAGE
+   MAIN STYLESHEET — HERO PAGE
    ==========================================================================
-   1. NAVIGATION .............. Header, Nav-Links o& Log
-   2. LAYOUT & SECTIONS ....... Hero-Bereich & Grundstruktur
-   3. LANGUAGE-SWITCHER ......... Language Toggle Logik
-   4. COMPONENTS ............. Buttons & Interaktive Elemente
-   5. SIDEBARS (LATERAL) ...... Seitliche Social-Media & Info-Leisten
-   6. ANIMATIONS (KEYFRAMES) .. Globale Keyframes & Lauftexte
-   ========================================================================== 
+   1. NAVIGATION .............. Header, nav links & logo
+   2. LAYOUT & SECTIONS ....... Hero area & base structure
+   3. LANGUAGE SWITCHER ....... Language toggle logic
+   4. COMPONENTS .............. Buttons & interactive elements
+   5. SIDEBARS (LATERAL) ...... Side social media & info bars
+   6. ANIMATIONS (KEYFRAMES) .. Global keyframes & marquee text
+   ==========================================================================
 */
 
 /* --- 1. HEADER & NAVIGATION --- */
@@ -58,7 +58,7 @@ nav a.nav-link .link-text:hover + .circle {
   opacity: 1;
 }
 
-/* Standardzustand (Zu) */
+/* Default state (closed) */
 #mobile-menu {
   position: absolute;
   top: 30px;
@@ -89,8 +89,7 @@ section.hero {
   background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
 }
 
-/* --- 3. LANGUAGE-SWITCHER --- */
-/* --- 3. LANGUAGE-SWITCHER --- */
+/* --- 3. LANGUAGE SWITCHER --- */
 .toggle-btn {
   position: relative;
   top: 8px;
@@ -111,7 +110,7 @@ section.hero {
   transition: opacity 0.3s ease;
 }
 
-/* Hover-Logik für die Bilder */
+/* Image hover swap */
 .lang-de-hover, 
 .lang-en-hover {
   position: absolute;
@@ -122,11 +121,11 @@ section.hero {
   z-index: 1;
 }
 
-/* Standard: DE anzeigen, EN verstecken */
+/* Default: show DE, hide EN */
 .lang-de-wrapper { opacity: 1; pointer-events: auto; }
 .lang-en-wrapper { opacity: 0; pointer-events: none; }
 
-/* Status: Englisch aktiv (.active) */
+/* State: English active (.active) */
 .toggle-btn.active .lang-de-wrapper { 
   opacity: 0; 
   pointer-events: none; 
@@ -136,7 +135,7 @@ section.hero {
   pointer-events: auto; 
 }
 
-/* Hover-Effekt: Standardbild weg, Hover-Bild da */
+/* Hover effect: hide default image, show hover image */
 .lang-de-wrapper:hover .lang-de-default,
 .lang-en-wrapper:hover .lang-en-default {
   opacity: 0;
@@ -229,7 +228,7 @@ section.hero {
 
 /* --- 6. ANIMATIONS & SCROLL TEXT --- */
 .scroll-wrapper {
-  display: flex;           /* explizit statt Tailwind */
+  display: flex;           /* explicit instead of Tailwind */
   position: relative;
   width: 100%;
   max-width: 100vw;

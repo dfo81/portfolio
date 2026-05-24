@@ -47,7 +47,7 @@ export const getProjectPrev = (project, index, total) => {
  * @returns {string} HTML markup.
  */
 export const getOverlay = (project, nextProjectName, isEnglish) => {
-  const description = isEnglish ? project.content.en.decription : project.content.de.decription;
+  const description = isEnglish ? project.content.en.description : project.content.de.description;
   const headline = isEnglish ? "What is this project about?" : "Worum geht es in diesem Projekt?";
   const nextText = isEnglish ? "Next Project" : "Nächstes Projekt";
   const techHtml = project.technologies
