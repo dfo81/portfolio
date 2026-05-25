@@ -231,7 +231,7 @@ section.hero {
   display: flex;           /* explicit instead of Tailwind */
   position: relative;
   width: 100%;
-  max-width: 100vw;
+  max-width: 1440px;
   background-color: var(--color-scroll);
   transform: skewY(-3deg);
   backdrop-filter: blur(4px);

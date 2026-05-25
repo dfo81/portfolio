@@ -1,16 +1,40 @@
 // --- Mouse gradient effect ---
+// Start hidden until the first mousemove tells us where the cursor is.
+document.body.classList.add("cursor-hidden");
+
+const EDGE_THRESHOLD = 30;
+
+/**
+ * Hides the cursor gradient by re-adding the cursor-hidden class on body.
+ * @returns {void}
+ */
+function hideCursor() {
+  document.body.classList.add("cursor-hidden");
+}
+
 document.addEventListener("mousemove", (e) => {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  const nearEdge =
+    e.clientX < EDGE_THRESHOLD ||
+    e.clientY < EDGE_THRESHOLD ||
+    e.clientX > w - EDGE_THRESHOLD ||
+    e.clientY > h - EDGE_THRESHOLD;
+
+  if (nearEdge) {
+    hideCursor();
+    return;
+  }
+
   document.documentElement.style.setProperty("--cursor-x", e.clientX + "px");
   document.documentElement.style.setProperty("--cursor-y", e.clientY + "px");
+  document.body.classList.remove("cursor-hidden");
 });
 
-document.addEventListener("mouseleave", () => {
-  document.documentElement.style.setProperty("--cursor-opacity", "0");
-});
-
-document.addEventListener("mouseenter", () => {
-  document.documentElement.style.setProperty("--cursor-opacity", "1");
-});
+// Multiple safety nets so the gradient never lingers when the cursor really left.
+document.documentElement.addEventListener("mouseleave", hideCursor);
+document.addEventListener("mouseleave", hideCursor);
+window.addEventListener("blur", hideCursor);
 
 // --- Contact-form checkbox / submit button ---
 document.querySelectorAll(".checkbox").forEach((el) => {
