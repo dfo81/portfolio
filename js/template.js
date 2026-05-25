@@ -62,8 +62,8 @@ export const getOverlay = (project, nextProjectName, isEnglish) => {
     .join("");
 
   return `
-    <div id="project-overlay" class="fixed inset-0 z-100 flex items-center justify-center p-4 xl:p-0">
-      <div class="relative w-full max-w-135 max-h-[95vh] overflow-y-auto xl:w-312 xl:max-w-none xl:h-164 xl:max-h-none xl:overflow-visible bg-[linear-gradient(45deg,var(--color-bg)_40%,var(--color-bg-second)_100%)] rounded-4xl border-1 border-accent flex flex-col xl:flex-row xl:items-stretch gap-6 xl:gap-22 px-6 py-10 xl:px-22 xl:py-20">
+    <div id="project-overlay" class="fixed inset-0 z-100 overflow-y-auto p-4 xl:overflow-hidden xl:flex xl:items-center xl:justify-center xl:p-0">
+      <div class="relative w-full max-w-135 mx-auto xl:mx-0 xl:w-312 xl:max-w-none xl:h-164 xl:overflow-visible bg-[linear-gradient(45deg,var(--color-bg)_40%,var(--color-bg-second)_100%)] rounded-4xl border-1 border-accent flex flex-col xl:flex-row xl:items-stretch gap-6 xl:gap-22 px-6 py-10 xl:px-22 xl:py-20">
 
         <!-- Close button: absolute top-right -->
         <div onclick="closeOverlay()" class="group absolute top-5 right-5 xl:top-20 xl:right-22 w-10 xl:w-12 cursor-pointer z-20">

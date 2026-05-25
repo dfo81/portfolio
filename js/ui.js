@@ -47,7 +47,7 @@ document.querySelectorAll(".checkbox").forEach((el) => {
 // --- Logo navigates back to the start page ---
 document.querySelectorAll(".logo-wrapper").forEach((logo) => {
   logo.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = "index.html#hero_page";
   });
 });
 
@@ -65,3 +65,18 @@ function autoResize(textarea) {
 
 // Inline `oninput="autoResize(this)"` in HTML needs this as a global.
 window.autoResize = autoResize;
+
+// --- Scroll reveal ---
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));

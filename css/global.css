@@ -11,16 +11,6 @@ html {
   max-width: 100%;
 }
 
-section[id] {
-  scroll-margin-top: 24px;
-}
-
-@media (min-width: 768px) {
-  section[id] {
-    scroll-margin-top: 72px;
-  }
-}
-
 /* Mouse gradient effect */
 body::before {
   content: "";
@@ -34,4 +24,26 @@ body::before {
 
 body.cursor-hidden::before {
   display: none;
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(64px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section[id] {
+  scroll-margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 96px;
+  }
 }

@@ -84,8 +84,7 @@ nav a.nav-link .link-text:hover + .circle {
 }
 /* --- 2. LAYOUT & SECTIONS --- */
 section.hero {
-  min-height: min(100dvh, 950px);
-  height: min(100dvh, 900px);
+  height: 100vh;
   background: linear-gradient(45deg, var(--color-bg) 40%, var(--color-bg-second) 100%);
 }
 
