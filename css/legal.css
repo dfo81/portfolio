@@ -12,13 +12,40 @@ section * {
 .legal {
     display: flex;
     flex-direction: column;
-    width: 1440px;
-    padding: 96px;
+    width: 100%;
+    max-width: 1440px;
+    padding: 96px 24px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .legal {
+        padding: 96px;
+    }
 }
 
 .legal a {
     text-decoration: none;
     color: var(--color-accent);
+}
+
+h1 {
+    color: var(--color-accent);
+    text-align: center;
+    font-family: var(--font-second);
+    font-size: 22px;
+}
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 860px) {
+    h1 {
+        font-size: 56px;
+    }
 }
 
 h2 {

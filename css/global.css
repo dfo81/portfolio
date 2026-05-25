@@ -12,7 +12,13 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 112px;
+  scroll-margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 72px;
+  }
 }
 
 /* Mouse gradient effect */
