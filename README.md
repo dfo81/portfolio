@@ -50,4 +50,4 @@ Die Seite ist statisch — `index.html` kann direkt in jedem statischen Hoster (
 
 ## Kontakt
 
-[contact@dieter-foos.de](mailto:contact@dieter-foos.de) · [GitHub](https://github.com/dfo81) · [LinkedIn](https://www.linkedin.com/in/dieter-foos-7a13a63ba/)
+[mail@dieter-foos.de](mailto:mail@dieter-foos.de) · [GitHub](https://github.com/dfo81) · [LinkedIn](https://www.linkedin.com/in/dieter-foos-7a13a63ba/)
