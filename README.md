@@ -2,7 +2,7 @@
 
 Persönliche Portfolio-Seite (Frontend-Entwickler, München).
 
-**Live:** _<https://your-live-url.example>_ ← bitte ergänzen
+**Live:** [dieter-foos.de](https://dieter-foos.de)
 
 ## Stack
 
