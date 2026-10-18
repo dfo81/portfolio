@@ -2,7 +2,8 @@
   "projects": [
     {
       "id": 1,
-      "title": "Join",
+      "title": "Join AI",
+      "isNew": true,
       "image": "/assets/img/icons/sub_join.svg",
       "technologies": [
         {
@@ -23,15 +24,15 @@
         }
       ],
       "links": {
-        "liveTest": "https://join.dieter-foos.de",
-        "github": "https://github.com/eisyeic/Join/tree/second"
+        "liveTest": "https://joinai.dieter-foos.de",
+        "github": "https://github.com/dfo81/Join_V2_Ai"
       },
       "content": {
         "de": {
-            "description": "Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen und weise Benutzern sowie Kategorien zu."
+            "description": "Kanban-Task-Manager mit KI-Workflow: Stakeholder senden Anfragen per Formular oder E-Mail, eine KI (Claude via n8n) erstellt daraus automatisch Tickets mit Priorität und Deadline. Aufgaben per Drag-and-Drop organisieren, Benutzer und Kategorien zuweisen."
         },
         "en": {
-           "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+           "description": "Kanban task manager with an AI workflow: stakeholders submit requests via form or email, and an AI (Claude via n8n) automatically turns them into tickets with priority and deadline. Organize tasks with drag and drop, assign users and categories."
         }
       }
     },

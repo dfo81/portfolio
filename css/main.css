@@ -197,6 +197,20 @@
   gap: 8px;
 }
 
+.new-badge {
+  align-self: center;
+  padding: 2px 10px;
+  border: 1px solid var(--color-accent);
+  border-radius: 100px;
+  background-color: rgba(61, 207, 182, 0.1);
+  color: var(--color-accent);
+  font-family: var(--font-second);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .arrow-outward {
   opacity: 0;
   width: 16px;

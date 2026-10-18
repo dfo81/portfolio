@@ -1,4 +1,11 @@
 /**
+ * Returns the "New" badge for projects flagged with `isNew`, or an empty string.
+ * @param {Object} project A project descriptor from `projects.json`.
+ * @returns {string} HTML markup.
+ */
+const getNewBadge = (project) => (project.isNew ? `<span class="new-badge">New</span>` : "");
+
+/**
  * Returns the HTML for one entry in the textual project list.
  * @param {Object} project A project descriptor from `projects.json`.
  * @returns {string} HTML markup.
@@ -11,6 +18,7 @@ export const getProjectList = (project) => {
     <div class="project-item" data-project="${project.title.toLowerCase()}">
       <div class="project-title">
         <h2>${project.title}</h2>
+        ${getNewBadge(project)}
         <img class="arrow-outward" src="/assets/img/icons/arrow_outward.svg" alt="" />
       </div>
       <div>
@@ -85,7 +93,10 @@ export const getOverlay = (project, nextProjectName, isEnglish) => {
         <div class="order-2 xl:order-1 xl:w-1/2 xl:h-full flex flex-col gap-6 xl:gap-0 xl:justify-between">
           <div class="flex flex-col">
             <h1 class="text-7xl xl:text-9xl font-bold text-accent tracking-tight">${String(project.id).padStart(2, "0")}</h1>
-            <h2 class="text-4xl xl:text-6xl font-second-bold tracking-tight">${project.title}</h2>
+            <div class="flex items-center gap-4">
+              <h2 class="text-4xl xl:text-6xl font-second-bold tracking-tight">${project.title}</h2>
+              ${getNewBadge(project)}
+            </div>
           </div>
           <div class="flex flex-col gap-4 xl:gap-6">
             <h3 class="font-second-bold text-xl xl:text-2xl text-accent">${headline}</h3>
