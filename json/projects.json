@@ -7,20 +7,16 @@
       "image": "/assets/img/icons/sub_join.svg",
       "technologies": [
         {
-          "name": "HTML",
-          "icon": "/assets/img/icons/html.svg"
-        },
-        {
-          "name": "CSS",
-          "icon": "/assets/img/icons/css.svg"
-        },
-        {
-          "name": "Javascript",
-          "icon": "/assets/img/icons/javascript.svg"
-        },
-        {
           "name": "Firebase",
           "icon": "/assets/img/icons/firebase.svg"
+        },
+        {
+          "name": "n8n",
+          "icon": "/assets/img/icons/n8n_aquamarine.svg"
+        },
+        {
+          "name": "Docker",
+          "icon": "/assets/img/icons/docker_aquamarine.svg"
         }
       ],
       "links": {
